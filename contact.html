@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">לְהָאִיר אֶת הַחוֹשֶׁךְ</div>
+                <button class="menu-toggle">☰</button>
+                <ul class="menu">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
+                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html" class="active">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>צְרוּ קֶשֶׁר</h1>
+                <div class="intro-separator contact-separator"></div>
+                <p class="contact-hero-text">אנחנו כאן בשבילכם. פנו אלינו לקבלת מידע נוסף, קביעת פגישה או כל שאלה</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="contact-info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>דרכי התקשרות</h2>
+            </div>
+            <div class="cards contact-cards">
+                <div class="card contact-info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>טלפון</h3>
+                        <div class="contact-separator-mini"></div>
+                        <p class="contact-data">058-439-7827</p>
+                        <p>ימים א'-ה': 9:00 - 19:00</p>
+                        <p>יום ו': 9:00 - 13:00</p>
+                    </div>
+                </div>
+                <div class="card contact-info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>אימייל</h3>
+                        <div class="contact-separator-mini"></div>
+                        <p class="contact-data">odalyasite@gmail.com</p>
+                        <p>אנו משתדלים להשיב לכל פניה בתוך 24 שעות.</p>
+                    </div>
+                </div>
+                <div class="card contact-info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>כתובת</h3>
+                        <div class="contact-separator-mini"></div>
+                        <p class="contact-data">חולון</p>
+                        <p>אפשרות לטיפולים פרונטליים או מקוונים</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form-section" class="contact-form-enhanced">
+        <div class="container">
+            <div class="section-title">
+                <h2>שלחו לנו הודעה</h2>
+            </div>
+            <div class="form-wrapper">
+                <div class="form-intro">
+                    <div class="form-intro-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>נשמח לשמוע מכם</h3>
+                    <p>מלאו את הטופס ונחזור אליכם בהקדם האפשרי</p>
+                </div>
+                <div class="contact-form enhanced-form">
+                    <div class="form-group">
+                        <label for="full-name">שם מלא</label>
+                        <input type="text" id="full-name" placeholder="הזינו את שמכם המלא">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">אימייל</label>
+                        <input type="email" id="email" placeholder="הזינו את כתובת האימייל שלכם">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" placeholder="הזינו את מספר הטלפון שלכם">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">נושא הפנייה</label>
+                        <select id="subject">
+                            <option value="general">מידע כללי</option>
+                            <option value="treatment">טיפולים</option>
+                            <option value="course">קורסים וסדנאות</option>
+                            <option value="name">פיענוח שמות</option>
+                            <option value="crystals">ריפוי בקריסטלים</option>
+                            <option value="other">אחר</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הודעה</label>
+                        <textarea id="message" placeholder="כתבו את תוכן ההודעה כאן..."></textarea>
+                    </div>
+                    <button class="btn contact-submit-btn" id="contact-submit">שלח הודעה</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>שאלות נפוצות</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
+                        <h3>כמה זמן אורך טיפול ממוצע?</h3>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>טיפול ממוצע אורך כשעה. בפגישה הראשונה אנו מקדישים זמן נוסף להיכרות ואבחון מעמיק, ולכן היא עשויה להימשך כשעה וחצי.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
+                        <h3>האם אתם מציעים פגישות אונליין?</h3>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>כן, אנו מציעים פגישות ייעוץ אונליין בנוסף לפגישות פנים אל פנים. הפגישות מתקיימות באמצעות זום או סקייפ, לפי העדפתך.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
+                        <h3>האם יש אפשרות לרכוש קריסטלים במרכז?</h3>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>כן, אנו מציעים מגוון רחב של קריסטלים ואבני חן איכותיים, שנבחרו בקפידה בהתאם לתכונות הריפוי שלהם. ניתן לרכוש אותם במרכז או באמצעות המשלוח.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social-connect" class="social-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>התחברו אלינו</h2>
+            </div>
+            <div class="social-container">
+                <p class="social-intro">עקבו אחרינו ברשתות החברתיות לעדכונים, טיפים והשראה יומית</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ניווט מהיר</h3>
+                    <ul>
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
+                        <li><a href="names.html">פיענוח שמות</a></li>
+                        <li><a href="about.html">אודות</a></li>
+                        <li><a href="contact.html">צור קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>שירותים</h3>
+                    <ul>
+                        <li><a href="index.html#services">טיפולים אישיים</a></li>
+                        <li><a href="contact.html">ייעוץ מקוון</a></li>
+                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>שעות פעילות</h3>
+                    <ul>
+                        <li>ראשון - חמישי: 9:00 - 19:00</li>
+                        <li>שישי: 9:00 - 13:00</li>
+                        <li>שבת: סגור</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>צור קשר</h3>
+                    <ul>
+                        <li>טלפון: 058-439-7827</li>
+                        <li>אימייל: odalyasite@gmail.com</li>
+                        <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // סקריפט לתפריט המובייל
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+        
+        // סגירת התפריט בלחיצה על קישור
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+            });
+        });
+
+        // סקריפט לפתיחה וסגירה של שאלות נפוצות
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggleIcon = item.querySelector('.faq-toggle i');
+            
+            // מסתיר את כל התשובות בהתחלה
+            answer.style.display = 'none';
+            
+            question.addEventListener('click', function() {
+                // פותח או סוגר את התשובה
+                if (answer.style.display === 'none') {
+                    answer.style.display = 'block';
+                    toggleIcon.classList.remove('fa-chevron-down');
+                    toggleIcon.classList.add('fa-chevron-up');
+                    item.classList.add('active');
+                } else {
+                    answer.style.display = 'none';
+                    toggleIcon.classList.remove('fa-chevron-up');
+                    toggleIcon.classList.add('fa-chevron-down');
+                    item.classList.remove('active');
+                }
+            });
+        });
+
+        // סקריפט לטופס צור קשר
+        const contactButton = document.querySelector('#contact-submit');
+        
+        if (contactButton) {
+            contactButton.addEventListener('click', function(event) {
+                // מונע את ההתנהגות הדיפולטית של הכפתור
+                event.preventDefault();
+                
+                // קבלת הערכים מהטופס
+                const fullName = document.getElementById('full-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value.trim();
+                
+                // בדיקה בסיסית של תקינות הטופס
+                if (fullName === '') {
+                    showError('full-name', 'אנא הזן את שמך המלא');
+                    return;
+                } else {
+                    removeError('full-name');
+                }
+                
+                if (phone === '') {
+                    showError('phone', 'אנא הזן מספר טלפון ליצירת קשר');
+                    return;
+                } else {
+                    removeError('phone');
+                }
+                
+                // כתובת האימייל של בעל האתר
+                const ownerEmail = 'odalyasite@gmail.com';
+                
+                // בניית נושא האימייל
+                const emailSubject = 'פנייה חדשה מהאתר: ' + getSubjectText(subject) + ' - ' + fullName;
+                
+                // בניית תוכן האימייל
+                let body = `שם: ${fullName}`;
+                if (email) body += `\nאימייל: ${email}`;
+                body += `\nטלפון: ${phone}`;
+                body += `\nנושא: ${getSubjectText(subject)}`;
+                if (message) body += `\n\nהודעה: ${message}`;
+                
+                // יצירת קישור mailto
+                const mailtoLink = `mailto:${ownerEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(body)}`;
+                
+                // הוספת אנימציה לכפתור לפני פתיחת תוכנת האימייל
+                contactButton.innerHTML = "שולח...";
+                contactButton.style.opacity = "0.8";
+                
+                // פתיחת תוכנת האימייל אחרי קצת השהייה שתראה את אנימציית הטעינה
+                setTimeout(function() {
+                    window.location.href = mailtoLink;
+                    // החזרת הכפתור למצב הרגיל
+                    setTimeout(function() {
+                        contactButton.innerHTML = "שלח הודעה";
+                        contactButton.style.opacity = "1";
+                    }, 1000);
+                }, 500);
+            });
+        }
+        
+        // פונקציה להמרת ערך הנושא לטקסט בעברית
+        function getSubjectText(value) {
+            switch(value) {
+                case 'general': return 'מידע כללי';
+                case 'treatment': return 'טיפולים';
+                case 'course': return 'קורסים וסדנאות';
+                case 'name': return 'פיענוח שמות';
+                case 'crystals': return 'ריפוי בקריסטלים';
+                case 'other': return 'אחר';
+                default: return 'מידע כללי';
+            }
+        }
+        
+        // פונקציה להצגת הודעת שגיאה
+        function showError(inputId, message) {
+            const input = document.getElementById(inputId);
+            input.style.borderColor = "#e74c3c";
+            
+            // הסרת הודעת שגיאה קודמת אם קיימת
+            const existingError = input.parentNode.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // יצירת הודעת שגיאה חדשה
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.color = "#e74c3c";
+            errorDiv.style.fontSize = "12px";
+            errorDiv.style.marginTop = "5px";
+            errorDiv.textContent = message;
+            
+            // הוספת הודעת השגיאה אחרי האינפוט
+            input.parentNode.appendChild(errorDiv);
+        }
+        
+        // פונקציה להסרת הודעת שגיאה
+        function removeError(inputId) {
+            const input = document.getElementById(inputId);
+            input.style.borderColor = "";
+            
+            // הסרת הודעת שגיאה אם קיימת
+            const existingError = input.parentNode.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+        }
+    });
+    </script>
+</body>
+</html>
