@@ -105,4 +105,43 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+    
+    // הודעה קופצת אחרי 1 שנייה
+    setTimeout(function() {
+        showPopup();
+    }, 1000);
+    
+    // בדיקה שהקוד עובד
+    console.log('הקוד נטען בהצלחה');
+    
+    // בדיקה נוספת - הודעה מיידית
+    console.log('כל הפונקציות זמינות');
  });
+
+// פונקציות להודעה קופצת
+function showPopup() {
+    const overlay = document.getElementById('popup-overlay');
+    const popup = document.getElementById('popup-message');
+    
+    if (overlay && popup) {
+        overlay.classList.add('show');
+        popup.classList.add('show');
+    }
+}
+
+function closePopup() {
+    const overlay = document.getElementById('popup-overlay');
+    const popup = document.getElementById('popup-message');
+    
+    if (overlay && popup) {
+        overlay.classList.remove('show');
+        popup.classList.remove('show');
+    }
+}
+
+// סגירת ההודעה בלחיצה על הרקע
+document.addEventListener('click', function(event) {
+    if (event.target.id === 'popup-overlay') {
+        closePopup();
+    }
+});
