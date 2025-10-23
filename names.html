@@ -29,7 +29,7 @@
             <div class="hero-content">
                 <h1>פִּעֲנוּחַ שֵׁמוֹת</h1>
                 <div class="intro-separator names-separator"></div>
-                <p class="names-hero-text">גלי את המשמעות העמוקה והפוטנציאל הגלום בשמכם על פי חכמת הקבלה והגימטריה</p>
+                <p class="names-hero-text">גלו את המשמעות העמוקה והפוטנציאל הגלום בשמכם על פי חכמת הקבלה והגימטריה</p>
             </div>
         </div>
     </section>
@@ -58,20 +58,14 @@
     <section id="name-analysis" class="names-analysis-section">
         <div class="container">
             <div class="section-title">
-                <h2>פענחי את השם שלך</h2>
+                <h2>מעוניינים בפיענוח שם אישי ומעמיק?</h2>
             </div>
             <div class="name-form analysis-form">
                 <div class="form-group">
-                    <label for="name">הזיני את השם המלא שלך:</label>
+                    <label for="name">השאירו פרטים ואחזור אליכם עם פיענוח מלא ומשמעותי</label>
                     <input type="text" id="name" placeholder="השם המלא שלך">
                 </div>
-                <button class="btn name-analysis-btn" id="analyze-name-btn">פענח את השם</button>
-            </div>
-            <div class="name-result analysis-result">
-                <div class="result-header">
-                    <i class="fas fa-magic result-icon"></i>
-                </div>
-                <p>פיענוח השם מתבסס על חכמת הגימטריה והקבלה, ומספק תובנות עמוקות על האופי, הייעוד והפוטנציאל בשמך.</p>
+                <button class="btn name-analysis-btn" id="analyze-name-btn">צרו קשר</button>
             </div>
         </div>
     </section>
@@ -109,15 +103,6 @@
                         <p>חיבור בין המשמעויות השונות מאפשר הבנה עמוקה של הייעוד הרוחני והמסע הנשמתי.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact-names" class="contact-section-names">
-        <div class="container">
-            <div class="contact-names-content">
-                <h2>מעוניינים בפיענוח שם אישי ומעמיק?</h2>
-                <p>השאירו פרטים ואחזור אליכם עם פיענוח מלא ומשמעותי</p>
-                <a href="contact.html" class="btn contact-btn names-contact-btn">צרו קשר עכשיו</a>
             </div>
         </div>
     </section>
@@ -188,20 +173,17 @@
         if (analyzeBtn) {
             analyzeBtn.addEventListener('click', function() {
                 const nameInput = document.getElementById('name');
-                if (nameInput && nameInput.value.trim() !== '') {
-                    const name = nameInput.value.trim();
-                    // מספר הטלפון - יש להחליף למספר הנכון
-                    const phoneNumber = '053-3397827';
-                    // הודעה שתישלח עם השם שהוזן
-                    const message = `שלום, אשמח לקבל פיענוח לשם: ${name}`;
-                    // יצירת קישור וואטסאפ עם ההודעה
-                    const encodedMessage = encodeURIComponent(message);
-                    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                    // פתיחת וואטסאפ
-                    window.open(whatsappLink, '_blank');
-                } else {
-                    alert('אנא הזן שם לפיענוח');
-                }
+                const name = nameInput ? nameInput.value.trim() : '';
+                
+                // מספר הטלפון
+                const phoneNumber = '972533397827';
+                // הודעה שתישלח עם השם שהוזן
+                const message = name ? `שלום, אשמח לקבל פיענוח שם בתשלום של 100 שקלים, לשם: ${name}` : 'שלום, אשמח לקבל מידע על פיענוח שמות';
+                // יצירת קישור וואטסאפ עם ההודעה
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                // פתיחת וואטסאפ
+                window.open(whatsappLink, '_blank');
             });
         }
     });
