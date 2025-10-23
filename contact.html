@@ -85,102 +85,18 @@
             </div>
             <div class="form-wrapper">
                 <div class="form-intro">
-                    <div class="form-intro-icon">
-                        <i class="fas fa-paper-plane"></i>
-                    </div>
-                    <h3>נשמח לשמוע מכם</h3>
-                    <p>מלאו את הטופס ונחזור אליכם בהקדם האפשרי</p>
+                    <p>לחצו על הכפתור כדי לשלוח הודעה ישירות בוואטסאפ</p>
                 </div>
-                <div class="contact-form enhanced-form">
-                    <div class="form-group">
-                        <label for="full-name">שם מלא</label>
-                        <input type="text" id="full-name" placeholder="הזינו את שמכם המלא">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">אימייל</label>
-                        <input type="email" id="email" placeholder="הזינו את כתובת האימייל שלכם">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">טלפון</label>
-                        <input type="tel" id="phone" placeholder="הזינו את מספר הטלפון שלכם">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">נושא הפנייה</label>
-                        <select id="subject">
-                            <option value="general">מידע כללי</option>
-                            <option value="treatment">טיפולים</option>
-                            <option value="course">קורסים וסדנאות</option>
-                            <option value="name">פיענוח שמות</option>
-                            <option value="crystals">ריפוי בקריסטלים</option>
-                            <option value="other">אחר</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">הודעה</label>
-                        <textarea id="message" placeholder="כתבו את תוכן ההודעה כאן..."></textarea>
-                    </div>
-                    <button class="btn contact-submit-btn" id="contact-submit">שלח הודעה</button>
+                <div class="whatsapp-contact">
+                    <a href="https://wa.me/972533397827?text=שלום,%20אשמח%20לקבל%20מידע%20נוסף" class="btn whatsapp-btn">
+                        שלח הודעה בוואטסאפ
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>שאלות נפוצות</h2>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
-                        <h3>כמה זמן אורך טיפול ממוצע?</h3>
-                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>טיפול ממוצע אורך כשעה. בפגישה הראשונה אנו מקדישים זמן נוסף להיכרות ואבחון מעמיק, ולכן היא עשויה להימשך כשעה וחצי.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
-                        <h3>האם אתם מציעים פגישות אונליין?</h3>
-                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>כן, אנו מציעים פגישות ייעוץ אונליין בנוסף לפגישות פנים אל פנים. הפגישות מתקיימות באמצעות זום או סקייפ, לפי העדפתך.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <div class="faq-icon"><i class="fas fa-question-circle"></i></div>
-                        <h3>האם יש אפשרות לרכוש קריסטלים במרכז?</h3>
-                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <p>כן, אנו מציעים מגוון רחב של קריסטלים ואבני חן איכותיים, שנבחרו בקפידה בהתאם לתכונות הריפוי שלהם. ניתן לרכוש אותם במרכז או באמצעות המשלוח.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="social-connect" class="social-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>התחברו אלינו</h2>
-            </div>
-            <div class="social-container">
-                <p class="social-intro">עקבו אחרינו ברשתות החברתיות לעדכונים, טיפים והשראה יומית</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
@@ -244,142 +160,7 @@
             });
         });
 
-        // סקריפט לפתיחה וסגירה של שאלות נפוצות
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            const toggleIcon = item.querySelector('.faq-toggle i');
-            
-            // מסתיר את כל התשובות בהתחלה
-            answer.style.display = 'none';
-            
-            question.addEventListener('click', function() {
-                // פותח או סוגר את התשובה
-                if (answer.style.display === 'none') {
-                    answer.style.display = 'block';
-                    toggleIcon.classList.remove('fa-chevron-down');
-                    toggleIcon.classList.add('fa-chevron-up');
-                    item.classList.add('active');
-                } else {
-                    answer.style.display = 'none';
-                    toggleIcon.classList.remove('fa-chevron-up');
-                    toggleIcon.classList.add('fa-chevron-down');
-                    item.classList.remove('active');
-                }
-            });
-        });
 
-        // סקריפט לטופס צור קשר
-        const contactButton = document.querySelector('#contact-submit');
-        
-        if (contactButton) {
-            contactButton.addEventListener('click', function(event) {
-                // מונע את ההתנהגות הדיפולטית של הכפתור
-                event.preventDefault();
-                
-                // קבלת הערכים מהטופס
-                const fullName = document.getElementById('full-name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value.trim();
-                
-                // בדיקה בסיסית של תקינות הטופס
-                if (fullName === '') {
-                    showError('full-name', 'אנא הזן את שמך המלא');
-                    return;
-                } else {
-                    removeError('full-name');
-                }
-                
-                if (phone === '') {
-                    showError('phone', 'אנא הזן מספר טלפון ליצירת קשר');
-                    return;
-                } else {
-                    removeError('phone');
-                }
-                
-                // כתובת האימייל של בעל האתר
-                const ownerEmail = 'odalyasite@gmail.com';
-                
-                // בניית נושא האימייל
-                const emailSubject = 'פנייה חדשה מהאתר: ' + getSubjectText(subject) + ' - ' + fullName;
-                
-                // בניית תוכן האימייל
-                let body = `שם: ${fullName}`;
-                if (email) body += `\nאימייל: ${email}`;
-                body += `\nטלפון: ${phone}`;
-                body += `\nנושא: ${getSubjectText(subject)}`;
-                if (message) body += `\n\nהודעה: ${message}`;
-                
-                // יצירת קישור mailto
-                const mailtoLink = `mailto:${ownerEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(body)}`;
-                
-                // הוספת אנימציה לכפתור לפני פתיחת תוכנת האימייל
-                contactButton.innerHTML = "שולח...";
-                contactButton.style.opacity = "0.8";
-                
-                // פתיחת תוכנת האימייל אחרי קצת השהייה שתראה את אנימציית הטעינה
-                setTimeout(function() {
-                    window.location.href = mailtoLink;
-                    // החזרת הכפתור למצב הרגיל
-                    setTimeout(function() {
-                        contactButton.innerHTML = "שלח הודעה";
-                        contactButton.style.opacity = "1";
-                    }, 1000);
-                }, 500);
-            });
-        }
-        
-        // פונקציה להמרת ערך הנושא לטקסט בעברית
-        function getSubjectText(value) {
-            switch(value) {
-                case 'general': return 'מידע כללי';
-                case 'treatment': return 'טיפולים';
-                case 'course': return 'קורסים וסדנאות';
-                case 'name': return 'פיענוח שמות';
-                case 'crystals': return 'ריפוי בקריסטלים';
-                case 'other': return 'אחר';
-                default: return 'מידע כללי';
-            }
-        }
-        
-        // פונקציה להצגת הודעת שגיאה
-        function showError(inputId, message) {
-            const input = document.getElementById(inputId);
-            input.style.borderColor = "#e74c3c";
-            
-            // הסרת הודעת שגיאה קודמת אם קיימת
-            const existingError = input.parentNode.querySelector('.error-message');
-            if (existingError) {
-                existingError.remove();
-            }
-            
-            // יצירת הודעת שגיאה חדשה
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message';
-            errorDiv.style.color = "#e74c3c";
-            errorDiv.style.fontSize = "12px";
-            errorDiv.style.marginTop = "5px";
-            errorDiv.textContent = message;
-            
-            // הוספת הודעת השגיאה אחרי האינפוט
-            input.parentNode.appendChild(errorDiv);
-        }
-        
-        // פונקציה להסרת הודעת שגיאה
-        function removeError(inputId) {
-            const input = document.getElementById(inputId);
-            input.style.borderColor = "";
-            
-            // הסרת הודעת שגיאה אם קיימת
-            const existingError = input.parentNode.querySelector('.error-message');
-            if (existingError) {
-                existingError.remove();
-            }
-        }
     });
     </script>
 </body>
