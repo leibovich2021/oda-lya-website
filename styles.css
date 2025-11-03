@@ -46,6 +46,11 @@ header {
     /* עיצוב כללי */
     text-align: center;
     direction: rtl;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-content h1 {
@@ -170,9 +175,20 @@ nav {
 /* עיצוב לאזור הגיבור */
 .hero {
     background: linear-gradient(135deg, #e1f0f9 0%, #b5d6e8 100%);
-    padding: 1.5rem 0;
-    text-align: center;
+    padding: 1rem 0 0.0rem 0;
+    position: relative;
+    width: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    text-align: center;
+}
+
+.hero .container {
+    padding: 1.25rem 1rem 0.0rem 1rem;
+    margin: 0;
 }
 
 /* עיצוב חדש למיכל התמונה שמתחת לכותרת */
@@ -193,10 +209,11 @@ nav {
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0;
+    font-size: 2.88rem;
+    margin-bottom: 0.08rem;
     color: var(--accent-color);
-    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
 }
 
 .hero p {
@@ -439,25 +456,30 @@ section {
 
 .crystal-carousel-track {
     display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.crystal-carousel-track .crystal-item {
-    flex: 0 0 28%;
-    min-width: 0;
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: scale(0.9);
-    opacity: 0.7;
-}
-
+/* 5 פריטים - כולם באותו גודל בדיוק - כללי - ללא יוצאים מהכלל */
+.crystal-carousel-track .crystal-item,
+.crystal-carousel-track .crystal-item.side-item,
+.crystal-carousel-track .crystal-item.mid-item,
 .crystal-carousel-track .crystal-item.center-item {
-    flex: 0 0 44%;
-    transform: scale(1);
-    opacity: 1;
-    z-index: 5;
-    position: relative;
+    flex: 0 0 20% !important;
+    min-width: 20% !important;
+    max-width: 20% !important;
+    width: 20% !important;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+}
+
+/* אבטחה נוספת - כל הפריטים זהים */
+.crystal-carousel-track .crystal-item * {
+    box-sizing: border-box;
 }
 
 .carousel-btn {
@@ -494,62 +516,103 @@ section {
     transform: none;
 }
 
-/* קריסטלים - Grid פשוט */
+/* קריסטלים - Grid קומפקטי עם hover */
 .crystal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin: 2rem 0;
     padding: 2rem 0;
 }
 
 .crystal-grid .crystal-item {
     background: var(--light-color);
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(60, 141, 188, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(60, 141, 188, 0.1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: none !important;
 }
 
-.crystal-grid .crystal-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 .crystal-grid .crystal-img {
-    height: 200px;
+    height: 220px;
     width: 100%;
     background-color: var(--light-color);
+    flex-shrink: 0;
+    overflow: hidden;
+    transform: none !important;
 }
+
+.crystal-grid .crystal-img img {
+    transform: none !important;
+}
+
 
 .crystal-grid .crystal-info {
-    padding: 1.5rem;
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* עיצוב נקי לקריסטלים ב-carousel */
+.crystal-grid .crystal-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.crystal-grid .crystal-separator-mini {
+    width: 30px;
+    height: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.crystal-grid .crystal-properties {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    opacity: 0.9;
+}
+
+
+.crystal-grid .crystal-info p:last-child {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+/* עיצוב נקי לקריסטלים ב-carousel - כולם אותו דבר */
 .crystal-carousel-track .crystal-item {
-    background: white;
-    border: 1px solid rgba(60, 141, 188, 0.15);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: var(--light-color) !important;
+    border: 1px solid rgba(60, 141, 188, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+.crystal-carousel-track .crystal-item.side-item,
+.crystal-carousel-track .crystal-item.mid-item,
 .crystal-carousel-track .crystal-item.center-item {
-    background: white;
-    border: 2px solid var(--secondary-color);
-    box-shadow: 0 8px 24px rgba(60, 141, 188, 0.2);
+    background: var(--light-color) !important;
+    border: 1px solid rgba(60, 141, 188, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
-.crystal-carousel-track .crystal-item:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.crystal-carousel-track .crystal-item.center-item:hover {
-    box-shadow: 0 10px 28px rgba(60, 141, 188, 0.25);
-}
 
 .crystal-img {
-    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -560,21 +623,55 @@ section {
 }
 
 .crystal-carousel-track .crystal-item .crystal-img {
-    transition: all 0.6s ease;
-    height: 180px;
+    height: 180px !important;
 }
 
+/* כל התמונות באותו גודל */
+.crystal-carousel-track .crystal-item .crystal-img,
+.crystal-carousel-track .crystal-item.side-item .crystal-img,
+.crystal-carousel-track .crystal-item.mid-item .crystal-img,
 .crystal-carousel-track .crystal-item.center-item .crystal-img {
-    height: 250px;
+    height: 180px !important;
+    width: 100% !important;
 }
 
 .crystal-info {
     padding: 1.5rem;
-    transition: all 0.6s ease;
 }
 
+.crystal-carousel-track .crystal-item .crystal-info {
+    padding: 1rem !important;
+}
+
+/* כל ה-info sections באותו padding */
+.crystal-carousel-track .crystal-item .crystal-info,
+.crystal-carousel-track .crystal-item.side-item .crystal-info,
+.crystal-carousel-track .crystal-item.mid-item .crystal-info,
 .crystal-carousel-track .crystal-item.center-item .crystal-info {
-    padding: 1.8rem;
+    padding: 1rem !important;
+}
+
+/* כל הטקסטים באותו גודל - ללא יוצאים מהכלל */
+.crystal-carousel-track .crystal-item .crystal-name,
+.crystal-carousel-track .crystal-item.side-item .crystal-name,
+.crystal-carousel-track .crystal-item.mid-item .crystal-name,
+.crystal-carousel-track .crystal-item.center-item .crystal-name {
+    font-size: 1rem !important;
+}
+
+.crystal-carousel-track .crystal-item .crystal-properties,
+.crystal-carousel-track .crystal-item.side-item .crystal-properties,
+.crystal-carousel-track .crystal-item.mid-item .crystal-properties,
+.crystal-carousel-track .crystal-item.center-item .crystal-properties {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+}
+
+.crystal-carousel-track .crystal-item .crystal-info p:last-child,
+.crystal-carousel-track .crystal-item.side-item .crystal-info p:last-child,
+.crystal-carousel-track .crystal-item.mid-item .crystal-info p:last-child,
+.crystal-carousel-track .crystal-item.center-item .crystal-info p:last-child {
+    font-size: 0.75rem !important;
 }
 
 .crystal-info-img {
@@ -590,9 +687,9 @@ section {
 }
 
 .crystal-carousel-track .crystal-item.center-item .crystal-info-img {
-    max-width: 180px;
-    height: 140px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    max-width: 150px !important;
+    height: 120px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .crystal-name {
@@ -604,8 +701,8 @@ section {
 }
 
 .crystal-carousel-track .crystal-item.center-item .crystal-name {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
+    font-size: 1rem !important;
+    color: var(--accent-color);
 }
 
 .crystal-properties {
@@ -1081,7 +1178,7 @@ footer {
     
     /* תיקונים לאזור הגיבור */
     .hero {
-        padding: 1.5rem 0;
+        padding: 0.8rem 0;
     }
     
     .hero h1 {
@@ -1151,7 +1248,24 @@ footer {
     }
     
     .crystal-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .crystal-grid .crystal-img {
+        height: 180px;
+    }
+    
+    .crystal-grid .crystal-info {
+        padding: 0.8rem;
+    }
+    
+    .crystal-grid .crystal-name {
+        font-size: 1rem;
+    }
+    
+    .crystal-grid .crystal-properties {
+        font-size: 0.8rem;
     }
     
     /* התאמות Carousel למובייל */
@@ -1168,8 +1282,10 @@ footer {
     }
     
     .crystal-carousel-track .crystal-item.center-item {
-        flex: 0 0 100%;
-        transform: scale(1);
+        flex: 0 0 20% !important;
+        transform: scale(1) !important;
+        width: 20% !important;
+        max-width: 20% !important;
     }
     
     .carousel-btn {
@@ -1195,7 +1311,7 @@ footer {
     }
     
     .crystal-carousel-track .crystal-item.center-item .crystal-img {
-        height: 220px;
+        height: 180px !important;
     }
     
     .about-content {
@@ -1268,13 +1384,19 @@ footer {
 /* עיצוב הירו מיוחד לדף קריסטלים */
 .crystal-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.3rem 0;
+    padding: 1rem 0 0.0rem 0;
     position: relative;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: auto;
+}
+
+.crystal-hero .container {
+    padding: 1.25rem 1rem 0.0rem 1rem;
+    margin: 0;
 }
 
 .crystal-hero::before {
@@ -1290,31 +1412,38 @@ footer {
     z-index: 0;
 }
 
+
 .crystal-hero .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .crystal-hero h1 {
     color: var(--accent-color);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.88rem;
+    margin-bottom: 0.08rem;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
 }
 
 .crystal-hero-text {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.08rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
     color: var(--text-color);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .crystal-separator {
-    width: 100px;
-    height: 3px;
-    margin: 0.7rem auto;
+    width: 64px;
+    height: 1.5px;
+    margin: 0.16rem auto 0.1rem auto;
     background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
 }
 
@@ -1372,19 +1501,13 @@ footer {
 
 /* קריסטלים - עיצוב משופר */
 .crystal-item {
-    transition: all 0.4s ease;
     overflow: hidden;
 }
 
-.crystal-item:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-}
 
 .crystal-img {
     position: relative;
     overflow: hidden;
-    transition: all 0.4s ease;
 }
 
 .crystal-img::after {
@@ -1399,9 +1522,6 @@ footer {
     transition: opacity 0.3s ease;
 }
 
-.crystal-item:hover .crystal-img::after {
-    opacity: 1;
-}
 
 /* צבעי רקע לקריסטלים אם התמונות לא נטענות */
 .amethyst { background-color: transparent; }
@@ -1583,13 +1703,19 @@ footer {
 /* עיצוב הירו */
 .about-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.3rem 0;
+    padding: 1rem 0 0.0rem 0;
     position: relative;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: auto;
+}
+
+.about-hero .container {
+    padding: 1.25rem 1rem 0.0rem 1rem;
+    margin: 0;
 }
 
 .about-hero::before {
@@ -1610,26 +1736,32 @@ footer {
     z-index: 1;
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .about-hero h1 {
     color: var(--accent-color);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.88rem;
+    margin-bottom: 0.08rem;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
 }
 
 .about-hero-text {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.08rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
     color: var(--text-color);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .about-separator {
-    width: 100px;
-    height: 3px;
-    margin: 0.7rem auto;
+    width: 64px;
+    height: 1.5px;
+    margin: 0.16rem auto 0.1rem auto;
     background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
 }
 
@@ -1917,13 +2049,19 @@ footer {
 /* עיצוב הירו */
 .names-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.3rem 0;
+    padding: 1rem 0 0.0rem 0;
     position: relative;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: auto;
+}
+
+.names-hero .container {
+    padding: 1.25rem 1rem 0.0rem 1rem;
+    margin: 0;
 }
 
 .names-hero::before {
@@ -1944,26 +2082,32 @@ footer {
     z-index: 1;
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .names-hero h1 {
     color: var(--accent-color);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.88rem;
+    margin-bottom: 0.08rem;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
 }
 
 .names-hero-text {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.08rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
     color: var(--text-color);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .names-separator {
-    width: 100px;
-    height: 3px;
-    margin: 0.7rem auto;
+    width: 64px;
+    height: 1.5px;
+    margin: 0.16rem auto 0.1rem auto;
     background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
 }
 
@@ -2074,13 +2218,19 @@ footer {
 /* עיצוב הירו */
 .contact-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.3rem 0;
+    padding: 1rem 0 0.0rem 0;
     position: relative;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: auto;
+}
+
+.contact-hero .container {
+    padding: 1.25rem 1rem 0.0rem 1rem;
+    margin: 0;
 }
 
 .contact-hero::before {
@@ -2101,26 +2251,32 @@ footer {
     z-index: 1;
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-hero h1 {
     color: var(--accent-color);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.88rem;
+    margin-bottom: 0.08rem;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+    line-height: 1.1;
 }
 
 .contact-hero-text {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.08rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
     color: var(--text-color);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .contact-separator {
-    width: 100px;
-    height: 3px;
-    margin: 0.7rem auto;
+    width: 64px;
+    height: 1.5px;
+    margin: 0.16rem auto 0.1rem auto;
     background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
 }
 
