@@ -354,7 +354,7 @@ section {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .card {
@@ -1763,6 +1763,7 @@ footer {
 /* עיצוב תיבת מידע על פיענוח שמות */
 .names-intro-box {
     padding: 1.7rem;
+    margin-bottom: 0.05rem;
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.8;
@@ -1784,6 +1785,7 @@ footer {
 
 .names-quote {
     margin-top: 1.4rem;
+    margin-bottom: 0.03rem;
     padding: 1rem;
     background-color: rgba(181, 214, 232, 0.1);
     border-radius: 10px;
@@ -1826,7 +1828,7 @@ footer {
 }
 
 .analysis-cards {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .analysis-card {
