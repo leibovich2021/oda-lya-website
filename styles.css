@@ -420,24 +420,132 @@ section {
     font-size: 1.2rem;
 }
 
-/* קריסטלים */
+/* קריסטלים - Carousel */
+.crystal-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    background-color: var(--light-color);
+}
+
+.crystal-carousel-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.crystal-carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.crystal-carousel-track .crystal-item {
+    flex: 0 0 28%;
+    min-width: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.crystal-carousel-track .crystal-item.center-item {
+    flex: 0 0 44%;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 5;
+    position: relative;
+}
+
+.carousel-btn {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* קריסטלים - Grid פשוט */
 .crystal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
 }
 
-.crystal-item {
-    background: white;
-    border-radius: 20px;
+.crystal-grid .crystal-item {
+    background: var(--light-color);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    border: 1px solid rgba(60, 141, 188, 0.15);
 }
 
-.crystal-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+.crystal-grid .crystal-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.crystal-grid .crystal-img {
+    height: 200px;
+    width: 100%;
+    background-color: var(--light-color);
+}
+
+.crystal-grid .crystal-info {
+    padding: 1.5rem;
+}
+
+/* עיצוב נקי לקריסטלים ב-carousel */
+.crystal-carousel-track .crystal-item {
+    background: white;
+    border: 1px solid rgba(60, 141, 188, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.crystal-carousel-track .crystal-item.center-item {
+    background: white;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 8px 24px rgba(60, 141, 188, 0.2);
+}
+
+.crystal-carousel-track .crystal-item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.crystal-carousel-track .crystal-item.center-item:hover {
+    box-shadow: 0 10px 28px rgba(60, 141, 188, 0.25);
 }
 
 .crystal-img {
@@ -447,16 +555,57 @@ section {
     justify-content: center;
     color: white;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.crystal-carousel-track .crystal-item .crystal-img {
+    transition: all 0.6s ease;
+    height: 180px;
+}
+
+.crystal-carousel-track .crystal-item.center-item .crystal-img {
+    height: 250px;
 }
 
 .crystal-info {
     padding: 1.5rem;
+    transition: all 0.6s ease;
+}
+
+.crystal-carousel-track .crystal-item.center-item .crystal-info {
+    padding: 1.8rem;
+}
+
+.crystal-info-img {
+    width: 100%;
+    max-width: 150px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0.5rem auto 1rem;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.crystal-carousel-track .crystal-item.center-item .crystal-info-img {
+    max-width: 180px;
+    height: 140px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .crystal-name {
     color: var(--accent-color);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    transition: all 0.6s ease;
+    font-weight: 700;
+}
+
+.crystal-carousel-track .crystal-item.center-item .crystal-name {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
 }
 
 .crystal-properties {
@@ -1005,6 +1154,50 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    /* התאמות Carousel למובייל */
+    .crystal-carousel-wrapper {
+        position: relative;
+        padding: 1.5rem 0;
+        margin: 2rem 0;
+    }
+    
+    .crystal-carousel-track .crystal-item {
+        flex: 0 0 100%;
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .crystal-carousel-track .crystal-item.center-item {
+        flex: 0 0 100%;
+        transform: scale(1);
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    .carousel-btn-prev {
+        right: 5px;
+    }
+    
+    .carousel-btn-next {
+        left: 5px;
+    }
+    
+    .crystal-carousel-container {
+        position: relative;
+    }
+    
+    .crystal-carousel-track .crystal-item.center-item .crystal-img {
+        height: 220px;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -1211,12 +1404,26 @@ footer {
 }
 
 /* צבעי רקע לקריסטלים אם התמונות לא נטענות */
-.amethyst { background-color: #7b68ee; }
-.aquamarine { background-color: #00bfff; }
-.aventurine { background-color: #32cd32; }
-.ruby { background-color: #b22222; }
-.citrine { background-color: #ffd700; }
-.rose-quartz { background-color: #ff69b4; }
+.amethyst { background-color: transparent; }
+.aquamarine { background-color: transparent; }
+.aventurine { background-color: transparent; }
+.ruby { background-color: transparent; }
+.citrine { background-color: transparent; }
+.rose-quartz { background-color: transparent; }
+.amber { background-color: transparent; }
+.smoky-quartz { background-color: transparent; }
+.carnelian { background-color: transparent; }
+.moonstone { background-color: transparent; }
+.obsidian { background-color: transparent; }
+.black-tourmaline { background-color: transparent; }
+.lapis-lazuli { background-color: transparent; }
+.malachite { background-color: transparent; }
+.selenite { background-color: transparent; }
+.tigers-eye { background-color: transparent; }
+.clear-quartz { background-color: transparent; }
+.black-onyx { background-color: transparent; }
+.opalite { background-color: transparent; }
+.abalone { background-color: transparent; }
 
 .crystal-separator-mini {
     width: 40px;
