@@ -176,7 +176,7 @@ nav {
 /* עיצוב לאזור הגיבור */
 .hero {
     background: linear-gradient();
-    padding: 1rem 0 0.0rem 0;
+    padding: 0.15rem 0 0.04rem 0;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -188,7 +188,7 @@ nav {
 }
 
 .hero .container {
-    padding: 1.25rem 1rem 0.0rem 1rem;
+    padding: 0.2rem 1rem 0.04rem 1rem;
     margin: 0;
 }
 
@@ -219,7 +219,7 @@ nav {
 
 .hero p {
     font-size: 1.3rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.01rem;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -1653,7 +1653,7 @@ footer {
 /* עיצוב הירו מיוחד לדף קריסטלים */
 .crystal-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 1rem 0 0.0rem 0;
+    padding: 0.15rem 0 0.04rem 0;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -1664,7 +1664,7 @@ footer {
 }
 
 .crystal-hero .container {
-    padding: 1.25rem 1rem 0.0rem 1rem;
+    padding: 0.2rem 1rem 0.04rem 1rem;
     margin: 0;
 }
 
@@ -1972,7 +1972,7 @@ footer {
 /* עיצוב הירו */
 .about-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 1rem 0 0.0rem 0;
+    padding: 0.15rem 0 0.04rem 0;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -1983,7 +1983,7 @@ footer {
 }
 
 .about-hero .container {
-    padding: 1.25rem 1rem 0.0rem 1rem;
+    padding: 0.2rem 1rem 0.04rem 1rem;
     margin: 0;
 }
 
@@ -2318,7 +2318,7 @@ footer {
 /* עיצוב הירו */
 .names-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 1rem 0 0.0rem 0;
+    padding: 0.15rem 0 0.04rem 0;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -2329,7 +2329,7 @@ footer {
 }
 
 .names-hero .container {
-    padding: 1.25rem 1rem 0.0rem 1rem;
+    padding: 0.2rem 1rem 0.04rem 1rem;
     margin: 0;
 }
 
@@ -2487,7 +2487,7 @@ footer {
 /* עיצוב הירו */
 .contact-hero {
     background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 1rem 0 0.0rem 0;
+    padding: 0.15rem 0 0.04rem 0;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -2498,7 +2498,7 @@ footer {
 }
 
 .contact-hero .container {
-    padding: 1.25rem 1rem 0.0rem 1rem;
+    padding: 0.2rem 1rem 0.04rem 1rem;
     margin: 0;
 }
 
