@@ -116,7 +116,161 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // בדיקה נוספת - הודעה מיידית
     console.log('כל הפונקציות זמינות');
+    
+    // גלריית תמונות זזה
+    initGallery();
  });
+ 
+// פונקציה לאתחול הגלריה
+function initGallery() {
+    const galleryTrack = document.querySelector('.gallery-track');
+    const slides = document.querySelectorAll('.gallery-slide');
+    const prevBtn = document.querySelector('.gallery-btn-prev');
+    const nextBtn = document.querySelector('.gallery-btn-next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (!galleryTrack || !slides.length) {
+        console.log('גלריה לא נמצאה');
+        return;
+    }
+    
+    // טעינת תמונות מראש ובדיקה שהן נטענו
+    let imagesLoaded = 0;
+    const totalImages = slides.length;
+    
+    slides.forEach((slide, index) => {
+        const img = slide.querySelector('.gallery-image');
+        if (img) {
+            // בדיקה אם התמונה כבר נטענה
+            if (img.complete && img.naturalHeight !== 0) {
+                imagesLoaded++;
+                console.log('תמונה כבר נטענה:', img.src);
+            } else {
+                img.onerror = function() {
+                    console.error('תמונה לא נטענה:', img.src);
+                    console.error('נסה לבדוק את הנתיב:', img.getAttribute('src'));
+                };
+                img.onload = function() {
+                    imagesLoaded++;
+                    console.log('תמונה נטענה:', img.src, '(' + imagesLoaded + '/' + totalImages + ')');
+                };
+            }
+        }
+    });
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    console.log('מספר תמונות בגלריה:', totalSlides);
+    
+    // וידוא שהתמונות נטענו לפני תחילת הגלריה
+    function checkImagesAndInit() {
+        if (imagesLoaded === totalImages) {
+            console.log('כל התמונות נטענו בהצלחה!');
+            updateGallery();
+        } else {
+            console.log('ממתין לטעינת תמונות...', imagesLoaded + '/' + totalImages);
+            setTimeout(checkImagesAndInit, 100);
+        }
+    }
+    
+    // פונקציה לעדכון הגלריה
+    function updateGallery() {
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        
+        // כל תמונה תופסת 100% מהרוחב, אז נזיז ב-100% לכל תמונה
+        const translateX = -currentSlide * 100;
+        galleryTrack.style.transform = `translateX(${translateX}%)`;
+        
+        console.log('תמונה:', currentSlide + 1, 'מתוך', totalSlides, '| translateX:', translateX + '%');
+        
+        // בדיקה שהתמונה הנוכחית קיימת ונשלפה
+        const currentSlideElement = slides[currentSlide];
+        if (currentSlideElement) {
+            const img = currentSlideElement.querySelector('.gallery-image');
+            if (img) {
+                console.log('תמונה נוכחית:', img.src);
+                // בדיקה אם התמונה נטענה
+                if (!img.complete || img.naturalHeight === 0) {
+                    console.warn('⚠️ תמונה לא נטענה:', img.src);
+                    // ניסיון לטעון מחדש
+                    const originalSrc = img.src;
+                    img.src = '';
+                    setTimeout(() => {
+                        img.src = originalSrc;
+                    }, 100);
+                } else {
+                    console.log('✅ תמונה נטענה בהצלחה:', img.src);
+                }
+                
+                // וידוא שהתמונה נראית
+                img.style.display = 'block';
+                img.style.visibility = 'visible';
+                img.style.opacity = '1';
+            }
+        }
+        
+        // עדכון אינדיקטורים
+        indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+    
+    // כפתור הבא
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateGallery();
+        });
+    }
+    
+    // כפתור הקודם
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateGallery();
+        });
+    }
+    
+    // לחיצה על אינדיקטורים - רק עבור התמונות הקיימות
+    indicators.forEach((indicator, index) => {
+        if (index < totalSlides) {
+            indicator.addEventListener('click', function() {
+                currentSlide = index;
+                updateGallery();
+            });
+        }
+    });
+    
+    // הזזה אוטומטית (אופציונלי - כל 5 שניות)
+    let autoSlideInterval = setInterval(function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateGallery();
+    }, 5000);
+    
+    // עצירת הזזה אוטומטית כשהעכבר על הגלריה
+    const gallerySection = document.querySelector('.image-gallery-section');
+    if (gallerySection) {
+        gallerySection.addEventListener('mouseenter', function() {
+            clearInterval(autoSlideInterval);
+        });
+        
+        gallerySection.addEventListener('mouseleave', function() {
+            autoSlideInterval = setInterval(function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateGallery();
+            }, 5000);
+        });
+    }
+    
+    // אתחול ראשוני - ממתין שהתמונות יטענו
+    checkImagesAndInit();
+}
 
 // פונקציות להודעה קופצת
 function showPopup() {
