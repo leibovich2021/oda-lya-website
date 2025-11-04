@@ -382,18 +382,45 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.menu');
         
-        menuToggle.addEventListener('click', function() {
-            menu.classList.toggle('active');
-        });
-        
-        // סגירת התפריט בלחיצה על קישור
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
+        if (menuToggle && menu) {
+            // פונקציה לפתיחה/סגירה של התפריט
+            function toggleMenu(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                menu.classList.toggle('active');
+                console.log('Menu toggled, active:', menu.classList.contains('active'));
+            }
+            
+            // הוספת event listeners - גם click וגם touchstart
+            menuToggle.addEventListener('click', toggleMenu);
+            menuToggle.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                toggleMenu(e);
             });
-        });
-        
+            
+            // סגירת התפריט בלחיצה על קישור
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menu.classList.remove('active');
+                });
+            });
+            
+            // סגירת התפריט בלחיצה מחוץ לתפריט (עם delay קטן)
+            document.addEventListener('click', function(e) {
+                if (menu.classList.contains('active')) {
+                    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                        setTimeout(function() {
+                            menu.classList.remove('active');
+                        }, 100);
+                    }
+                }
+            });
+        } else {
+            console.log('Menu elements not found:', {menuToggle, menu});
+        }
     });
     </script>
 </body>
