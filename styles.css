@@ -15,6 +15,7 @@
 
 html {
     font-size: 16px;
+    height: 100%;
 }
 
 body {
@@ -24,6 +25,9 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-weight: bold;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -545,7 +549,7 @@ nav {
     color: var(--accent-color);
     position: relative;
     display: inline-block;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.1rem;
 }
 
 .section-title h2::after {
@@ -555,6 +559,165 @@ nav {
 /* רקע לסקשנים */
 .bg-light {
     background-color: #f0f7fc;
+}
+
+/* צמצום רווחים ספציפי לעמוד קריסטלים */
+#crystal-therapy {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#crystal-therapy .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#crystal-therapy .content-box {
+    margin-bottom: 0.5rem !important;
+}
+
+#crystal-types {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#crystal-types .section-title {
+    margin-bottom: 0.25rem !important;
+    margin-top: 0 !important;
+}
+
+#crystal-types .crystal-grid {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#pricelist {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#pricelist .section-title {
+    margin-bottom: 0.25rem !important;
+    margin-top: 0 !important;
+}
+
+#pricelist .pricelist-container {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#crystal-benefits {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#crystal-benefits .section-title {
+    margin-bottom: 0.25rem !important;
+    margin-top: 0 !important;
+}
+
+#crystal-benefits .benefits-grid {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* צמצום רווחים בעמוד index.html */
+#services {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#services .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#names {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#names .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#testimonials {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#testimonials .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+/* צמצום רווחים בעמוד names.html */
+#name-meaning {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#name-meaning .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#name-meaning .content-box {
+    margin-bottom: 0.5rem !important;
+}
+
+#name-analysis {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#name-analysis .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#name-components {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#name-components .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+/* צמצום רווחים בעמוד about.html */
+#our-story {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#our-story .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#our-values {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#our-values .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+/* צמצום רווחים בעמוד contact.html */
+#contact-info {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#contact-info .section-title {
+    margin-bottom: 0.25rem !important;
+}
+
+#contact-form-section {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+#contact-form-section .section-title {
+    margin-bottom: 0.25rem !important;
 }
 
 /* כרטיסים */
@@ -1118,6 +1281,7 @@ footer {
     background-color: var(--accent-color);
     color: white;
     padding: 1rem 0 0.3rem;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -2604,7 +2768,7 @@ footer {
 
 /* אזור טופס יצירת קשר */
 .contact-form-enhanced {
-    background-color: #f9f9f9;
+    background-color: var(--light-color);
     padding: 2.5rem 0;
     position: relative;
 }
@@ -2616,7 +2780,7 @@ footer {
     left: 0;
     right: 0;
     height: 200px;
-    background: linear-gradient(to bottom, white, transparent);
+    background: linear-gradient(to bottom, var(--light-color), transparent);
     z-index: 0;
 }
 
@@ -2651,7 +2815,7 @@ footer {
 }
 
 .enhanced-form {
-    background-color: white;
+    background-color: var(--light-color);
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     padding: 2.1rem;
