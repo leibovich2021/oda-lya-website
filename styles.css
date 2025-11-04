@@ -1390,164 +1390,226 @@ footer {
     font-style: italic;
 }
 
-/* עיצוב הודעה קופצת */
-.popup-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 1.4rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    z-index: 10000;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-    transition: all 0.5s ease;
-    max-width: 350px;
-    width: 90%;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.popup-message.show {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1);
-    pointer-events: auto;
-}
-
-.popup-message img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid white;
-}
-
-.popup-image-wrapper {
-    width: 308px;
-    max-width: 476px;
-    height: 364px;
-    border-radius: 60px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    display: block;
-    position: relative;
-}
-
-.popup-large-image {
-    width: 100% !important;
-    max-width: 476px !important;
-    height: 476px !important;
-    border-radius: 60px !important;
-    margin-bottom: 0 !important;
-    border: none !important;
-    object-fit: cover;
-    object-position: center 15%;
-    background: transparent;
-    display: block;
-    position: absolute;
-    top: -15%;
-    left: 0;
-}
-
-.popup-message h2 {
-    font-size: 2rem;
-    margin-bottom: 0.2rem;
-    margin-top: 0;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.popup-message h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
-    line-height: 1.3;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.popup-message p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-    line-height: 1.3;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-
-.popup-close {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid white;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.popup-close:hover {
-    background: white;
-    color: #667eea;
-    transform: translateY(-2px);
-}
-
-/* התאמת פופאפ למסכים קטנים (טלפון) */
-@media screen and (max-width: 768px) {
-    .popup-message {
-        max-width: 175px !important;
-        padding: 0.8rem;
-    }
-    
-    .popup-image-wrapper {
-        width: 154px !important;
-        max-width: 238px !important;
-        height: 182px !important;
-    }
-    
-    .popup-large-image {
-        max-width: 238px !important;
-        height: 238px !important;
-    }
-    
-    .popup-message h2 {
-        font-size: 1.2rem;
-    }
-    
-    .popup-message h3 {
-        font-size: 0.8rem;
-        margin-bottom: 0.2rem;
-        margin-top: 0.2rem;
-    }
-    
-    .popup-close {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-}
-
+/* עיצוב הודעה קופצת - זהב ממלכתי */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     z-index: 9999;
     opacity: 0;
-    transition: opacity 0.5s ease;
     pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 .popup-overlay.show {
     opacity: 1;
     pointer-events: auto;
+}
+
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: linear-gradient(135deg, #f5e6d3 0%, #fff8e7 50%, #f5e6d3 100%);
+    color: #3d2817;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3), 
+                0 0 0 2px #d4af37,
+                0 0 20px rgba(212, 175, 55, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-align: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 520px;
+    width: 90%;
+    max-height: 85vh;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    border: 3px solid #d4af37;
+}
+
+.popup-message.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.popup-message::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-message::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 4px;
+}
+
+.popup-message::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37 0%, #b8941f 100%);
+    border-radius: 4px;
+    border: 1px solid #8b6914;
+}
+
+.popup-message::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #e5c547 0%, #c9a529 100%);
+}
+
+.popup-message img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    border: 3px solid #d4af37;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), 
+                0 0 10px rgba(212, 175, 55, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.popup-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1.5rem auto 0.375rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: none;
+    background: transparent;
+}
+
+.popup-large-image {
+    width: 150% !important;
+    height: 150% !important;
+    border-radius: 8px !important;
+    border: none !important;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 1cm);
+    transform: translate(-50%, -50%);
+}
+
+.popup-message h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+    font-weight: 700;
+    color: #8b6914;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3),
+                 0 0 10px rgba(212, 175, 55, 0.2),
+                 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.popup-message h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #5d3f1f;
+    text-shadow: 0 1px 3px rgba(212, 175, 55, 0.2);
+}
+
+.popup-message p {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    margin-top: 0;
+    line-height: 1.6;
+    color: #4a3317;
+    font-weight: 700;
+}
+
+.popup-close {
+    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+    border: 2px solid #8b6914;
+    color: #3d2817;
+    padding: 0.8rem 2.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 0.375rem;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4),
+                0 2px 5px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close:hover {
+    background: linear-gradient(135deg, #e5c547 0%, #c9a529 100%);
+    border-color: #a67c00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5),
+                0 3px 8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.popup-close:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* התאמת פופאפ למסכים קטנים (טלפון) */
+@media screen and (max-width: 768px) {
+    .popup-message {
+        max-width: 92% !important;
+        width: 92% !important;
+        padding: 2rem 1.5rem;
+        max-height: 90vh;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+    
+    .popup-image-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 350px !important;
+        margin: 1.2rem 0;
+    }
+    
+    .popup-large-image {
+        width: 350% !important;
+        height: 350% !important;
+    }
+    
+    .popup-message h2 {
+        font-size: 1.5rem;
+    }
+    
+    .popup-message h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+        margin-top: 0.4rem;
+    }
+    
+    .popup-close {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 200px;
+    }
 }
 
 /* מדיה קוורי למובייל */
@@ -1614,6 +1676,28 @@ footer {
     
     .menu li {
         margin: 0;
+        text-align: center;
+    }
+    
+    /* מרכוז כיתוב קריסטלים בטלפון */
+    .crystal-grid .crystal-info {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .crystal-grid .crystal-separator-mini {
+        margin: 0 auto 0.5rem auto;
+    }
+    
+    .crystal-grid .crystal-name {
+        text-align: center;
+    }
+    
+    .crystal-grid .crystal-properties {
+        text-align: center;
+    }
+    
+    .crystal-grid .crystal-info p {
         text-align: center;
     }
     
