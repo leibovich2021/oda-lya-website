@@ -787,6 +787,28 @@ section {
     padding-top: 0.5rem;
 }
 
+/* מחירון */
+.pricelist-section {
+    padding: 3rem 0;
+    background-color: var(--light-color);
+}
+
+.pricelist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.pricelist-image {
+    max-width: 50%;
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
 /* עיצוב נקי לקריסטלים ב-carousel - כולם אותו דבר */
 .crystal-carousel-track .crystal-item {
     background: var(--light-color) !important;
