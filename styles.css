@@ -485,8 +485,8 @@ nav {
 }
 
 .gallery-image-simple {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     object-position: center;
     transform: none;
@@ -496,6 +496,11 @@ nav {
     -moz-user-select: none;
     -ms-user-select: none;
     pointer-events: none;
+}
+
+.gallery-image-contain {
+    object-fit: contain;
+    background-color: #f5f5f5;
 }
 
 .orders-hero {
@@ -2635,8 +2640,8 @@ footer {
 
 .orders-gallery-item img {
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 430px;
+    height: 430px;
     object-fit: cover;
     border-radius: 18px;
 }
