@@ -1,3 +1,40 @@
+section,
+section::before,
+section::after,
+.hero,
+.hero::before,
+.hero::after,
+.orders-section,
+.orders-section::before,
+.orders-section::after,
+.contact-section,
+.contact-section::before,
+.contact-section::after,
+.contact-section-crystal,
+.contact-section-crystal::before,
+.contact-section-crystal::after {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+#name-meaning,
+#name-analysis,
+#name-components {
+    padding: 4rem 0;
+}
+
+#name-meaning {
+    background: rgba(245, 248, 255, 0.9);
+}
+
+#name-analysis {
+    background: rgba(231, 240, 255, 0.9);
+}
+
+#name-components {
+    background: rgba(240, 246, 255, 0.9);
+}
+
 .promo-banner {
     position: fixed;
     bottom: 1.5rem;
@@ -130,7 +167,7 @@ html {
 }
 
 body {
-    background-color: var(--light-color);
+    background-color: #d9eaf8;
     color: var(--text-color);
     line-height: 1.3;
     -webkit-text-size-adjust: 100%;
@@ -229,6 +266,7 @@ nav {
 .menu {
     list-style-type: none;
     display: flex;
+    margin-right: 4cm;
 }
 
 .menu li {
@@ -462,32 +500,8 @@ nav {
 
 .orders-hero {
     padding: 5rem 0 4rem;
-    background: linear-gradient(135deg, rgba(240, 247, 252, 0.95) 0%, rgba(213, 233, 248, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
     position: relative;
     overflow: hidden;
-}
-
-.orders-hero::before,
-.orders-hero::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(60, 141, 188, 0.12);
-    filter: blur(60px);
-}
-
-.orders-hero::before {
-    width: 520px;
-    height: 520px;
-    top: -140px;
-    left: -160px;
-}
-
-.orders-hero::after {
-    width: 420px;
-    height: 420px;
-    bottom: -140px;
-    right: -120px;
 }
 
 .orders-hero-wrapper {
@@ -596,7 +610,7 @@ nav {
 }
 
 .orders-section.bg-light {
-    background: rgba(32, 123, 189, 0.7);
+    background: transparent !important;
 }
 
 .orders-section-title {
@@ -703,31 +717,70 @@ nav {
     opacity: 0.85;
 }
 
-.orders-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.orders-gallery-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 3.5rem;
+}
+
+.orders-gallery-track {
+    display: flex;
     gap: 1.5rem;
+    transition: transform 0.6s ease;
 }
 
 .orders-gallery-item {
-    border-radius: 0;
-    overflow: visible;
-    box-shadow: none;
-    position: relative;
-    background: transparent;
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .orders-gallery-item img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
+    border-radius: 18px;
     transition: transform 0.4s ease;
-    border-radius: 0;
 }
 
 .orders-gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+
+.orders-gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(30, 95, 140, 0.85);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 10px 25px rgba(12, 28, 45, 0.25);
+}
+
+.orders-gallery-nav:hover {
+    background: rgba(30, 95, 140, 1);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.orders-gallery-nav.prev {
+    left: 0.75rem;
+}
+
+.orders-gallery-nav.next {
+    right: 0.75rem;
 }
 
 .orders-packages {
@@ -826,8 +879,6 @@ nav {
 
 .orders-cta-section {
     padding: 4.5rem 0 5rem;
-    background: linear-gradient(135deg, rgba(60, 141, 188, 0.82), rgba(30, 95, 140, 0.92));
-    color: #fff;
 }
 
 .orders-cta-wrapper {
@@ -844,7 +895,7 @@ nav {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
 .orders-cta-actions {
@@ -852,15 +903,6 @@ nav {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.orders-cta-section .secondary-btn {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.7);
-}
-
-.orders-cta-section .secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 520px) {
@@ -1914,10 +1956,11 @@ section {
 
 /* פוטר */
 footer {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 1rem 0 0.3rem;
+    background: linear-gradient(1deg, #68acd3, #60a3fa);
+    color: rgb(0, 0, 0);
+    padding: 0.2rem 0 0.1rem;
     margin-top: auto;
+    font-size: 0.825em;
 }
 
 .footer-content {
@@ -1943,7 +1986,7 @@ footer {
 }
 
 .footer-column a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     opacity: 0.8;
 }
@@ -2303,6 +2346,7 @@ footer {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
+        margin-right: 0;
     }
     
     .menu.active {
@@ -2534,1289 +2578,6 @@ footer {
 
 /* Media Queries נוספים לטלפונים קטנים במיוחד */
 @media screen and (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    
-    .profession-title {
-        font-size: 1rem;
-    }
-    
-    .profession-title::before,
-    .profession-title::after {
-        margin: 0 3px;
-        font-size: 0.7rem;
-    }
-    
-    .hero-image {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .intro-heading {
-        font-size: 1.1rem;
-    }
-    
-    .intro-content, .intro-footer {
-        font-size: 0.95rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-column {
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* ----------- עיצובים מיוחדים לדף הקריסטלים ----------- */
-
-/* עיצוב הירו מיוחד לדף קריסטלים */
-.crystal-hero {
-    background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.15rem 0 0.04rem 0;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: auto;
-}
-
-.crystal-hero .container {
-    padding: 0.2rem 1rem 0.04rem 1rem;
-    margin: 0;
-}
-
-.crystal-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('crystal-bg.webp') center center no-repeat;
-    background-size: cover;
-    opacity: 0.15;
-    z-index: 0;
-}
-
-
-.crystal-hero .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.crystal-hero h1 {
-    color: var(--accent-color);
-    font-size: 2.88rem;
-    margin-bottom: 0.08rem;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    line-height: 1.1;
-}
-
-.crystal-hero-text {
-    font-size: 0.8rem;
-    margin-top: 0.08rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: var(--text-color);
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.crystal-separator {
-    width: 64px;
-    height: 1.5px;
-    margin: 0.16rem auto 0.1rem auto;
-    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
-}
-
-/* עיצוב תיבת/* עיצוב תיבת מידע על קריסטלים */
-.crystal-intro-box {
-    padding: 2.5rem;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-.icon-image {
-    width: 250px;          /* קובע רוחב קבוע */
-    height: 250px;         /* קובע גובה קבוע */
-    object-fit: cover;    /* חותך את התמונה כדי שתתאים לממדים בדיוק */
-    border-radius: 50%;   /* הופך את התמונה לעיגול */
-    display: block;
-    margin: 0 auto;       /* ממרכז את התמונה */
-}
-.crystal-intro-icons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.crystal-icon {
-    font-size: 2.5rem;
-    margin: 0 1.5rem;
-    color: var(--secondary-color);
-    opacity: 0.9;
-}
-
-.crystal-quote {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: rgba(181, 214, 232, 0.1);
-    border-radius: 10px;
-    position: relative;
-}
-
-.crystal-quote blockquote {
-    font-style: italic;
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.crystal-quote blockquote::before {
-    content: '"';
-    font-size: 3rem;
-    position: absolute;
-    top: -15px;
-    right: 10px;
-    color: rgba(30, 95, 140, 0.1);
-}
-
-/* קריסטלים - עיצוב משופר */
-.crystal-item {
-    overflow: hidden;
-}
-
-
-.crystal-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.crystal-img::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-
-/* צבעי רקע לקריסטלים אם התמונות לא נטענות */
-.amethyst { background-color: transparent; }
-.aquamarine { background-color: transparent; }
-.aventurine { background-color: transparent; }
-.ruby { background-color: transparent; }
-.citrine { background-color: transparent; }
-.rose-quartz { background-color: transparent; }
-.amber { background-color: transparent; }
-.smoky-quartz { background-color: transparent; }
-.carnelian { background-color: transparent; }
-.moonstone { background-color: transparent; }
-.obsidian { background-color: transparent; }
-.black-tourmaline { background-color: transparent; }
-.lapis-lazuli { background-color: transparent; }
-.malachite { background-color: transparent; }
-.selenite { background-color: transparent; }
-.tigers-eye { background-color: transparent; }
-.clear-quartz { background-color: transparent; }
-.black-onyx { background-color: transparent; }
-.opalite { background-color: transparent; }
-.abalone { background-color: transparent; }
-
-.crystal-separator-mini {
-    width: 40px;
-    height: 2px;
-    background: var(--secondary-color);
-    margin-bottom: 1rem;
-    opacity: 0.7;
-}
-
-/* שיטות טיפול משודרגות */
-.treatment-methods-section {
-    background-color: #f9f9f9;
-    position: relative;
-}
-
-.treatment-methods-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, rgba(230, 241, 252, 0.5), transparent);
-    z-index: 0;
-}
-
-.treatment-cards {
-    position: relative;
-    z-index: 1;
-    margin-top: 1rem;
-}
-
-.treatment-card {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: all 0.35s ease;
-}
-
-.treatment-card:hover {
-    transform: translateY(-15px);
-}
-
-.card-icon {
-    width: 100%;
-    padding: 2.5rem 0;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3.5rem;
-}
-
-.treatment-card .card-content {
-    padding: 1.4rem 1.05rem;
-}
-
-.treatment-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.treatment-card p {
-    line-height: 1.7;
-    font-size: 1.05rem;
-}
-
-/* סקציית יתרונות */
-.benefit-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.benefit-item {
-    background-color: white;
-    padding: 1.4rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.benefit-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.benefit-icon {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1.2rem;
-}
-
-.benefit-item h3 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.benefit-item p {
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
-/* סקציית יצירת קשר */
-.contact-section-crystal {
-    background: linear-gradient(rgba(30, 95, 140, 0.85), rgba(30, 95, 140, 0.85)), url('crystal-pattern.webp');
-    background-size: cover;
-    background-position: center;
-    padding: 1.5rem 0;
-    text-align: center;
-    color: white;
-}
-
-.contact-crystal-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.contact-crystal-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
-
-.contact-crystal-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.crystal-contact-btn {
-    background: linear-gradient(to right, #ffffff, #e6f1fc);
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    padding: 0.7rem 1.75rem;
-}
-
-.crystal-contact-btn:hover {
-    background: white;
-    transform: translateY(-5px);
-}
-
-/* ----------- עיצובים מיוחדים לדף האודות ----------- */
-
-/* עיצוב הירו */
-.about-hero {
-    background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.15rem 0 0.04rem 0;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: auto;
-}
-
-.about-hero .container {
-    padding: 0.2rem 1rem 0.04rem 1rem;
-    margin: 0;
-}
-
-.about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('about-bg.webp') center center no-repeat;
-    background-size: cover;
-    opacity: 0.12;
-    z-index: 0;
-}
-
-.about-hero .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.about-hero h1 {
-    color: var(--accent-color);
-    font-size: 2.88rem;
-    margin-bottom: 0.08rem;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    line-height: 1.1;
-}
-
-.about-hero-text {
-    font-size: 0.8rem;
-    margin-top: 0.08rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: var(--text-color);
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.about-separator {
-    width: 64px;
-    height: 1.5px;
-    margin: 0.16rem auto 0.1rem auto;
-    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
-}
-
-/* סקציית הסיפור שלנו */
-.story-section {
-    padding-top: 5rem;
-    padding-bottom: 3rem;
-}
-
-.enhanced-about-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.about-text {
-    padding-right: 1rem;
-}
-
-.about-text h3 {
-    color: var(--accent-color);
-    font-size: 1.6rem;
-    margin: 1.5rem 0 1rem;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-    position: relative;
-}
-
-.about-text h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--secondary-color);
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-.story-icon {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.about-img-container {
-    position: relative;
-}
-
-.about-img-frame {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-    position: relative;
-    background-color: var(--light-color);
-}
-
-.about-img-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-img-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    font-size: 5rem;
-}
-
-.about-quote {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    position: relative;
-    text-align: center;
-}
-
-.about-quote blockquote {
-    font-style: italic;
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    position: relative;
-}
-
-.about-quote blockquote::before,
-.about-quote blockquote::after {
-    content: '"';
-    font-size: 2rem;
-    position: absolute;
-    color: rgba(30, 95, 140, 0.2);
-}
-
-.about-quote blockquote::before {
-    top: -20px;
-    right: -10px;
-}
-
-.about-quote blockquote::after {
-    bottom: -30px;
-    left: -10px;
-}
-
-/* סקציית הערכים שלנו */
-.values-section {
-    background-color: #f9f9f9;
-    padding: 2.5rem 0;
-    position: relative;
-}
-
-.values-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, white, transparent);
-    z-index: 1;
-}
-
-.values-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    font-size: 1.2rem;
-    color: var(--text-color);
-}
-
-.values-cards {
-    z-index: 2;
-    position: relative;
-}
-
-.values-card {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: all 0.35s ease;
-}
-
-.values-card:hover {
-    transform: translateY(-15px);
-}
-
-.values-card .card-icon {
-    width: 100%;
-    padding: 2.5rem 0;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3.5rem;
-}
-
-.values-card .card-content {
-    padding: 1.4rem 1.05rem;
-}
-
-.values-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.value-separator-mini {
-    width: 40px;
-    height: 2px;
-    background: var(--secondary-color);
-    margin: 0 auto 1rem;
-    opacity: 0.7;
-}
-
-.values-card p {
-    line-height: 1.7;
-    font-size: 1.05rem;
-}
-
-/* סקציית הצוות שלנו */
-.team-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.enhanced-team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.enhanced-team-member {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.35s ease;
-}
-
-.enhanced-team-member:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.member-img-container {
-    padding: 1.5rem 0;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.member-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3rem;
-    border: 3px solid white;
-}
-
-.member-info {
-    padding: 1.4rem;
-    text-align: center;
-}
-
-.member-info h3 {
-    color: var(--accent-color);
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.member-title {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    font-style: italic;
-}
-
-.member-separator {
-    width: 40px;
-    height: 2px;
-    background: var(--secondary-color);
-    margin: 1rem auto;
-    opacity: 0.7;
-}
-
-.member-info p {
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-
-
-/* ----------- עיצובים מיוחדים לדף פיענוח שמות ----------- */
-
-/* עיצוב הירו */
-.names-hero {
-    background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.15rem 0 0.04rem 0;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: auto;
-}
-
-.names-hero .container {
-    padding: 0.2rem 1rem 0.04rem 1rem;
-    margin: 0;
-}
-
-.names-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('names-bg.webp') center center no-repeat;
-    background-size: cover;
-    opacity: 0.12;
-    z-index: 0;
-}
-
-.names-hero .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.names-hero h1 {
-    color: var(--accent-color);
-    font-size: 2.88rem;
-    margin-bottom: 0.08rem;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    line-height: 1.1;
-}
-
-.names-hero-text {
-    font-size: 0.8rem;
-    margin-top: 0.08rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: var(--text-color);
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.names-separator {
-    width: 64px;
-    height: 1.5px;
-    margin: 0.16rem auto 0.1rem auto;
-    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
-}
-
-/* עיצוב תיבת מידע על פיענוח שמות */
-.names-intro-box {
-    padding: 1.7rem;
-    margin-bottom: 0.05rem;
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    font-weight: bold;
-}
-
-.names-intro-icons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.names-icon {
-    font-size: 2.5rem;
-    margin: 0 1.5rem;
-    color: var(--secondary-color);
-    opacity: 0.9;
-}
-
-.names-quote {
-    margin-top: 1.4rem;
-    margin-bottom: 0.03rem;
-    padding: 1rem;
-    background-color: rgba(181, 214, 232, 0.1);
-    border-radius: 10px;
-    position: relative;
-}
-
-.names-quote blockquote {
-    font-style: italic;
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* אזור ניתוח שמות */
-.names-analysis-section {
-    background-color: #f9f9f9;
-    padding: 1.5rem 0;
-    position: relative;
-}
-
-.analysis-form {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    padding: 2.5rem;
-    border-radius: 15px;
-}
-
-.name-analysis-btn {
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    color: white;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
-
-
-/* אזור מרכיבי פיענוח */
-.components-section {
-    padding: 0.8rem 0;
-}
-
-.analysis-cards {
-    margin-top: 1rem;
-}
-
-.analysis-card {
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-}
-
-.analysis-card .card-content {
-    padding: 1.4rem 1.05rem;
-}
-
-.analysis-card h3 {
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-    font-size: 1.3rem;
-}
-
-/* אזור האותיות העבריות */
-.letters-section {
-    background-color: #f0f7fc;
-    padding: 2.5rem 0;
-}
-
-.letter-separator-mini {
-    width: 30px;
-    height: 2px;
-    background: var(--secondary-color);
-    margin: 0.5rem auto 1rem;
-    opacity: 0.7;
-}
-
-
-/* ----------- עיצובים מיוחדים לדף צור קשר ----------- */
-
-/* עיצוב הירו */
-.contact-hero {
-    background: linear-gradient(135deg, #e0ecff 0%, #a6c8e6 100%);
-    padding: 0.15rem 0 0.04rem 0;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: auto;
-}
-
-.contact-hero .container {
-    padding: 0.2rem 1rem 0.04rem 1rem;
-    margin: 0;
-}
-
-.contact-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('contact-bg.webp') center center no-repeat;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: 0;
-}
-
-.contact-hero .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.contact-hero h1 {
-    color: var(--accent-color);
-    font-size: 2.88rem;
-    margin-bottom: 0.08rem;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    line-height: 1.1;
-}
-
-.contact-hero-text {
-    font-size: 0.8rem;
-    margin-top: 0.08rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: var(--text-color);
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-.contact-separator {
-    width: 64px;
-    height: 1.5px;
-    margin: 0.16rem auto 0.1rem auto;
-    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
-}
-
-/* אזור פרטי התקשרות */
-.contact-info-section {
-    padding: 1.4rem 0 1.05rem;
-}
-
-.contact-cards {
-    margin-top: 0.8rem;
-}
-
-.contact-info-card {
-    text-align: center;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.35s ease;
-}
-
-.contact-info-card:hover {
-    transform: translateY(-5px);
-}
-
-.contact-info-card .card-content {
-    padding: 0.8rem 0.6rem;
-}
-
-.contact-info-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 0.4rem;
-    font-size: 1.24rem;
-    font-weight: bold;
-}
-
-.contact-separator-mini {
-    width: 16px;
-    height: 1px;
-    background: var(--secondary-color);
-    margin: 0 auto 0.4rem;
-    opacity: 0.7;
-}
-
-.contact-data {
-    font-size: 1.12rem;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-bottom: 0.32rem;
-}
-
-.contact-info-card p {
-    line-height: 1.3;
-    margin-bottom: 0.2rem;
-    font-size: 1.06rem;
-    font-weight: bold;
-}
-
-/* אזור טופס יצירת קשר */
-.contact-form-enhanced {
-    background-color: var(--light-color);
-    padding: 2.5rem 0;
-    position: relative;
-}
-
-.contact-form-enhanced::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, var(--light-color), transparent);
-    z-index: 0;
-}
-
-.form-wrapper {
-    max-width: 750px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.form-intro {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.form-intro-icon {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.form-intro h3 {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-    margin-bottom: 0.8rem;
-}
-
-.form-intro p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
-.enhanced-form {
-    background-color: var(--light-color);
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    padding: 2.1rem;
-}
-
-.enhanced-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.enhanced-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--accent-color);
-    font-size: 1rem;
-}
-
-.enhanced-form input,
-.enhanced-form select,
-.enhanced-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
-}
-
-.enhanced-form input:focus,
-.enhanced-form select:focus,
-.enhanced-form textarea:focus {
-    border-color: var(--secondary-color);
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(60, 141, 188, 0.1);
-    outline: none;
-}
-
-.enhanced-form textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.contact-submit-btn {
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-/* עיצוב כפתור וואטסאפ */
-.whatsapp-contact {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.whatsapp-btn {
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-}
-
-.whatsapp-btn:hover {
-    background: linear-gradient(45deg, #128C7E, #25D366);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-    color: white;
-    text-decoration: none;
-}
-
-
-
-
-/* מפה */
-.map-container {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.placeholder-map {
-    height: 350px;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2rem;
-}
-
-.directions {
-    padding: 1.4rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.directions h3 {
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 0.5rem;
-}
-
-.direction-item {
-    margin-bottom: 1.5rem;
-}
-
-.direction-item h4 {
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.direction-item p {
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-}
-
-/* התאמות למובייל */
-@media screen and (max-width: 768px) {
-    /* התאמות לדף קריסטלים */
-    .crystal-hero,
-    .about-hero,
-    .names-hero,
-    .contact-hero {
-        padding: 1.5rem 0;
-    }
-    
-    .crystal-hero h1,
-    .about-hero h1,
-    .names-hero h1,
-    .contact-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .crystal-hero-text,
-    .about-hero-text,
-    .names-hero-text,
-    .contact-hero-text {
-        font-size: 1.2rem;
-    }
-    
-    .crystal-intro-icons,
-    .names-intro-icons {
-        flex-wrap: wrap;
-    }
-    
-    .crystal-icon,
-    .names-icon {
-        margin: 0 0.8rem 1rem;
-        font-size: 2rem;
-    }
-    
-    .crystal-intro-box,
-    .names-intro-box {
-        padding: 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .benefit-section,
-    .team-section,
-    .components-section {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-    
-    .enhanced-about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .about-img-frame {
-        width: 220px;
-        height: 220px;
-    }
-    
-    .about-quote {
-        margin: 1.5rem auto 0;
-    }
-    
-    .contact-crystal-content h2,
-    .contact-about-content h2,
-    .contact-names-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .contact-crystal-content p,
-    .contact-about-content p,
-    .contact-names-content p {
-        font-size: 1.1rem;
-    }
-    
-    /* התאמות לדף צור קשר */
-    .enhanced-form {
-        padding: 1.5rem;
-    }
-    
-    .form-intro-icon {
-        font-size: 2.5rem;
-    }
-    
-    .form-intro h3 {
-        font-size: 1.5rem;
-    }
-    
-    .testimonials-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .map-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .social-icons {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
     .crystal-hero h1,
     .about-hero h1,
     .names-hero h1,
@@ -3839,4 +2600,23 @@ footer {
         height: 50px;
         font-size: 1.2rem;
     }
+}
+
+.about-hero-image {
+    width: 300px;
+    height: 300px;
+}
+
+.about-img-frame {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
 }
