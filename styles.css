@@ -187,8 +187,8 @@ body {
 
 /* תפריט ניווט */
 header {
-    background-color: #f0f9fd;
-    box-shadow: 0 2px 15px rgba(2, 12, 17, 0.3);
+    background-color: #eef9ff;
+    box-shadow: 0 2px 15px rgba(28, 122, 168, 0.3);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -209,8 +209,8 @@ header {
     /* עיצוב טקסט */
     color: #ffffff;
     font-family: 'David', 'Rubik', 'Open Sans Hebrew', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 500;
     letter-spacing: 1px;
     
     /* צללית */
@@ -219,7 +219,7 @@ header {
 
     
     /* אפקט מעבר חלק */
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     
     /* הוספת cursor: pointer כדי שיהיה ברור שאפשר להצביע על הטקסט */
     cursor: pointer;
@@ -2619,4 +2619,24 @@ footer {
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.orders-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.orders-gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders-gallery-item img {
+    display: block;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
 }
