@@ -1896,11 +1896,14 @@ section {
 }
 
 .crystal-grid .crystal-img img {
-    width: 250px;
-    height: 250px;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: 250px !important;
+    height: 250px !important;
+    min-width: 250px !important;
+    min-height: 250px !important;
+    max-width: 250px !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    object-position: center !important;
     border-radius: 18px;
     display: block;
     user-select: none;
@@ -1915,8 +1918,12 @@ section {
 
 @media (max-width: 480px) {
     .crystal-grid .crystal-img img {
-        width: 200px;
-        height: 200px;
+        width: 200px !important;
+        height: 200px !important;
+        min-width: 200px !important;
+        min-height: 200px !important;
+        max-width: 200px !important;
+        max-height: 200px !important;
     }
 }
 
