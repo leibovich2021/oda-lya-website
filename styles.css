@@ -1315,16 +1315,105 @@ nav {
 #crystal-benefits {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#crystal-benefits .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
 #crystal-benefits .section-title {
     margin-bottom: 0.25rem !important;
     margin-top: 0 !important;
+    text-align: center !important;
+}
+
+#crystal-benefits .section-title h2 {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
 }
 
 #crystal-benefits .benefits-grid {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#crystal-benefits .benefit-item {
+    text-align: center;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#crystal-benefits .benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#crystal-benefits .benefit-item h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#crystal-benefits .benefit-item p {
+    text-align: center;
+}
+
+#contact-crystal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-crystal .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#contact-crystal .contact-crystal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#contact-crystal .contact-crystal-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#contact-crystal .contact-crystal-content p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#contact-crystal .crystal-contact-btn {
+    display: inline-block;
+    margin: 0 auto;
 }
 
 /* צמצום רווחים בעמוד index.html */
@@ -1423,6 +1512,38 @@ nav {
 
 #contact-form-section .section-title {
     margin-bottom: 0.25rem !important;
+    text-align: center !important;
+}
+
+#contact-form-section .section-title h2 {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+#contact-form-section .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form-section .form-intro {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#contact-form-section .form-intro p {
+    text-align: center;
+}
+
+#contact-form-section .whatsapp-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* כרטיסים */
@@ -1717,74 +1838,85 @@ section {
 /* קריסטלים - Grid קומפקטי עם hover */
 .crystal-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    column-gap: 1rem;
+    row-gap: 1rem;
     margin: 2rem 0;
     padding: 2rem 0;
+    justify-items: center;
 }
 
 .crystal-grid .crystal-item {
-    background: var(--light-color);
+    background: transparent;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(60, 141, 188, 0.1);
+    overflow: visible;
+    box-shadow: none;
+    border: none;
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     transform: none !important;
+    align-items: center;
 }
 
 
 .crystal-grid .crystal-img {
-    width: 400px;
-    height: 400px;
+    width: fit-content;
+    height: fit-content;
     max-width: 100%;
-    background-color: var(--light-color);
     flex-shrink: 0;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    padding: 0.375rem;
+    border-radius: 18px;
+    background: linear-gradient(160deg, rgba(184, 199, 218, 0.95), rgba(127, 158, 191, 0.88));
+    box-shadow: 0 8px 18px rgba(21, 58, 92, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.crystal-grid .crystal-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(19, 70, 110, 0.45);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.crystal-grid .crystal-item:hover .crystal-img {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 40px rgba(21, 58, 92, 0.2);
 }
 
 .crystal-grid .crystal-img img {
-    width: 100%;
-    height: 100%;
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
     object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+    position: relative;
+    z-index: 0;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 480px) {
-    .crystal-grid .crystal-img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 1400px) {
-    .crystal-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1024px) {
-    .crystal-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .crystal-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 520px) {
-    .crystal-grid {
-        grid-template-columns: 1fr;
+    .crystal-grid .crystal-img img {
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -1794,6 +1926,10 @@ section {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
 }
 
 .crystal-grid .crystal-name {
@@ -1806,7 +1942,7 @@ section {
 .crystal-grid .crystal-separator-mini {
     width: 30px;
     height: 2px;
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem auto;
 }
 
 .crystal-grid .crystal-properties {
@@ -1881,7 +2017,7 @@ section {
 }
 
 .crystal-carousel-track .crystal-item .crystal-img {
-    height: 180px !important;
+    height: 200px !important;
 }
 
 /* כל התמונות באותו גודל */
@@ -1889,7 +2025,7 @@ section {
 .crystal-carousel-track .crystal-item.side-item .crystal-img,
 .crystal-carousel-track .crystal-item.mid-item .crystal-img,
 .crystal-carousel-track .crystal-item.center-item .crystal-img {
-    height: 180px !important;
+    height: 200px !important;
     width: 100% !important;
 }
 
@@ -1975,6 +2111,10 @@ section {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .form-group {
@@ -1991,6 +2131,12 @@ section {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.name-analysis-btn {
+    display: block;
+    margin: 1rem auto 0;
+    text-align: center;
 }
 
 .name-result {
@@ -2418,21 +2564,21 @@ footer {
 }
 
 .popup-close {
-    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
-    border: 2px solid #8b6914;
-    color: #3d2817;
-    padding: 0.8rem 2.2rem;
-    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.25rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #d4af37, #b99124);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: none;
     cursor: pointer;
     font-size: 0.95rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin-top: 0.375rem;
-    letter-spacing: 0.03em;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4),
-                0 2px 5px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 0.75rem;
+    box-shadow: 0 12px 24px rgba(180, 130, 20, 0.25);
 }
 
 .popup-cta {
@@ -2441,29 +2587,22 @@ footer {
     justify-content: center;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
-    padding: 0.9rem 2.3rem;
+    padding: 0.85rem 2.25rem;
     font-size: 0.95rem;
-    font-weight: 650;
+    font-weight: 700;
     border-radius: 999px;
     text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .popup-close:hover {
-    background: linear-gradient(135deg, #e5c547 0%, #c9a529 100%);
-    border-color: #a67c00;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5),
-                0 3px 8px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(20, 60, 96, 0.3);
 }
 
 .popup-close:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3),
-                0 1px 3px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(180, 130, 20, 0.25);
 }
 
 /* התאמת פופאפ למסכים קטנים (טלפון) */
@@ -2504,10 +2643,10 @@ footer {
     }
     
     .popup-close {
-        padding: 0.65rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.85rem 2.25rem;
+        font-size: 0.95rem;
         width: 100%;
-        max-width: 200px;
+        max-width: none;
     }
 }
 
@@ -2709,7 +2848,8 @@ footer {
     }
     
     .crystal-grid .crystal-img {
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
     
     .crystal-grid .crystal-info {
@@ -2767,7 +2907,7 @@ footer {
     }
     
     .crystal-carousel-track .crystal-item.center-item .crystal-img {
-        height: 180px !important;
+        height: 200px !important;
     }
     
     .about-content {
