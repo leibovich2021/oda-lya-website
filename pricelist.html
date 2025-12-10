@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>מחירון והזמנה - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="google-site-verification" content="Fzcmd_ZS1Lth-FvbekWtQxCaVpW6HbOkzIeiQZvx32w" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">לְהָאִיר אֶת הַחוֹשֶׁךְ</div>
+                <button class="menu-toggle">☰</button>
+                <ul class="menu" id="navMenu">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="orders.html">הזמנות</a></li>
+                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
+                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="orders-section">
+        <div class="container">
+            <div class="orders-section-title">
+                <h1>מחירון והזמנה</h1>
+                <p>בחרו את הפתרון המתאים עבורלם והזמינו ישירות</p>
+            </div>
+            
+            <div class="shop-page-wrapper">
+                <!-- אזור המוצרים והעגלה -->
+                <div class="shop-main-content" style="grid-column: 1 / -1;">
+                    <!-- רשימת מוצרים -->
+                    <div class="shop-products-section">
+                        <h2>בחרו את המסלול המתאים</h2>
+                        <div class="shop-products-grid" id="products-grid">
+                            <!-- המוצרים יוטענו דרך JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- עגלת קניות -->
+                    <div class="shop-cart-section" id="cart-section">
+                        <div class="cart-header">
+                            <h3>סיכום הזמנה</h3>
+                            <span class="cart-items-count" id="cart-count">0 פריטים</span>
+                        </div>
+                        
+                        <div class="cart-items" id="cart-items">
+                            <div class="cart-empty">
+                                <p>העגלה שלך ריקה</p>
+                                <p class="cart-empty-hint">בחרו מוצר מהרשימה כדי להתחיל</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-summary" id="cart-summary" style="display: none;">
+                            <div class="cart-subtotal">
+                                <span>סה"כ ביניים:</span>
+                                <span id="cart-subtotal">₪0</span>
+                            </div>
+                            <div class="cart-total">
+                                <span>סה"כ לתשלום:</span>
+                                <span id="cart-total">₪0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-actions" id="cart-actions" style="display: none;">
+                            <button class="btn btn-secondary" id="clear-cart-btn">נקה עגלה</button>
+                            <button class="btn btn-primary" id="checkout-btn">השלם הזמנה</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal לבחירת אפשרויות מוצר -->
+    <div class="product-options-modal" id="product-options-modal" style="display: none;">
+        <div class="product-options-modal-overlay"></div>
+        <div class="product-options-modal-content">
+            <button class="product-options-modal-close" id="close-product-options-modal">&times;</button>
+            <h2 id="product-options-title">בחר אפשרויות</h2>
+            
+            <form id="product-options-form" class="product-options-form">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="decoding-name">שם לפיענוח *</label>
+                        <input type="text" id="decoding-name" name="decodingName" required placeholder="הזן שם לפיענוח">
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-date">תאריך לידה *</label>
+                        <input type="date" id="birth-date" name="birthDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="frame-size-title">גודל המסגרת: 20 על 25</h3>
+                </div>
+                
+                <div class="form-section">
+                    <h3>בחר סוג כתב</h3>
+                    <div class="font-type-options">
+                        <label class="font-option">
+                            <input type="radio" name="fontType" value="print" checked>
+                            <span>כתב דפוס</span>
+                        </label>
+                        <label class="font-option">
+                            <input type="radio" name="fontType" value="handwriting">
+                            <span>כתב יד רגיל</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-product-options">ביטול</button>
+                    <button type="submit" class="btn btn-primary">הוסף לעגלה</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- טופס הזמנה (Modal) -->
+    <div class="checkout-modal" id="checkout-modal" style="display: none;">
+        <div class="checkout-modal-overlay"></div>
+        <div class="checkout-modal-content">
+            <button class="checkout-modal-close" id="close-checkout-modal">&times;</button>
+            <h2>פרטי ההזמנה</h2>
+            
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-section">
+                    <h3>פרטים אישיים</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-name">שם מלא *</label>
+                            <input type="text" id="customer-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">טלפון *</label>
+                            <input type="tel" id="customer-phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-email">אימייל</label>
+                            <input type="email" id="customer-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-city">עיר</label>
+                            <input type="text" id="customer-city" name="city">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="customer-address">כתובת *</label>
+                            <input type="text" id="customer-address" name="address" required placeholder="רחוב, מספר בית">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>אפשרויות משלוח</h3>
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="pickup" checked>
+                            <div class="delivery-option-content">
+                                <span class="delivery-option-title">איסוף עצמי מחולון</span>
+                                <span class="delivery-option-price">חינם</span>
+                            </div>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="shipping">
+                            <div class="delivery-option-content">
+                                <span class="delivery-option-title">משלוח</span>
+                                <span class="delivery-option-price">₪30</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>סיכום הזמנה</h3>
+                    <div id="order-summary-display" class="order-summary-display">
+                        <!-- סיכום יוטען כאן -->
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>הערות נוספות</h3>
+                    <div class="form-group">
+                        <label for="order-notes">הערות או בקשות מיוחדות</label>
+                        <textarea id="order-notes" name="notes" rows="4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-checkout">ביטול</button>
+                    <button type="submit" class="btn btn-primary">שלח הזמנה</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>שירותים</h3>
+                    <ul>
+                        <li><a href="index.html#services">טיפולים אישיים</a></li>
+                        <li><a href="contact.html">ייעוץ מקוון</a></li>
+                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>שעות פעילות</h3>
+                    <ul>
+                        <li>ראשון - חמישי: 9:00 - 19:00</li>
+                        <li>שישי: 9:00 - 13:00</li>
+                        <li>שבת: סגור</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>צור קשר</h3>
+                    <ul>
+                        <li>טלפון: 053-3397827</li>
+                        <li>אימייל: odalyasite@gmail.com</li>
+                        <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ.  אחד הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // מיפוי המוצרים
+        const products = {
+            'name-digital': {
+                id: 'name-digital',
+                name: 'פענוח שם דיגיטלי',
+                price: 180,
+                features: [
+                    'פענוח שם אישי מפורט',
+                    'שליחה בוואטסאפ ובמייל',
+                    'קובץ להדפסה עצמית'
+                ]
+            },
+            'name-only': {
+                id: 'name-only',
+                name: 'פענוח שם ללא קריסטל',
+                price: 230,
+                features: [
+                    'פענוח שם אישי מפורט',
+                    'ניתוח גימטריה ומשמעות',
+                    'מסר אנרגטי כתוב'
+                ]
+            },
+            'single': {
+                id: 'single',
+                name: 'מסגרת יחידה',
+                price: 300,
+                features: [
+                    'מסגרת עץ איכותית בגודל לבחירה',
+                    'קריסטל ראשי + חיזוק משלים',
+                    'פענוח מסר אישי מודפס'
+                ]
+            },
+            'couple': {
+                id: 'couple',
+                name: 'סט זוגי מומלץ',
+                price: 549,
+                featured: true,
+                features: [
+                    'שתי מסגרות בהתאמה הדדית',
+                    'קריסטלים מעצימים ל אח אחד',
+                    'פענוח זוגי + מסר אישי לחחד'
+                ]
+            },
+            'family': {
+                id: 'family',
+                name: 'אוסף משפחתי',
+                price: 699,
+                features: [
+                    'שלוש מסגרות בהתאמה משפחתית',
+                    'בחירת קריסטלים לכל בן משפחה',
+                    'מסר משפחתי מאחד + פענוח אישי'
+                ]
+            }
+        };
+
+        // עגלת קניות
+        let cart = [];
+
+        // טעינת המוצרים
+        function loadProducts() {
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = '';
+            
+            Object.values(products).forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = `shop-product-card ${product.featured ? 'featured' : ''}`;
+                productCard.innerHTML = `
+                    ${product.featured ? '<span class="product-badge">מומלץ</span>' : ''}
+                    <div class="product-header">
+                        <h3>${product.name}</h3>
+                        <div class="product-price">₪${product.price}</div>
+                    </div>
+                    <ul class="product-features">
+                        ${product.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                    <button class="btn btn-add-to-cart" data-product-id="${product.id}">
+                        הוסף לעגלה
+                    </button>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // עדכון עגלה
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            const cartActions = document.getElementById('cart-actions');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartTotal = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <p>העגלה שלך ריקה</p>
+                        <p class="cart-empty-hint">בחרו מוצר מהרשימה כדי להתחיל</p>
+                    </div>
+                `;
+                cartSummary.style.display = 'none';
+                cartActions.style.display = 'none';
+                cartCount.textContent = '0 פריטים';
+            } else {
+                let total = 0;
+                cartItems.innerHTML = '';
+                
+                cart.forEach((item, index) => {
+                    const product = products[item.id];
+                    const itemTotal = product.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    
+                    // הצגת אפשרויות אם קיימות
+                    let optionsHTML = '';
+                    if (item.options) {
+                        const fontTypeText = item.options.fontType === 'print' ? 'כתב דפוס' : 'כתב יד רגיל';
+                        optionsHTML = `
+                            <div class="cart-item-options">
+                                <div>שם: ${item.options.decodingName}</div>
+                                <div>תאריך לידה: ${item.options.birthDate}</div>
+                                <div>כתב: ${fontTypeText}</div>
+                            </div>
+                        `;
+                    }
+                    
+                    cartItem.innerHTML = `
+                        <div class="cart-item-info">
+                            <h4>${product.name}</h4>
+                            ${optionsHTML}
+                        </div>
+                        <div class="cart-item-main-row">
+                           
+                            <div class="cart-item-actions">
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn plus" data-index="${index}">+</button>
+                                    <button class="remove-item" data-index="${index}">×</button>
+                                </div>
+                                <div class="cart-item-total">₪${itemTotal}</div>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                
+                cartCount.textContent = `${cart.reduce((sum, item) => sum + item.quantity, 0)} פריטים`;
+                cartSubtotal.textContent = `₪${total}`;
+                cartTotal.textContent = `₪${total}`;
+                cartSummary.style.display = 'block';
+                cartActions.style.display = 'flex';
+            }
+        }
+
+        // משתנה לשמירת המוצר הנוכחי
+        let currentProductId = null;
+
+        // פתיחת modal בחירת אפשרויות
+        function openProductOptionsModal(productId) {
+            currentProductId = productId;
+            const product = products[productId];
+            document.getElementById('product-options-title').textContent = `בחר אפשרויות - ${product.name}`;
+            
+            // איפוס הטופס
+            document.getElementById('product-options-form').reset();
+            document.querySelector('input[name="fontType"][value="print"]').checked = true;
+            
+            // הצגת ה-modal
+            document.getElementById('product-options-modal').style.display = 'block';
+        }
+
+        // הוספה לעגלה עם אפשרויות
+        function addToCartWithOptions(productId, options) {
+            const existingItem = cart.find(item => item.id === productId && 
+                item.options.decodingName === options.decodingName &&
+                item.options.birthDate === options.birthDate &&
+                item.options.fontType === options.fontType);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ 
+                    id: productId, 
+                    quantity: 1,
+                    options: options
+                });
+            }
+            updateCart();
+        }
+
+        // הוספה לעגלה (ללא אפשרויות - למקרה של הוספה אוטומטית)
+        function addToCart(productId) {
+            // אם זה מוצר שדורש אפשרויות, פתח את ה-modal
+            openProductOptionsModal(productId);
+        }
+
+        // הסרה מעגלה
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // עדכון כמות
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                removeFromCart(index);
+            } else {
+                updateCart();
+            }
+        }
+
+        // ניקוי עגלה
+        function clearCart() {
+            if (confirm('האם אתה בטוח שברצונך לנקות את העגלה?')) {
+                cart = [];
+                updateCart();
+            }
+        }
+
+        // הצגת טופס הזמנה
+        function showCheckout() {
+            if (cart.length === 0) {
+                alert('העגלה ריקה. אנא הוסיפו מוצרים לעגלה.');
+                return;
+            }
+            
+            document.getElementById('checkout-modal').style.display = 'block';
+            // עדכון סיכום הזמנה
+            setTimeout(updateOrderSummary, 100);
+        }
+
+        // חישוב עלות משלוח
+        function calculateShippingCost(deliveryMethod) {
+            if (deliveryMethod === 'pickup') {
+                return 0;
+            } else if (deliveryMethod === 'shipping') {
+                return 30;
+            }
+            return 0;
+        }
+
+        // עדכון סיכום הזמנה עם עלות משלוח
+        function updateOrderSummary() {
+            const deliveryMethod = document.querySelector('input[name="delivery"]:checked')?.value;
+            const shippingCost = calculateShippingCost(deliveryMethod);
+            
+            const subtotal = cart.reduce((sum, item) => {
+                return sum + (products[item.id].price * item.quantity);
+            }, 0);
+            
+            const total = subtotal + shippingCost;
+            
+            // עדכון תצוגת סיכום אם קיים
+            const summaryElement = document.getElementById('order-summary-display');
+            if (summaryElement) {
+                let summaryHTML = `
+                    <div class="order-summary-item">
+                        <span>סה"כ ביניים:</span>
+                        <span>₪${subtotal}</span>
+                    </div>
+                `;
+                
+                if (shippingCost > 0) {
+                    summaryHTML += `
+                        <div class="order-summary-item">
+                            <span>משלוח:</span>
+                            <span>₪${shippingCost}</span>
+                        </div>
+                    `;
+                } else {
+                    summaryHTML += `
+                        <div class="order-summary-item">
+                            <span>משלוח:</span>
+                            <span>חינם (איסוף עצמי מחולון)</span>
+                        </div>
+                    `;
+                }
+                
+                summaryHTML += `
+                    <div class="order-summary-total">
+                        <span>סה"כ לתשלום:</span>
+                        <span>₪${total}</span>
+                    </div>
+                `;
+                
+                summaryElement.innerHTML = summaryHTML;
+            }
+        }
+
+        // שליחת הזמנה
+        function submitOrder(formData) {
+            const orderItems = cart.map(item => {
+                const product = products[item.id];
+                let itemText = `${product.name} (${item.quantity}x) - ₪${product.price * item.quantity}`;
+                
+                // הוספת אפשרויות אם קיימות
+                if (item.options) {
+                    const fontTypeText = item.options.fontType === 'print' ? 'כתב דפוס' : 'כתב יד רגיל';
+                    itemText += `\n  - שם לפיענוח: ${item.options.decodingName}`;
+                    itemText += `\n  - תאריך לידה: ${item.options.birthDate}`;
+                    itemText += `\n  - סוג כתב: ${fontTypeText}`;
+                    itemText += `\n  - גודל מסגרת: 20 על 25`;
+                }
+                
+                return itemText;
+            }).join('\n\n');
+            
+            const subtotal = cart.reduce((sum, item) => {
+                return sum + (products[item.id].price * item.quantity);
+            }, 0);
+            
+            const deliveryMethod = document.querySelector('input[name="delivery"]:checked')?.value;
+            const shippingCost = calculateShippingCost(deliveryMethod);
+            const total = subtotal + shippingCost;
+            
+            const message = `שלום, אני מעוניין בהזמנה:
+
+פרטים אישיים:
+שם: ${formData.name}
+טלפון: ${formData.phone}
+${formData.email ? `אימייל: ${formData.email}` : ''}
+${formData.city ? `עיר: ${formData.city}` : ''}
+כתובת: ${formData.address}
+
+פרטי ההזמנה:
+${orderItems}
+
+${shippingCost > 0 ? `עלות משלוח: ₪${shippingCost}\n` : 'משלוח: חינם (איסוף עצמי מחולון)\n'}
+סה"כ: ₪${total}
+
+${formData.notes ? `הערות: ${formData.notes}` : ''}`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/972533397827?text=${encodedMessage}`, '_blank');
+            
+            // סגירת הטופס וניקוי העגלה
+            document.getElementById('checkout-modal').style.display = 'none';
+            cart = [];
+            updateCart();
+            document.getElementById('checkout-form').reset();
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // בדיקת פרמטר מה-URL והוספה אוטומטית לעגלה
+            const urlParams = new URLSearchParams(window.location.search);
+            const productParam = urlParams.get('product');
+            
+            if (productParam && products[productParam]) {
+                // פתיחת modal בחירת אפשרויות (לא הוספה ישירה)
+                openProductOptionsModal(productParam);
+            }
+            
+            loadProducts();
+            updateCart();
+            
+            // הוספה לעגלה - פתיחת modal בחירת אפשרויות
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('btn-add-to-cart')) {
+                    const productId = e.target.dataset.productId;
+                    openProductOptionsModal(productId);
+                }
+            });
+            
+            // סגירת modal בחירת אפשרויות
+            document.getElementById('close-product-options-modal').addEventListener('click', function() {
+                document.getElementById('product-options-modal').style.display = 'none';
+            });
+            
+            document.getElementById('cancel-product-options').addEventListener('click', function() {
+                document.getElementById('product-options-modal').style.display = 'none';
+            });
+            
+            document.querySelector('.product-options-modal-overlay').addEventListener('click', function() {
+                document.getElementById('product-options-modal').style.display = 'none';
+            });
+            
+            // שליחת טופס בחירת אפשרויות
+            document.getElementById('product-options-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!currentProductId) return;
+                
+                const formData = {
+                    decodingName: document.getElementById('decoding-name').value,
+                    birthDate: document.getElementById('birth-date').value,
+                    fontType: document.querySelector('input[name="fontType"]:checked').value
+                };
+                
+                // הוספה לעגלה עם האפשרויות
+                addToCartWithOptions(currentProductId, formData);
+                
+                // סגירת ה-modal
+                document.getElementById('product-options-modal').style.display = 'none';
+                
+                // גלילה לעגלה
+                setTimeout(() => {
+                    document.getElementById('cart-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            });
+            
+            // עדכון כמות
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('quantity-btn')) {
+                    const index = parseInt(e.target.dataset.index);
+                    const change = e.target.classList.contains('plus') ? 1 : -1;
+                    updateQuantity(index, change);
+                }
+            });
+            
+            // הסרה מעגלה
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-item')) {
+                    const index = parseInt(e.target.dataset.index);
+                    removeFromCart(index);
+                }
+            });
+            
+            // ניקוי עגלה
+            document.getElementById('clear-cart-btn').addEventListener('click', clearCart);
+            
+            // פתיחת טופס הזמנה
+            document.getElementById('checkout-btn').addEventListener('click', showCheckout);
+            
+            // סגירת טופס
+            document.getElementById('close-checkout-modal').addEventListener('click', function() {
+                document.getElementById('checkout-modal').style.display = 'none';
+            });
+            
+            document.getElementById('cancel-checkout').addEventListener('click', function() {
+                document.getElementById('checkout-modal').style.display = 'none';
+            });
+            
+            document.querySelector('.checkout-modal-overlay').addEventListener('click', function() {
+                document.getElementById('checkout-modal').style.display = 'none';
+            });
+            
+            // שליחת טופס
+            // עדכון סיכום הזמנה כשמשתנה שיטת משלוח
+            document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    updateOrderSummary();
+                });
+            });
+            
+            // עדכון סיכום בפתיחת הטופס
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                setTimeout(updateOrderSummary, 100);
+            });
+            
+            document.getElementById('checkout-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = {
+                    name: document.getElementById('customer-name').value,
+                    phone: document.getElementById('customer-phone').value,
+                    email: document.getElementById('customer-email').value,
+                    city: document.getElementById('customer-city').value,
+                    address: document.getElementById('customer-address').value,
+                    notes: document.getElementById('order-notes').value
+                };
+                submitOrder(formData);
+            });
+            
+            // תפריט מובייל
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+            
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                });
+                
+                const menuLinks = document.querySelectorAll('.menu a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
