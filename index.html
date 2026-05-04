@@ -11,6 +11,11 @@
 
 </head>
 <body>
+    <div class="announcement-bar" role="region" aria-label="הודעה">
+        <div class="container announcement-bar__inner">
+            <p><strong>טיפול הוליסטי ואישי</strong> — CBT, קריסטלים ופיענוח שמות במקום אחד</p>
+        </div>
+    </div>
     <header>
         <div class="container">
             <nav>
@@ -81,7 +86,37 @@
         </div>
     </section>
 
-    
+    <section class="home-videos" id="videos" aria-labelledby="home-videos-heading">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="home-videos-heading">סרטונים</h2>
+            </div>
+            <p class="home-videos-intro">כאן אפשר להציג סרטון מהמחשב (MP4) או סרטון מ־YouTube. הוראות מעודכנות בתוך הקוד כהערות HTML.</p>
+
+            <div class="video-embed">
+                <p class="video-embed__label">סרטון מהאתר (קובץ MP4)</p>
+                <div class="video-embed__ratio video-embed__ratio--file">
+                    <video controls playsinline preload="metadata" title="סרטון מבוא">
+                        <source src="video/intro.mp4" type="video/mp4">
+                        הדפדפן לא תומך בנגן וידאו. כדי להציג סרטון: שימי קובץ בשם <code>intro.mp4</code> בתיקייה <code>video/</code> (צרי את התיקייה אם אין).
+                    </video>
+                </div>
+            </div>
+
+            <div class="video-embed video-embed--youtube">
+                <p class="video-embed__label">סרטון מ־YouTube</p>
+                <div class="video-embed__ratio video-embed__ratio--iframe">
+                    <!--
+                      איך מוסיפים סרטון: ב-YouTube → "שיתוף" → "הטמעה" → העתקת קוד ה-iframe.
+                      מחקי את הפסקה עם class="video-embed__placeholder" והדביקי במקומה את ה-iframe (או הדביקי iframe למטה והסירי את ה-placeholder).
+                      דוגמה:
+                    <iframe src="https://www.youtube-nocookie.com/embed/XXXXXXXXXXX" title="YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    -->
+                    <p class="video-embed__placeholder">כאן יוצג סרטון YouTube אחרי שתדביקי כאן את תגית ה־<code>iframe</code> מההטמעה (או תמחקי את השורה הזו ותשימי iframe מתחת להערה בקוד).</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="services">
         <div class="container">
@@ -209,7 +244,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
@@ -361,20 +396,7 @@
     });
     </script>
     
-    <!-- הודעה קופצת -->
-    <div class="popup-overlay" id="popup-overlay"></div>
-    <div class="popup-message" id="popup-message">
-        <h2>חדש באתר!!!!</h2>
-        <h3>מתנה מיוחדת ומקורית<br>
-        בר או בת מצווה? יום הולדת? חתונה? יום נישואין? או סתם לעשות נעים על הלב??</h3>
-        <h3>מסגרת מעוצבת באופן אישי הכוללת פענוח שם פענוח תאריך לידה וקריסטל אישי</h3>
-        <div class="popup-image-wrapper">
-            <img src="image/gallery/frame2.png" alt="מסגרות" class="popup-large-image">
-        </div>
-        <a class="service-cta popup-cta" href="https://wa.me/972533397827?text=%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%AA%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%9E%D7%A1%D7%92%D7%A8%D7%AA%20%D7%90%D7%99%D7%A9%D7%99%D7%AA.%20%D7%90%D7%A9%D7%9C%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D" target="_blank" rel="noopener noreferrer">להזמנת מסגרת אישית</a>
-
-        <button class="popup-close" onclick="closePopup()">סגור</button>
-    </div>
+   
     
     <script src="script.js"></script>
 </body>

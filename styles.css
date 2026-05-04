@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap");
+
 section,
 section::before,
 section::after,
@@ -24,15 +26,15 @@ section::after,
 }
 
 #name-meaning {
-    background: rgba(245, 248, 255, 0.9);
+    background: rgba(247, 238, 221, 0.75);
 }
 
 #name-analysis {
-    background: rgba(231, 240, 255, 0.9);
+    background: rgba(235, 230, 224, 0.85);
 }
 
 #name-components {
-    background: rgba(240, 246, 255, 0.9);
+    background: rgba(223, 212, 199, 0.55);
 }
 
 .promo-banner {
@@ -40,7 +42,7 @@ section::after,
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(30, 95, 140, 0.92);
+    background: rgba(68, 34, 25, 0.94);
     color: #fff;
     border-radius: 999px;
     padding: 0.75rem 1.2rem;
@@ -147,18 +149,23 @@ section::after,
     }
 }
 :root {
-    --primary-color: #b5d6e8;
-    --secondary-color: #3c8dbc;
-    --accent-color: #1e5f8c;
-    --light-color: #f0f7fc;
-    --text-color: #2a4054;
+    --primary-color: #dfd4c7;
+    --secondary-color: #6e4736;
+    --accent-color: #442219;
+    --light-color: #f7eedd;
+    --text-color: #442219;
+    --surface-page: #ebe6e0;
+    --surface-card: #fffcf8;
+    --border-subtle: rgba(68, 34, 25, 0.12);
+    --highlight: #ffb503;
+    --ink: #1a1b18;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Assistant", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -167,12 +174,13 @@ html {
 }
 
 body {
-    background-color: #d9eaf8;
+    background-color: var(--surface-page);
     color: var(--text-color);
-    line-height: 1.3;
+    line-height: calc(1 + 0.55);
+    letter-spacing: 0.04em;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-weight: bold;
+    font-weight: 500;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -185,10 +193,30 @@ body {
     width: 100%;
 }
 
+.announcement-bar {
+    background: linear-gradient(180deg, #f7eedd 0%, #f0e6d4 100%);
+    color: var(--ink);
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(68, 34, 25, 0.08);
+}
+
+.announcement-bar__inner p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.announcement-bar strong {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
 /* תפריט ניווט */
 header {
-    background-color: #eef9ff;
-    box-shadow: 0 2px 15px rgba(28, 122, 168, 0.3);
+    background-color: #fff;
+    border-bottom: 1px solid #d2d5d9;
+    box-shadow: none;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -206,30 +234,19 @@ header {
 }
 
 .hero-content h1 {
-    /* עיצוב טקסט */
-    color: #ffffff;
-    font-family: 'David', 'Rubik', 'Open Sans Hebrew', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    
-    /* צללית */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
-                 2px 2px 5px rgba(0, 0, 0, 0.4);
-
-    
-    /* אפקט מעבר חלק */
-    transition: all 0.2s ease;
-    
-    /* הוספת cursor: pointer כדי שיהיה ברור שאפשר להצביע על הטקסט */
-    cursor: pointer;
+    color: var(--accent-color);
+    font-family: "Assistant", "David", "Rubik", "Open Sans Hebrew", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    cursor: default;
 }
 
-/* האנימציה פועלת רק כשעוברים עם העכבר על הטקסט עצמו */
 .hero-content h1:hover {
-    transform: scale(1.03);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
-                 3px 3px 7px rgba(0, 0, 0, 0.5);
+    transform: none;
+    color: var(--secondary-color);
 }
 
 nav {
@@ -242,17 +259,15 @@ nav {
 
 /* עיצוב חדש ללוגו בתפריט הניווט */
 .logo {
-    font-size: 1.7rem;
-    font-weight: bold;
-    background: linear-gradient(to right, #2d5aa0 0%, #1e4a7e 50%, #3d6bb8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    padding: 0.5rem 0.8rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    padding: 0.5rem 0.4rem;
     position: relative;
-    letter-spacing: 0.5px;
-    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    max-width: min(100%, 14rem);
 }
 
 .logo:before {
@@ -277,7 +292,10 @@ nav {
 .menu a {
     text-decoration: none;
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     padding: 0.5rem 0;
     display: block;
     position: relative; /* חשוב בשביל הקו התחתון */
@@ -291,7 +309,7 @@ nav {
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    background: var(--highlight);
     transition: width 0.3s ease;
 }
 
@@ -314,7 +332,7 @@ nav {
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--accent-color);
+    color: var(--ink);
     position: relative;
     z-index: 101;
     padding: 0.5rem;
@@ -357,59 +375,62 @@ nav {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 3px solid #3c8dbc;
+    border: 3px solid rgba(68, 34, 25, 0.35);
     object-fit: cover;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px rgba(68, 34, 25, 0.12);
 }
 
 .hero h1 {
     font-size: 2.88rem;
     margin-bottom: 0.08rem;
     color: var(--accent-color);
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    line-height: 1.1;
+    text-shadow: none;
+    line-height: 1.15;
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     margin-bottom: 0.01rem;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
-    font-weight: bold;
+    line-height: 1.55;
+    font-weight: 500;
+    color: rgba(68, 34, 25, 0.9);
 }
 
 /* עיצוב לתיאור התפקיד */
 .profession-title {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     color: var(--secondary-color);
-    margin: 0.2rem 0 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    margin: 0.35rem 0 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     position: relative;
     display: inline-block;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .profession-title::before,
 .profession-title::after {
     content: "✦";
     display: inline-block;
-    color: var(--accent-color);
-    opacity: 0.7;
+    color: var(--highlight);
+    opacity: 0.85;
     margin: 0 10px;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 /* עיצוב משופר לטקסט המנוקד באזור הגיבור */
 .intro-text-container {
-    max-width: 60%;
+    max-width: min(60%, 42rem);
     margin: 0 auto 2rem;
-    padding: 1rem;
-    background-color: rgba(240, 247, 252, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(247, 226, 226, 0.08);
+    padding: 1.35rem 1.5rem;
+    background-color: rgba(255, 252, 248, 0.96);
+    border-radius: 0;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 12px 32px rgba(68, 34, 25, 0.06);
     position: relative;
     overflow: hidden;
 }
@@ -436,15 +457,16 @@ nav {
     width: 60%;
     height: 1px;
     margin: 1rem auto;
-    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    background: linear-gradient(to right, transparent, rgba(68, 34, 25, 0.25), transparent);
 }
 
 .intro-content {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     margin-bottom: 1rem;
-    line-height: 1.7;
+    line-height: 1.75;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
+    color: rgba(68, 34, 25, 0.92);
 }
 
 .intro-footer {
@@ -468,13 +490,13 @@ nav {
     margin-bottom: 1.5rem;
 }
 
-    .gallery-heading {
-        font-size: 1.8rem;
-        color: var(--accent-color);
-        font-weight: 700;
-        margin: 0;
-        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
-    }
+.gallery-heading {
+    font-size: 1.75rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin: 0;
+    text-shadow: none;
+}
 
 .simple-gallery {
     display: grid;
@@ -491,9 +513,9 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 0.375rem;
-    border-radius: 18px;
-    background: linear-gradient(160deg, rgba(184, 199, 218, 0.95), rgba(127, 158, 191, 0.88));
-    box-shadow: 0 8px 18px rgba(21, 58, 92, 0.12);
+    border-radius: 10px;
+    background: linear-gradient(165deg, #fffcf8, #ebe6e0);
+    box-shadow: 0 10px 28px rgba(68, 34, 25, 0.08);
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -503,14 +525,14 @@ nav {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    border: 1px solid rgba(19, 70, 110, 0.45);
-    opacity: 0.85;
+    border: 1px solid var(--border-subtle);
+    opacity: 1;
     pointer-events: none;
 }
 
 .gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 40px rgba(21, 58, 92, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 44px rgba(68, 34, 25, 0.12);
 }
 
 .gallery-image-simple {
@@ -525,14 +547,94 @@ nav {
     -moz-user-select: none;
     -ms-user-select: none;
     pointer-events: none;
-    border-radius: 18px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .gallery-image-contain {
     object-fit: contain;
-    background-color: rgba(235, 242, 249, 0.85);
-    border-radius: 18px;
+    background-color: rgba(255, 252, 248, 0.95);
+    border-radius: 8px;
+}
+
+/* סקשן סרטונים בדף הבית */
+.home-videos {
+    padding: 2.5rem 0 3rem;
+}
+
+.home-videos-intro {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(68, 34, 25, 0.88);
+    font-weight: 500;
+}
+
+.video-embed {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+}
+
+.video-embed:last-child {
+    margin-bottom: 0;
+}
+
+.video-embed__label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-color);
+    margin-bottom: 0.65rem;
+    text-align: center;
+}
+
+.video-embed__ratio {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(68, 34, 25, 0.06);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+}
+
+.video-embed__ratio--file video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #1a1a1a;
+}
+
+.video-embed__ratio--iframe iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-embed__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.25rem;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(68, 34, 25, 0.85);
+    font-weight: 500;
+}
+
+.video-embed__placeholder code {
+    font-size: 0.88em;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.1em 0.35em;
 }
 
 .orders-hero {
@@ -1102,25 +1204,32 @@ nav {
 /* התאמות למובייל - גלריה */
 @media screen and (max-width: 768px) {
     .image-gallery-section {
-        max-width: 90%;
-        margin: 2rem auto;
+        max-width: 95%;
+        margin: 1.5rem auto;
     }
     
     .gallery-title {
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     .gallery-heading {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     
     .simple-gallery {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.8rem;
     }
     
     .gallery-item {
-        height: 300px;
+        height: auto;
+        padding: 0.25rem;
+    }
+    
+    .gallery-image-simple {
+        width: 100% !important;
+        max-width: 240px !important;
+        height: 240px !important;
     }
 }
 
@@ -1155,15 +1264,88 @@ nav {
 
 @media (max-width: 768px) {
     .orders-hero {
-        padding: 4rem 0 3rem;
+        padding: 2rem 0 1.5rem;
     }
 
     .orders-hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+    }
+
+    .orders-hero-kicker {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
     }
 
     .orders-hero-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    .orders-hero-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .orders-hero-actions .btn {
+        width: 100%;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .orders-hero-highlights {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
+    }
+
+    .orders-hero-highlight {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+        justify-content: center;
+    }
+
+    .orders-hero-highlight-icon {
         font-size: 1rem;
+    }
+
+    .orders-hero-media {
+        max-width: 100%;
+        margin: 1.5rem auto 0;
+    }
+
+    .orders-hero-image {
+        margin-top: 1.5rem;
+    }
+
+    .orders-hero-image-frame {
+        padding: 0.6rem;
+    }
+
+    .orders-hero-image img {
+        width: 100% !important;
+        max-width: 280px !important;
+        height: auto !important;
+        aspect-ratio: 1;
+    }
+
+    .orders-section-title {
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .orders-section-title h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .orders-section-title p {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .orders-highlight-grid,
@@ -1172,75 +1354,155 @@ nav {
     .orders-packages,
     .orders-testimonials {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .orders-step {
-        padding: 1.75rem;
+        padding: 1.2rem;
     }
 
     .orders-step-number {
-        right: 20px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        top: -20px;
+    }
+
+    .orders-step h3 {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+
+    .orders-step p {
+        font-size: 0.85rem;
     }
 
     .orders-section {
-        padding: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .order-card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .order-card-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .order-card-price {
+        font-size: 1.3rem;
+    }
+
+    .order-includes li {
+        font-size: 0.85rem;
+        padding-right: 1.5rem;
+    }
+
+    .orders-testimonial {
+        padding: 1.2rem;
+    }
+
+    .orders-testimonial p {
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
 
     .orders-cta-content h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .orders-cta-actions {
         flex-direction: column;
     }
+
+    .pricelist-image {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 520px) {
+    .orders-hero {
+        padding: 1.5rem 0 1rem;
+    }
+
     .orders-hero h1 {
-        font-size: 1.9rem;
+        font-size: 1.3rem;
         line-height: 1.3;
+    }
+
+    .orders-hero-text {
+        font-size: 0.85rem;
     }
 
     .orders-hero-actions .btn,
     .orders-cta-actions .btn {
         width: 100%;
         text-align: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .orders-hero-image img {
+        max-width: 240px !important;
+    }
+
+    .orders-section-title h2 {
+        font-size: 1.2rem;
+    }
+
+    .order-card {
+        padding: 1.2rem 1rem;
     }
 }
 
 /* תיקון צבע כפתור "צרי קשר" */
 .contact-btn {
-    background: linear-gradient(to right, #1e5f8c, #3c8dbc);
-    color: white;
-    font-weight: bold;
-    padding: 0.9rem 2rem;
-    border-radius: 30px;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0;
+    border: 1px solid var(--ink);
     display: inline-block;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(26, 27, 24, 0.15);
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(30, 95, 140, 0.3);
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 28px rgba(68, 34, 25, 0.2);
 }
 
 .btn {
     display: inline-block;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
-    color: white;
-    padding: 0.9rem 2rem;
-    border-radius: 30px;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0;
+    border: 1px solid var(--ink);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
     cursor: pointer;
-    border: none;
+    box-shadow: 0 8px 22px rgba(26, 27, 24, 0.12);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(30, 95, 140, 0.3);
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 28px rgba(68, 34, 25, 0.18);
 }
 
 /* כותרות סקשנים */
@@ -1250,8 +1512,9 @@ nav {
 }
 
 .section-title h2 {
-    font-size: 2rem;
+    font-size: clamp(1.65rem, 3vw, 2.1rem);
     color: var(--accent-color);
+    font-weight: 600;
     position: relative;
     display: inline-block;
     padding-bottom: 0.1rem;
@@ -1263,7 +1526,7 @@ nav {
 
 /* רקע לסקשנים */
 .bg-light {
-    background-color: #f0f7fc;
+    background-color: var(--light-color);
 }
 
 /* צמצום רווחים ספציפי לעמוד קריסטלים */
@@ -1561,9 +1824,9 @@ section {
     max-width: 780px;
     margin: 0.75rem auto 2.5rem;
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: rgba(21, 58, 92, 0.87);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(68, 34, 25, 0.88);
     font-weight: 500;
 }
 
@@ -1575,30 +1838,30 @@ section {
 
 .service-card {
     position: relative;
-    background: linear-gradient(165deg, rgba(255, 255, 255, 0.98), rgba(224, 236, 247, 0.96));
-    border-radius: 22px;
+    background: linear-gradient(180deg, #fffcf8 0%, #f3ebe4 100%);
+    border-radius: 10px;
     padding: 2.25rem 2rem 2.5rem;
-    box-shadow: 0 25px 45px rgba(12, 44, 78, 0.16);
+    box-shadow: 0 18px 40px rgba(68, 34, 25, 0.08);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(30, 95, 140, 0.12);
+    border: 1px solid var(--border-subtle);
 }
 
 .service-card::before {
     content: "";
     position: absolute;
     inset: -40px;
-    background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.35), transparent 52%);
-    opacity: 0.7;
+    background: radial-gradient(circle at top right, rgba(255, 181, 3, 0.18), transparent 55%);
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 58px rgba(12, 44, 78, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 26px 50px rgba(68, 34, 25, 0.12);
 }
 
 .service-card-header {
@@ -1621,7 +1884,7 @@ section {
     font-size: 1.05rem;
     line-height: 1.8;
     margin: 0;
-    color: rgba(21, 58, 92, 0.85);
+    color: rgba(68, 34, 25, 0.88);
     font-weight: 500;
 }
 
@@ -1642,12 +1905,12 @@ section {
     gap: 0.55rem;
     font-size: 0.98rem;
     line-height: 1.7;
-    color: rgba(12, 36, 62, 0.9);
+    color: rgba(68, 34, 25, 0.92);
     font-weight: 500;
 }
 
 .service-features li span {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: 700;
     font-size: 1rem;
     flex-shrink: 0;
@@ -1662,34 +1925,52 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 2.25rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #d4af37, #b99124);
+    padding: 0.8rem 1.85rem;
+    border-radius: 0;
+    background: var(--ink);
     color: #fff;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
     text-decoration: none;
-    box-shadow: 0 12px 24px rgba(180, 130, 20, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--ink);
+    box-shadow: 0 10px 26px rgba(26, 27, 24, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .service-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 28px rgba(20, 60, 96, 0.3);
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 14px 32px rgba(68, 34, 25, 0.2);
 }
 
 @media (max-width: 768px) {
     .services-tagline {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
     }
 
     .services-showcase {
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .service-card {
-        padding: 2rem 1.6rem 2.1rem;
+        padding: 1.5rem 1.2rem 1.8rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-intro {
+        font-size: 0.9rem;
+    }
+    
+    .service-features li {
+        font-size: 0.85rem;
     }
 }
 
@@ -1917,13 +2198,31 @@ section {
 }
 
 @media (max-width: 480px) {
+    .crystal-grid .crystal-img {
+        width: 140px;
+        height: 140px;
+    }
+    
     .crystal-grid .crystal-img img {
-        width: 200px !important;
-        height: 200px !important;
-        min-width: 200px !important;
-        min-height: 200px !important;
-        max-width: 200px !important;
-        max-height: 200px !important;
+        width: 140px;
+        height: 140px;
+    }
+    
+    .gallery-image-simple {
+        max-width: 240px !important;
+        height: 240px !important;
+    }
+    
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.2rem;
+    }
+    
+    html {
+        font-size: 13px;
     }
 }
 
@@ -2279,26 +2578,28 @@ section {
 }
 
 .contact-form .btn {
-    background: linear-gradient(45deg, #3295ce, #3295ce);
+    background: var(--ink);
     color: white;
-    border: none;
+    border: 1px solid var(--ink);
     padding: 14px 25px;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     cursor: pointer;
     width: 100%;
-    transition: all 0.3s ease;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
     margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(197, 164, 126, 0.15);
+    box-shadow: 0 8px 22px rgba(26, 27, 24, 0.12);
 }
 
 .contact-form .btn:hover {
-    background: linear-gradient(45deg, #3295ce, #3295ce);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(197, 164, 126, 0.2);
+    box-shadow: 0 12px 28px rgba(68, 34, 25, 0.15);
 }
 
 /* הודעות שגיאה בטופס */
@@ -2310,11 +2611,12 @@ section {
 
 /* פוטר */
 footer {
-    background: linear-gradient(1deg, #68acd3, #60a3fa);
-    color: rgb(0, 0, 0);
-    padding: 0.2rem 0 0.1rem;
+    background: #fff;
+    color: var(--ink);
+    border-top: 1px solid #d2d5d9;
+    padding: 2rem 0 1rem;
     margin-top: auto;
-    font-size: 0.825em;
+    font-size: 0.9rem;
 }
 
 .footer-content {
@@ -2326,8 +2628,10 @@ footer {
 
 .footer-column h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.04em;
 }
 
 .footer-column ul {
@@ -2335,27 +2639,31 @@ footer {
 }
 
 .footer-column li {
-    margin-bottom: 0.2rem;
-    font-weight: bold;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+    color: rgba(68, 34, 25, 0.88);
 }
 
 .footer-column a {
-    color: rgb(0, 0, 0);
+    color: var(--accent-color);
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .footer-column a:hover {
     opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .copyright {
     text-align: center;
-    padding-top: 0.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    opacity: 0.7;
-    font-weight: bold;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.85rem;
+    opacity: 0.75;
+    font-weight: 600;
+    color: rgba(68, 34, 25, 0.75);
 }
 
 /* תוספות לדפים החדשים */
@@ -2448,14 +2756,11 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.95);
-    background: linear-gradient(135deg, #f5e6d3 0%, #fff8e7 50%, #f5e6d3 100%);
-    color: #3d2817;
+    background: linear-gradient(180deg, #fffcf8 0%, #f7eedd 100%);
+    color: var(--accent-color);
     padding: 2.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3), 
-                0 0 0 2px #d4af37,
-                0 0 20px rgba(212, 175, 55, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+    box-shadow: 0 28px 80px rgba(68, 34, 25, 0.22);
     text-align: center;
     z-index: 10000;
     opacity: 0;
@@ -2468,8 +2773,8 @@ footer {
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    border: 3px solid #d4af37;
+    font-family: "Assistant", "Segoe UI", sans-serif;
+    border: 1px solid rgba(68, 34, 25, 0.2);
 }
 
 .popup-message.show {
@@ -2574,18 +2879,19 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 2.25rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #d4af37, #b99124);
-    color: #fff;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0;
+    background: #fff;
+    color: var(--accent-color);
     font-weight: 700;
-    letter-spacing: 0.02em;
-    border: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-subtle);
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     margin-top: 0.75rem;
-    box-shadow: 0 12px 24px rgba(180, 130, 20, 0.25);
+    box-shadow: 0 6px 16px rgba(68, 34, 25, 0.08);
 }
 
 .popup-cta {
@@ -2595,65 +2901,82 @@ footer {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     padding: 0.85rem 2.25rem;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    border-radius: 999px;
+    border-radius: 0;
     text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .popup-close:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 28px rgba(20, 60, 96, 0.3);
+    transform: translateY(-2px);
+    background: var(--surface-page);
+    box-shadow: 0 10px 22px rgba(68, 34, 25, 0.1);
 }
 
 .popup-close:active {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(180, 130, 20, 0.25);
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(68, 34, 25, 0.08);
 }
 
 /* התאמת פופאפ למסכים קטנים (טלפון) */
 @media screen and (max-width: 768px) {
     .popup-message {
-        max-width: 92% !important;
-        width: 92% !important;
-        padding: 2rem 1.5rem;
-        max-height: 90vh;
-        border-radius: 10px;
-        border-width: 2px;
+        max-width: 46% !important;
+        width: 46% !important;
+        padding: 0.75rem 0.6rem;
+        max-height: 45vh;
+        border-radius: 8px;
+        border-width: 1px;
     }
     
     .popup-image-wrapper {
         width: 100% !important;
         max-width: 100% !important;
-        height: 350px !important;
-        margin: 1.2rem 0;
+        height: 175px !important;
+        margin: 0.6rem 0;
     }
     
     .popup-large-image {
-        width: 350% !important;
-        height: 350% !important;
+        width: 100% !important;
+        height: 100% !important;
+        left: 50% !important;
     }
 
     .popup-cta {
         width: 100%;
+        padding: 0.425rem 1.125rem !important;
+        font-size: 0.7rem !important;
+        margin-top: 0.375rem !important;
+        margin-bottom: 0.375rem !important;
     }
     
     .popup-message h2 {
-        font-size: 1.5rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+        margin-top: 0;
     }
     
     .popup-message h3 {
-        font-size: 0.95rem;
-        margin-bottom: 0.4rem;
-        margin-top: 0.4rem;
+        font-size: 0.7rem;
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+        line-height: 1.3;
+    }
+    
+    .popup-message p {
+        font-size: 0.65rem;
+        margin-bottom: 0.3rem;
     }
     
     .popup-close {
-        padding: 0.85rem 2.25rem;
-        font-size: 0.95rem;
+        padding: 0.425rem 1.125rem;
+        font-size: 0.7rem;
         width: 100%;
         max-width: none;
+        margin-top: 0.375rem;
     }
 }
 
@@ -2665,7 +2988,11 @@ footer {
     }
     
     .container {
-        padding: 0 0.8rem;
+        padding: 0 0.6rem;
+    }
+    
+    html {
+        font-size: 14px;
     }
     
     /* תיקונים לתפריט */
@@ -2682,19 +3009,20 @@ footer {
         transform: translateY(-50%);
         z-index: 101;
         margin: 0;
-        background: linear-gradient(to right, #4a90e2 0%, #357abd 50%, #5ba3f0 100%);
-        border: none;
-        border-radius: 8px;
+        background: var(--ink);
+        border: 1px solid var(--ink);
+        border-radius: 0;
         padding: 0.5rem 0.8rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(74, 144, 226, 0.3);
+        box-shadow: 0 6px 18px rgba(68, 34, 25, 0.15);
         color: white;
     }
     
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         margin: 0 auto;
         text-align: center;
         flex: 1;
+        padding: 0.4rem 0.6rem;
     }
     
     .menu {
@@ -2750,7 +3078,7 @@ footer {
     
     .menu a {
         padding: 0.7rem 0;
-        border-bottom: 1px solid rgba(181, 214, 232, 0.2);
+        border-bottom: 1px solid var(--border-subtle);
     }
     
     /* גם במובייל נשמור על האפקט של קו תחתון, אבל נשנה אותו */
@@ -2762,7 +3090,7 @@ footer {
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        background: var(--highlight);
         transition: width 0.3s ease;
     }
     
@@ -2780,64 +3108,65 @@ footer {
     
     /* תיקונים לאזור הגיבור */
     .hero {
-        padding: 0.8rem 0;
+        padding: 0.6rem 0;
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
         line-height: 1.2;
         margin-bottom: 0.2rem;
     }
     
     .profession-title {
-        font-size: 1.1rem;
-        margin: 0 0 0.8rem;
+        font-size: 0.95rem;
+        margin: 0 0 0.6rem;
         line-height: 1.3;
     }
     
     .hero-image-container {
-        margin: 10px 0 15px;
+        margin: 8px 0 12px;
     }
     
     .hero-image {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
     
     /* תיקונים לטקסט המנוקד */
     .intro-text-container {
         max-width: 100%;
-        padding: 0.7rem;
-        margin-bottom: 1.5rem;
+        padding: 0.6rem;
+        margin-bottom: 1.2rem;
     }
     
     .intro-heading {
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.4;
+        margin-bottom: 0.7rem;
     }
     
     .intro-content, .intro-footer {
-        font-size: 1rem;
+        font-size: 0.85rem;
         line-height: 1.5;
     }
     
     .intro-separator {
-        margin: 0.7rem auto;
+        margin: 0.6rem auto;
     }
     
     /* תיקונים לכפתורים */
     .btn, .contact-btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
     
     /* תיקונים לשאר החלקים */
     section {
-        padding: 2.5rem 0;
+        padding: 2rem 0;
     }
     
     .section-title h2 {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
     
     .cards {
@@ -2850,25 +3179,31 @@ footer {
     }
     
     .crystal-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.8rem;
     }
     
     .crystal-grid .crystal-img {
-        width: 200px;
-        height: 200px;
+        width: 160px;
+        height: 160px;
+    }
+    
+    .crystal-grid .crystal-img img {
+        width: 160px;
+        height: 160px;
     }
     
     .crystal-grid .crystal-info {
-        padding: 0.8rem;
+        padding: 0.6rem;
+        max-width: 180px;
     }
     
     .crystal-grid .crystal-name {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .crystal-grid .crystal-properties {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     
     /* התאמות Carousel למובייל */
@@ -2943,23 +3278,333 @@ footer {
     }
 }
 
+/* התאמות למובייל - עמוד קריסטלים */
+@media screen and (max-width: 768px) {
+    html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .crystal-hero {
+        padding: 1rem 0 !important;
+        margin-top: 0 !important;
+        min-height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+    
+    .crystal-hero .container {
+        padding: 0 0.6rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .crystal-hero .hero-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .crystal-hero h1 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.5rem !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    
+    .crystal-separator {
+        margin: 0.5rem auto !important;
+        width: 60% !important;
+    }
+    
+    .crystal-hero-text {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+        padding: 0 0.5rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #crystal-therapy {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #crystal-types {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #crystal-therapy .container,
+    #crystal-types .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    header {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    header .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    section .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    .crystal-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .crystal-item {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    footer .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    .content-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .crystal-intro-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem 0.8rem !important;
+    }
+    
+    .benefits-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .benefit-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    #contact-crystal {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .contact-section-crystal {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .contact-crystal-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    .crystal-quote {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .crystal-quote blockquote {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0.8rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .section-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 0.6rem !important;
+    }
+    
+    .section-title h2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .crystal-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .crystal-img img {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .crystal-info {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .crystal-name {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .crystal-properties {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .crystal-separator-mini {
+        width: 30px !important;
+        max-width: 30px !important;
+        margin: 0 auto 0.5rem auto !important;
+    }
+    
+    .benefit-icon {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .benefit-icon i {
+        font-size: 2rem !important;
+    }
+    
+    .benefit-item h3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 1rem !important;
+    }
+    
+    .benefit-item p {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .contact-crystal-content h2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .contact-crystal-content p {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .crystal-contact-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0.7rem 1.2rem !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .crystal-info p {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .content-box p {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .crystal-intro-box p {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+}
+
 /* Media Queries נוספים לטלפונים קטנים במיוחד */
 @media screen and (max-width: 480px) {
+    .crystal-hero {
+        padding: 0.8rem 0 !important;
+    }
+    
     .crystal-hero h1,
     .about-hero h1,
     .names-hero h1,
     .contact-hero h1 {
-        font-size: 2rem;
+        font-size: 1.2rem !important;
+    }
+    
+    .crystal-hero-text {
+        font-size: 0.85rem !important;
     }
     
     .crystal-quote blockquote,
     .names-quote blockquote {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .benefit-item,
     .direction-item {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
     
     .social-icon {
