@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>סל קניות - לבנה אודהליה</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">לְהָאִיר אֶת הַחוֹשֶׁךְ</div>
+                <button class="menu-toggle">☰</button>
+                <ul class="menu">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="orders.html">הזמנות</a></li>
+                    <li><a href="cart.html" class="active cart-link" aria-label="סל קניות">סל <span class="cart-badge" aria-hidden="true">0</span></a></li>
+                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
+                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container cart-page__container">
+            <div class="section-title">
+                <h2>סל הקניות</h2>
+            </div>
+
+            <div class="cart-layout">
+                <section class="cart" aria-label="פריטי סל">
+                    <div id="cart-items" class="cart-items"></div>
+                    <p id="cart-empty" class="cart-empty" hidden>הסל ריק. אפשר לחזור ל־<a href="index.html">חנות בדף הבית</a>.</p>
+                </section>
+
+                <aside class="cart-summary" aria-label="סיכום ותשלום">
+                    <div class="cart-summary__box">
+                        <h3>סיכום</h3>
+                        <div class="cart-summary__row">
+                            <span>סה״כ</span>
+                            <strong id="cart-total">₪0</strong>
+                        </div>
+                        <p class="cart-summary__hint">התשלום מתבצע ב־PayPal (אפשר לשלם גם בכרטיס).</p>
+
+                        <div id="paypal-missing" class="cart-warning" hidden>
+                            כדי להפעיל תשלום, צריך להכניס את ה־<code>PAYPAL_CLIENT_ID</code> בקובץ <code>script.js</code>.
+                        </div>
+
+                        <div id="paypal-button-container" class="paypal-button"></div>
+
+                        <form id="order-form" class="order-form" aria-label="טופס הזמנה">
+                            <div class="order-form__grid">
+                                <label class="order-form__field">
+                                    <span>שם מלא</span>
+                                    <input id="order-name" name="name" type="text" autocomplete="name" required>
+                                </label>
+                                <label class="order-form__field">
+                                    <span>טלפון</span>
+                                    <input id="order-phone" name="phone" type="tel" autocomplete="tel" required>
+                                </label>
+                                <label class="order-form__field order-form__field--full">
+                                    <span>כתובת למשלוח</span>
+                                    <input id="order-address" name="address" type="text" autocomplete="street-address" required>
+                                </label>
+                                <label class="order-form__field">
+                                    <span>עיר</span>
+                                    <input id="order-city" name="city" type="text" autocomplete="address-level2" required>
+                                </label>
+                                <label class="order-form__field">
+                                    <span>אימייל</span>
+                                    <input id="order-email" name="email" type="email" autocomplete="email" required>
+                                </label>
+                                <label class="order-form__field order-form__field--full">
+                                    <span>הערה כללית להזמנה</span>
+                                    <textarea id="order-note" name="note" rows="3" placeholder="כל דבר שחשוב שנדע…"></textarea>
+                                </label>
+                            </div>
+                            <button id="order-submit" class="btn order-submit" type="submit">שליחת הזמנה</button>
+                            <p class="order-form__hint">הכפתור שולח אלינו את פרטי ההזמנה בוואטסאפ לצורך טיפול מהיר.</p>
+                        </form>
+
+                        <button id="bit-pay" class="btn bit-pay" type="button">תשלום ב־Bit</button>
+
+                        <button id="cart-clear" class="btn cart-clear" type="button">ניקוי סל</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

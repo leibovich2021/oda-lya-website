@@ -11,9 +11,14 @@
 
 </head>
 <body>
+    <!-- וידאו רקע לעמוד הראשי -->
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <div class="announcement-bar" role="region" aria-label="הודעה">
         <div class="container announcement-bar__inner">
-            <p><strong>טיפול הוליסטי ואישי</strong> — CBT, קריסטלים ופיענוח שמות במקום אחד</p>
+            <p><strong>מטפלת הוליסטית</strong> - CBT , פינוח שמות לפי הקבלה וטיפול אנרגטי בקריסטלים</p>
         </div>
     </div>
     <header>
@@ -24,6 +29,7 @@
                 <ul class="menu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html">הזמנות</a></li>
+                    <li><a href="cart.html" class="cart-link" aria-label="סל קניות">סל <span class="cart-badge" aria-hidden="true">0</span></a></li>
                     <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
                     <li><a href="names.html">פיענוח שמות</a></li>
                     <li><a href="about.html">אודות</a></li>
@@ -47,6 +53,320 @@
                     <p class="intro-content">חֲוָיָה הַמְּשַׁלֶּבֶת אֶת חָכְמַת הַקַּבָּלָה וְהָרִפּוּי הַיְּהוּדִי הָעַתִּיק בְּעֶזְרַת הקְרִיסְטַלִים </p>
                     <p class="intro-footer">הַדֶּרֶךְ שֶׁלָּךְ לְאִזּוּן, שַׁלְוָה וְהִתְחַדְּשׁוּת אֶנֶרְגֶּטִית שֶׁלֹּא הִכַּרְתָּ</p>
                 </div>
+                <section class="jewelry-store" aria-label="חנות">
+                    <h3 class="jewelry-store__section-title"><a href="orders.html">תכשיטי קריסטלים</a></h3>
+                    <div class="jewelry-store__carousel">
+                        <button class="jewelry-store__nav jewelry-store__nav--prev" type="button" aria-label="הקודם">‹</button>
+                        <div class="jewelry-store__grid jewelry-store__grid--carousel js-store-carousel" role="list" aria-label="תכשיטים">
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-01" data-name="תכשיט קריסטל 1" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.55.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.55.jpeg" alt="תכשיט קריסטל 1" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 1</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-02" data-name="תכשיט קריסטל 2" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%281%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%281%29.jpeg" alt="תכשיט קריסטל 2" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 2</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-03" data-name="תכשיט קריסטל 3" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%283%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%283%29.jpeg" alt="תכשיט קריסטל 3" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 3</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-04" data-name="תכשיט קריסטל 4" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%284%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%284%29.jpeg" alt="תכשיט קריסטל 4" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 4</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-05" data-name="תכשיט קריסטל 5" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%285%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%285%29.jpeg" alt="תכשיט קריסטל 5" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 5</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-06" data-name="תכשיט קריסטל 6" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%281%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%281%29.jpeg" alt="תכשיט קריסטל 6" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 6</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-07" data-name="תכשיט קריסטל 7" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%282%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%282%29.jpeg" alt="תכשיט קריסטל 7" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 7</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-08" data-name="תכשיט קריסטל 8" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%283%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%283%29.jpeg" alt="תכשיט קריסטל 8" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 8</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-09" data-name="תכשיט קריסטל 9" data-price="149" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2017.03.05%20%281%29.jpeg">
+                                <div class="jewelry-store__media">
+                                    <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2017.03.05%20%281%29.jpeg" alt="תכשיט קריסטל 9" loading="lazy" decoding="async" width="600" height="600">
+                                    <div class="jewelry-store__meta" aria-hidden="true">
+                                        <span class="jewelry-store__price">₪149</span>
+                                    </div>
+                                </div>
+                                <div class="jewelry-store__body">
+                                    <span class="jewelry-store__label">תכשיט קריסטל 9</span>
+                                    <div class="jewelry-store__actions">
+                                        <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                        <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <button class="jewelry-store__nav jewelry-store__nav--next" type="button" aria-label="הבא">›</button>
+                    </div>
+
+                    <h3 class="jewelry-store__section-title jewelry-store__section-title--spaced"><a href="crystals.html">אבני קריסטלים</a></h3>
+                    <div class="jewelry-store__carousel">
+                        <button class="jewelry-store__nav jewelry-store__nav--prev" type="button" aria-label="הקודם">‹</button>
+                        <div class="jewelry-store__grid jewelry-store__grid--carousel js-store-carousel" role="list" aria-label="קריסטלים">
+                        <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-CLEAR-01" data-name="קריסטל קוורץ שקוף" data-price="89" data-currency="ILS" data-image="image/Clear-quartz.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img jewelry-store__img--contain" src="image/Clear-quartz.png" alt="קריסטל קוורץ שקוף" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪89</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">קוורץ שקוף</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-TIGER-02" data-name="אבן טייגר איי" data-price="79" data-currency="ILS" data-image="image/Tiger's-Eye.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img jewelry-store__img--contain" src="image/Tiger's-Eye.png" alt="אבן טייגר איי" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪79</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">טייגר איי</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-MOON-03" data-name="מונסטון" data-price="99" data-currency="ILS" data-image="image/moonstone.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img jewelry-store__img--contain" src="image/moonstone.png" alt="מונסטון" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪99</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">מונסטון</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-TOURM-04" data-name="טורמלין שחור" data-price="89" data-currency="ILS" data-image="image/black-tourmaline.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img jewelry-store__img--contain" src="image/black-tourmaline.png" alt="טורמלין שחור" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪89</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">טורמלין שחור</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        </div>
+                        <button class="jewelry-store__nav jewelry-store__nav--next" type="button" aria-label="הבא">›</button>
+                    </div>
+
+                    <h3 class="jewelry-store__section-title jewelry-store__section-title--spaced"><a href="orders.html">פיענוח שם אישי</a></h3>
+                    <div class="jewelry-store__carousel">
+                        <button class="jewelry-store__nav jewelry-store__nav--prev" type="button" aria-label="הקודם">‹</button>
+                        <div class="jewelry-store__grid jewelry-store__grid--carousel js-store-carousel" role="list" aria-label="מסגרות">
+                        <article class="jewelry-store__item" role="listitem" data-sku="FRAME-CRYSTAL-01" data-name="מסגרת קריסטל" data-price="249" data-currency="ILS" data-image="image/gallery/frame1.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img" src="image/gallery/frame1.png" alt="מסגרת קריסטל" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪249</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">מסגרת קריסטל</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="FRAME-BLESS-02" data-name="מסגרת ברכה" data-price="289" data-currency="ILS" data-image="image/gallery/frame2.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img" src="image/gallery/frame2.png" alt="מסגרת ברכה" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪289</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">מסגרת ברכה</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="FRAME-DESIGN-03" data-name="מסגרת מעוצבת" data-price="329" data-currency="ILS" data-image="image/gallery/frame3.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img" src="image/gallery/frame3.png" alt="מסגרת מעוצבת" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪329</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">מסגרת מעוצבת</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="GIFT-SET-05" data-name="מארז מתנה" data-price="199" data-currency="ILS" data-image="image/gallery/frame5.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img jewelry-store__img--contain" src="image/gallery/frame5.png" alt="מארז מתנה" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪199</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">מארז מתנה</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="SPECIAL-CHOICE-04" data-name="בחירה מיוחדת" data-price="269" data-currency="ILS" data-image="image/gallery/frame4.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img" src="image/gallery/frame4.png" alt="מסגרת מיוחדת" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪269</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">בחירה מיוחדת</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="jewelry-store__item" role="listitem" data-sku="ENERGY-DESIGN-06" data-name="עיצוב אנרגטי" data-price="349" data-currency="ILS" data-image="image/gallery/frame6.png">
+                            <div class="jewelry-store__media">
+                                <img class="jewelry-store__img" src="image/gallery/frame6.png" alt="מסגרת בעיצוב" loading="lazy" decoding="async" width="600" height="600">
+                                <div class="jewelry-store__meta" aria-hidden="true">
+                                    <span class="jewelry-store__price">₪349</span>
+                                </div>
+                            </div>
+                            <div class="jewelry-store__body">
+                                <span class="jewelry-store__label">עיצוב אנרגטי</span>
+                                <div class="jewelry-store__actions">
+                                    <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                    <a class="jewelry-store__details" href="orders.html">פרטים</a>
+                                </div>
+                            </div>
+                        </article>
+                        </div>
+                        <button class="jewelry-store__nav jewelry-store__nav--next" type="button" aria-label="הבא">›</button>
+                    </div>
+
+                    <div class="jewelry-store__cta">
+                        <a class="btn jewelry-store__btn" href="orders.html">לרכישה</a>
+                    </div>
+                </section>
                 <a href="https://wa.me/+972584397827?text=שלום,%20אשמח%20לקבל%20מידע%20נוסף%20על המסגרות " class="btn contact-btn">לבחירת מסגרת עם פענוח וקריסטל</a>
                 
                 <!-- גלריית תמונות פשוטה -->
@@ -81,38 +401,6 @@
                         </div>
                 
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="home-videos" id="videos" aria-labelledby="home-videos-heading">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="home-videos-heading">סרטונים</h2>
-            </div>
-            <p class="home-videos-intro">כאן אפשר להציג סרטון מהמחשב (MP4) או סרטון מ־YouTube. הוראות מעודכנות בתוך הקוד כהערות HTML.</p>
-
-            <div class="video-embed">
-                <p class="video-embed__label">סרטון מהאתר (קובץ MP4)</p>
-                <div class="video-embed__ratio video-embed__ratio--file">
-                    <video controls playsinline preload="metadata" title="סרטון מבוא">
-                        <source src="video/intro.mp4" type="video/mp4">
-                        הדפדפן לא תומך בנגן וידאו. כדי להציג סרטון: שימי קובץ בשם <code>intro.mp4</code> בתיקייה <code>video/</code> (צרי את התיקייה אם אין).
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-embed video-embed--youtube">
-                <p class="video-embed__label">סרטון מ־YouTube</p>
-                <div class="video-embed__ratio video-embed__ratio--iframe">
-                    <!--
-                      איך מוסיפים סרטון: ב-YouTube → "שיתוף" → "הטמעה" → העתקת קוד ה-iframe.
-                      מחקי את הפסקה עם class="video-embed__placeholder" והדביקי במקומה את ה-iframe (או הדביקי iframe למטה והסירי את ה-placeholder).
-                      דוגמה:
-                    <iframe src="https://www.youtube-nocookie.com/embed/XXXXXXXXXXX" title="YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    -->
-                    <p class="video-embed__placeholder">כאן יוצג סרטון YouTube אחרי שתדביקי כאן את תגית ה־<code>iframe</code> מההטמעה (או תמחקי את השורה הזו ותשימי iframe מתחת להערה בקוד).</p>
                 </div>
             </div>
         </div>
