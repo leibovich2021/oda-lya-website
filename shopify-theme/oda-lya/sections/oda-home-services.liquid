@@ -1,0 +1,134 @@
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    {% if section.settings.tagline != blank %}
+      <p class="services-tagline">{{ section.settings.tagline }}</p>
+    {% endif %}
+    <div class="services-showcase">
+      <article class="service-card">
+        <div class="service-card-header">
+          <h3>{{ section.settings.card1_title }}</h3>
+          <p class="service-intro">{{ section.settings.card1_intro }}</p>
+        </div>
+        <ul class="service-features">
+          {% assign lines = section.settings.card1_bullets | newline_to_br | split: '<br />' %}
+          {% for line in lines %}
+            {% assign t = line | strip %}
+            {% if t != blank %}
+              <li><span>✓</span> {{ t }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if section.settings.card1_url != blank %}
+          <a class="service-cta" href="{{ section.settings.card1_url }}" target="_blank" rel="noopener">{{ section.settings.card1_cta }}</a>
+        {% endif %}
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-header">
+          <h3>{{ section.settings.card2_title }}</h3>
+          <p class="service-intro">{{ section.settings.card2_intro }}</p>
+        </div>
+        <ul class="service-features">
+          {% assign lines = section.settings.card2_bullets | newline_to_br | split: '<br />' %}
+          {% for line in lines %}
+            {% assign t = line | strip %}
+            {% if t != blank %}
+              <li><span>✓</span> {{ t }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if section.settings.card2_url != blank %}
+          <a class="service-cta" href="{{ section.settings.card2_url }}" target="_blank" rel="noopener">{{ section.settings.card2_cta }}</a>
+        {% endif %}
+      </article>
+
+      <article class="service-card">
+        <div class="service-card-header">
+          <h3>{{ section.settings.card3_title }}</h3>
+          <p class="service-intro">{{ section.settings.card3_intro }}</p>
+        </div>
+        <ul class="service-features">
+          {% assign lines = section.settings.card3_bullets | newline_to_br | split: '<br />' %}
+          {% for line in lines %}
+            {% assign t = line | strip %}
+            {% if t != blank %}
+              <li><span>✓</span> {{ t }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if section.settings.card3_url != blank %}
+          <a class="service-cta" href="{{ section.settings.card3_url }}" target="_blank" rel="noopener">{{ section.settings.card3_cta }}</a>
+        {% endif %}
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "דף הבית — שירותים",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "כותרת מקטע", "default": "הטיפול שלי" },
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "שורת משנה",
+      "default": "טיפולים אישיים ומדויקים שמחברים בין תודעה, גוף ונשמה – כדי שתוכלי להרגיש הקלה מיידית ותהליך עומק אמיתי."
+    },
+    { "type": "text", "id": "card1_title", "label": "כרטיס 1 — כותרת", "default": "טיפול על פי היהדות" },
+    {
+      "type": "textarea",
+      "id": "card1_intro",
+      "label": "כרטיס 1 — מבוא",
+      "default": "שיטת ה – CBT הטיפול הקוגניטיבית התנהגותית, Cognitive behavioral therapy"
+    },
+    {
+      "type": "textarea",
+      "id": "card1_bullets",
+      "label": "כרטיס 1 — נקודות (שורה לכל נקודה)",
+      "default": "הטיפול ב-CBT מועיל לטיפול במגוון רחב של בעיות כמו חרדות, PTSD, דיכאון, OCD, בעיות שינה ועוד\nהמטרה העיקרית היא לשנות דפוסי חשיבה והתנהגות.\nהטיפול משלב טכניקות CBT מתקדמות עם טכניקות אימון ומקורות ממסורת ישראל"
+    },
+    { "type": "text", "id": "card1_cta", "label": "כרטיס 1 — טקסט כפתור", "default": "לתיאום טיפול אישי" },
+    {
+      "type": "text",
+      "id": "card1_url",
+      "label": "כרטיס 1 — קישור",
+      "default": "https://wa.me/972533397827"
+    },
+    { "type": "text", "id": "card2_title", "label": "כרטיס 2 — כותרת", "default": "טיפול בקריסטלים" },
+    {
+      "type": "textarea",
+      "id": "card2_intro",
+      "label": "כרטיס 2 — מבוא",
+      "default": "בחירה מדויקת של קריסטלים שמנקים חסימות אנרגטיות ומחזירים את הגוף והנפש לזרימה הרמונית."
+    },
+    {
+      "type": "textarea",
+      "id": "card2_bullets",
+      "label": "כרטיס 2 — נקודות",
+      "default": "התאמה אישית של מערך קריסטלים לצורך רגשי או פיזי\nמסר אנרגטי מודפס המלווה כל טיפול ומסגרת\nהדרכה להמשך שימוש, טעינה וטיהור של הקריסטלים"
+    },
+    { "type": "text", "id": "card2_cta", "label": "כרטיס 2 — כפתור", "default": "להזמנת מסגרת אישית" },
+    { "type": "text", "id": "card2_url", "label": "כרטיס 2 — קישור", "default": "https://wa.me/972533397827" },
+    { "type": "text", "id": "card3_title", "label": "כרטיס 3 — כותרת", "default": "פיענוח שמות" },
+    {
+      "type": "textarea",
+      "id": "card3_intro",
+      "label": "כרטיס 3 — מבוא",
+      "default": "קריאה מעמיקה באותיות שמך כדי לגלות את הכוחות הטבעיים והייעוד שנולדת איתו."
+    },
+    {
+      "type": "textarea",
+      "id": "card3_bullets",
+      "label": "כרטיס 3 — נקודות",
+      "default": "דו״ח מפורט עם ניתוח גימטריה\nהמלצה לקריסטלים, צבעים ותדרים שמחזקים אותך\nמסר כתוב להמשך תרגול והעמקה בבית"
+    },
+    { "type": "text", "id": "card3_cta", "label": "כרטיס 3 — כפתור", "default": "לפענוח השם שלך" },
+    { "type": "text", "id": "card3_url", "label": "כרטיס 3 — קישור", "default": "https://wa.me/972533397827" }
+  ],
+  "presets": [{ "name": "שירותים דף הבית" }]
+}
+{% endschema %}

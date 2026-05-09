@@ -1,0 +1,89 @@
+<section class="hero contact-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ section.settings.hero_title }}</h1>
+      <div class="intro-separator contact-separator"></div>
+      <p class="contact-hero-text">{{ section.settings.hero_text }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact-info" class="contact-info-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ section.settings.cards_title }}</h2>
+    </div>
+    <div class="cards contact-cards">
+      <div class="card contact-info-card">
+        <div class="card-content">
+          <h3>{{ section.settings.c1_title }}</h3>
+          <div class="contact-separator-mini"></div>
+          <p class="contact-data">{{ section.settings.c1_main }}</p>
+          <p>{{ section.settings.c1_extra }}</p>
+        </div>
+      </div>
+      <div class="card contact-info-card">
+        <div class="card-content">
+          <h3>{{ section.settings.c2_title }}</h3>
+          <div class="contact-separator-mini"></div>
+          <p class="contact-data">{{ section.settings.c2_main }}</p>
+          <p>{{ section.settings.c2_extra }}</p>
+        </div>
+      </div>
+      <div class="card contact-info-card">
+        <div class="card-content">
+          <h3>{{ section.settings.c3_title }}</h3>
+          <div class="contact-separator-mini"></div>
+          <p class="contact-data">{{ section.settings.c3_main }}</p>
+          <p>{{ section.settings.c3_extra }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact-form-section" class="contact-form-enhanced">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ section.settings.form_title }}</h2>
+    </div>
+    <div class="form-wrapper">
+      <div class="form-intro">
+        <p>{{ section.settings.form_intro }}</p>
+      </div>
+      <div class="whatsapp-contact">
+        <a href="{{ section.settings.wa_url }}" class="btn whatsapp-btn" target="_blank" rel="noopener">{{ section.settings.wa_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "עמוד צור קשר",
+  "settings": [
+    { "type": "text", "id": "hero_title", "default": "צְרוּ קֶשֶׁר", "label": "כותרת" },
+    {
+      "type": "text",
+      "id": "hero_text",
+      "default": "אנחנו כאן בשבילכם. פנו אלינו לקבלת מידע נוסף, קביעת פגישה או כל שאלה",
+      "label": "טקסט גיבור"
+    },
+    { "type": "text", "id": "cards_title", "default": "דרכי התקשרות", "label": "כותרת כרטיסים" },
+    { "type": "text", "id": "c1_title", "default": "טלפון", "label": "כרטיס 1 כותרת" },
+    { "type": "text", "id": "c1_main", "default": "053-3397827", "label": "כרטיס 1 עיקרי" },
+    { "type": "text", "id": "c1_extra", "default": "ימים א'-ה': 9:00 - 19:00 | יום ו': 9:00 - 13:00", "label": "כרטיס 1 פירוט" },
+    { "type": "text", "id": "c2_title", "default": "אימייל", "label": "כרטיס 2 כותרת" },
+    { "type": "text", "id": "c2_main", "default": "odalyasite@gmail.com", "label": "כרטיס 2 עיקרי" },
+    { "type": "text", "id": "c2_extra", "default": "אנו משתדלים להשיב לכל פניה בתוך 24 שעות.", "label": "כרטיס 2 פירוט" },
+    { "type": "text", "id": "c3_title", "default": "כתובת", "label": "כרטיס 3 כותרת" },
+    { "type": "text", "id": "c3_main", "default": "חולון", "label": "כרטיס 3 עיקרי" },
+    { "type": "text", "id": "c3_extra", "default": "אפשרות לטיפולים פרונטליים או מקוונים", "label": "כרטיס 3 פירוט" },
+    { "type": "text", "id": "form_title", "default": "שלחו לנו הודעה", "label": "כותרת טופס" },
+    { "type": "text", "id": "form_intro", "default": "לחצו על הכפתור כדי לשלוח הודעה ישירות בוואטסאפ", "label": "הסבר" },
+    { "type": "text", "id": "wa_label", "default": "שלח הודעה בוואטסאפ", "label": "טקסט כפתור" },
+    { "type": "text", "id": "wa_url", "label": "קישור וואטסאפ", "default": "https://wa.me/972533397827" }
+  ],
+  "presets": [{ "name": "צור קשר" }]
+}
+{% endschema %}

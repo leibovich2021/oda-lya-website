@@ -4207,9 +4207,15 @@ footer {
     }
 }
 
-.about-hero-image {
-    width: 300px;
-    height: 300px;
+/* תמונת פרופיל בעמוד אודות — ספציפיות גבוהה מול max-width על img */
+#our-story .about-img-frame img.about-hero-image,
+#our-story .about-img-frame .about-hero-image {
+    width: 345px !important;
+    height: 345px !important;
+    max-width: none !important;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .about-img-frame {
@@ -4217,11 +4223,4 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.about-hero-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
 }

@@ -1,0 +1,106 @@
+{%- comment -%}
+  מיפוי מ-about.html (רק גוף העמוד):
+  שורות 30–34  → מקטע .hero.about-hero (ריק, כמו ב-HTML)
+  שורות 36–68   → #our-story — כותרת, מי אני, השיטה שלי, תמונה, ציטוט
+  לא כולל: header, footer, תפריט, סקריפט — אלה ב-layout / theme.
+
+  איך לעדכן טקסט: (1) שדות default ב-schema למטה (2) templates/page.about.json
+  (3) Shopify → עריכת תבנית → עמוד about → מקטע זה
+{%- endcomment -%}
+<section class="hero about-hero">
+  <div class="container"></div>
+</section>
+
+<section id="our-story" class="story-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ section.settings.story_title }}</h2>
+    </div>
+    <div class="about-content enhanced-about-content">
+      <div class="about-text">
+        <div class="story-icon"><i class="fas fa-seedling"></i></div>
+        <h3>{{ section.settings.block1_h }}</h3>
+        <p>{{ section.settings.block1_p1 }}</p>
+        <p>{{ section.settings.block1_p2 }}</p>
+        <div class="story-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <h3>{{ section.settings.block2_h }}</h3>
+        <p>{{ section.settings.block2_p1 }}</p>
+      </div>
+      <div class="about-img-container">
+        <div class="about-img-frame">
+          {% if section.settings.photo != blank %}
+            {{
+              section.settings.photo
+              | image_url: width: 920
+              | image_tag: class: 'about-hero-image', loading: 'lazy', alt: section.settings.photo_alt, width: 345, height: 345
+            }}
+          {% else %}
+            <img
+              class="about-hero-image"
+              src="{{ 'your-image.jpg' | asset_url }}"
+              alt="{{ section.settings.photo_alt }}"
+              width="690"
+              height="690"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'about-img-placeholder\'><i class=\'fas fa-user\'></i></div>';"
+            >
+          {% endif %}
+        </div>
+        <div class="about-quote">
+          <blockquote>
+            {{ section.settings.quote }}
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  #our-story .about-img-frame img.about-hero-image {
+    width: 345px !important;
+    height: 345px !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    border-radius: 50%;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "עמוד אודות",
+  "settings": [
+    { "type": "text", "id": "story_title", "label": "כותרת", "default": "הסיפור שלי" },
+    { "type": "text", "id": "block1_h", "label": "כותרת 1", "default": "מי אני" },
+    {
+      "type": "textarea",
+      "id": "block1_p1",
+      "label": "פסקה 1 (מי אני — ראשונה)",
+      "default": "לְהָאִיר אֶת הַחוֹשֶׁךְ נוסד מתוך אמונה עמוקה בכוחה של המסורת היהודית לריפוי הגוף והנפש. אנו משלבים חכמה עתיקה עם שיטות מודרניות, ויוצרים מסע ריפוי ייחודי ועוצמתי."
+    },
+    {
+      "type": "textarea",
+      "id": "block1_p2",
+      "label": "פסקה 2",
+      "default": "הטיפול שלי מבוסס על שיטת הרב פנגר לניהול רגשות, ומשלב טכניקות מעולם ה-CBT, קואצ'ינג, דמיון מודרך, מיינדפולנס, ריפוי במגע יד ועבודה עם קריסטלים."
+    },
+    { "type": "text", "id": "block2_h", "label": "כותרת 2", "default": "השיטה שלי" },
+    {
+      "type": "textarea",
+      "id": "block2_p1",
+      "label": "פסקה (השיטה שלי)",
+      "default": "אני מאמינה שכל אדם יכול להגיע לאיזון ושלווה פנימית באמצעות עבודה נכונה עם הרגשות, המחשבות והאנרגיות. שיטת הריפוי שלנו מתייחסת לכל האספקטים של האדם."
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "ציטוט",
+      "default": "\"נְשָׁמָה אַחַת מְאִירָה עוֹלָם שָׁלֵם\"",
+      "info": "כמו ב-about.html — ניתן לכלול מירכאות בטקסט."
+    },
+    { "type": "image_picker", "id": "photo", "label": "תמונה (אופציונלי)" },
+    { "type": "text", "id": "photo_alt", "label": "תיאור תמונה (alt)", "default": "תמונה אישית" }
+  ],
+  "presets": [{ "name": "עמוד אודות" }]
+}
+{% endschema %}

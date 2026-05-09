@@ -1,0 +1,26 @@
+{% if section.settings.url != blank %}
+  <div class="container" style="text-align: center; margin: 1.5rem auto;">
+    <a href="{{ section.settings.url }}" class="btn contact-btn" target="_blank" rel="noopener">{{ section.settings.label }}</a>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "כפתור וואטסאפ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "טקסט",
+      "default": "לבחירת מסגרת עם פענוח וקריסטל"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "קישור וואטסאפ",
+      "default": "https://wa.me/972584397827"
+    }
+  ],
+  "presets": [{ "name": "כפתור וואטסאפ" }]
+}
+{% endschema %}

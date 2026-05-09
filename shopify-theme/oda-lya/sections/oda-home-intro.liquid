@@ -1,0 +1,66 @@
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ section.settings.heading }}</h1>
+      {% if section.settings.subtitle != blank %}
+        <div class="profession-title">{{ section.settings.subtitle }}</div>
+      {% endif %}
+      {% if section.settings.hero_image != blank %}
+        <div class="hero-image-container">
+          {{
+            section.settings.hero_image
+            | image_url: width: 900
+            | image_tag: class: 'hero-image', alt: section.settings.hero_image_alt, loading: 'lazy'
+          }}
+        </div>
+      {% else %}
+        <div class="hero-image-container">
+          <img src="{{ 'your-image.jpg' | asset_url }}" alt="{{ section.settings.hero_image_alt }}" class="hero-image" width="600" height="600" loading="lazy">
+        </div>
+      {% endif %}
+      <div class="intro-text-container">
+        {% if section.settings.intro_heading != blank %}
+          <p class="intro-heading">{{ section.settings.intro_heading }}</p>
+        {% endif %}
+        <div class="intro-separator"></div>
+        {% if section.settings.intro_text != blank %}
+          <p class="intro-content">{{ section.settings.intro_text }}</p>
+        {% endif %}
+        {% if section.settings.intro_footer != blank %}
+          <p class="intro-footer">{{ section.settings.intro_footer }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "דף הבית — מבוא",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "כותרת ראשית", "default": "לְבָנָה אוֹדְהַלְיָה" },
+    { "type": "text", "id": "subtitle", "label": "תת־כותרת", "default": "מטפלת הוליסטית" },
+    { "type": "image_picker", "id": "hero_image", "label": "תמונת גיבור (אופציונלי)" },
+    { "type": "text", "id": "hero_image_alt", "label": "תיאור תמונה", "default": "תמונה אישית" },
+    {
+      "type": "text",
+      "id": "intro_heading",
+      "label": "כותרת מבוא",
+      "default": "גִּלּוּי עוֹלָמוֹת הָרִפּוּי הָעַתִּיקִיםָ"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "פסקת מבוא",
+      "default": "חֲוָיָה הַמְּשַׁלֶּבֶת אֶת חָכְמַת הַקַּבָּלָה וְהָרִפּוּי הַיְּהוּדִי הָעַתִּיק בְּעֶזְרַת הקְרִיסְטַלִים"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_footer",
+      "label": "שורת סיום",
+      "default": "הַדֶּרֶךְ שֶׁלָּךְ לְאִזּוּן, שַׁלְוָה וְהִתְחַדְּשׁוּת אֶנֶרְגֶּטִית שֶׁלֹּא הִכַּרְתָּ"
+    }
+  ],
+  "presets": [{ "name": "מבוא דף הבית" }]
+}
+{% endschema %}

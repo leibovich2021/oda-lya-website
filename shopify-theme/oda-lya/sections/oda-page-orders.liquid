@@ -1,0 +1,221 @@
+<section class="orders-hero">
+  <div class="container orders-hero-wrapper">
+    <div class="orders-hero-content">
+      <p class="orders-hero-kicker">{{ section.settings.kicker }}</p>
+      <h1>{{ section.settings.title }}</h1>
+      <p class="orders-hero-text">{{ section.settings.lead }}</p>
+      <div class="orders-hero-actions">
+        <a href="{{ section.settings.wa_primary }}" class="btn secondary-btn" target="_blank" rel="noopener">{{ section.settings.btn_primary }}</a>
+        <a href="#orders-gallery" class="btn secondary-btn">{{ section.settings.btn_secondary }}</a>
+      </div>
+      <div class="orders-hero-highlights">
+        <div class="orders-hero-highlight"><span class="orders-hero-highlight-icon">🎁</span> {{ section.settings.hi1 }}</div>
+        <div class="orders-hero-highlight"><span class="orders-hero-highlight-icon">✨</span> {{ section.settings.hi2 }}</div>
+        <div class="orders-hero-highlight"><span class="orders-hero-highlight-icon">🪬</span> {{ section.settings.hi3 }}</div>
+      </div>
+    </div>
+    <div class="orders-hero-media">
+      <div class="orders-hero-image">
+        <div class="orders-hero-image-frame">
+          {% if section.settings.hero_image != blank %}
+            {{ section.settings.hero_image | image_url: width: 900 | image_tag: alt: '', loading: 'lazy' }}
+          {% else %}
+            <img src="{{ 'rose-quartz.png' | asset_url }}" alt="מסגרת קריסטל" width="600" height="600" loading="lazy">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="orders-section">
+  <div class="container orders-process-wrapper">
+    <div class="orders-section-title">
+      <h2>{{ section.settings.process_title }}</h2>
+      <p>{{ section.settings.process_sub }}</p>
+    </div>
+    <div class="orders-process-steps">
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          <div class="orders-step" {{ block.shopify_attributes }}>
+            <div class="orders-step-number">{{ block.settings.num }}</div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="orders-section bg-light" id="orders-gallery">
+  <div class="container">
+    <div class="orders-section-title">
+      <h2>{{ section.settings.gallery_title }}</h2>
+      <p>{{ section.settings.gallery_sub }}</p>
+    </div>
+    <div class="simple-gallery">
+      {% for block in section.blocks %}
+        {% if block.type == 'gallery_img' and block.settings.image != blank %}
+          <div class="gallery-item" {{ block.shopify_attributes }}>
+            {{ block.settings.image | image_url: width: 900 | image_tag: class: 'gallery-image-simple gallery-image-contain', loading: 'lazy', alt: block.settings.alt }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="orders-section">
+  <div class="container">
+    <div class="orders-section-title">
+      <h2>{{ section.settings.pkg_title }}</h2>
+      <p>{{ section.settings.pkg_sub }}</p>
+    </div>
+    <div class="orders-packages">
+      {% for block in section.blocks %}
+        {% if block.type == 'package' %}
+          <div class="order-card{% if block.settings.featured %} featured{% endif %}" {{ block.shopify_attributes }}>
+            <div class="order-card-header">
+              <h3>{{ block.settings.title }}</h3>
+              <span class="order-card-price">{{ block.settings.price }}</span>
+            </div>
+            <ul class="order-includes">
+              {% assign lines = block.settings.bullets | newline_to_br | split: '<br />' %}
+              {% for line in lines %}
+                {% assign t = line | strip %}
+                {% if t != blank %}<li>{{ t }}</li>{% endif %}
+              {% endfor %}
+            </ul>
+            {% if block.settings.wa != blank %}
+              <a href="{{ block.settings.wa }}" class="btn contact-btn order-card-btn" target="_blank" rel="noopener">{{ block.settings.btn }}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="orders-section bg-light">
+  <div class="container">
+    <div class="orders-section-title">
+      <h2>{{ section.settings.testi_title }}</h2>
+      <p>{{ section.settings.testi_sub }}</p>
+    </div>
+    <div class="orders-testimonials">
+      {% for block in section.blocks %}
+        {% if block.type == 'quote' %}
+          <div class="orders-testimonial" {{ block.shopify_attributes }}>
+            <p>{{ block.settings.text }}</p>
+            <span>{{ block.settings.author }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.pricelist_image != blank %}
+  <section id="pricelist" class="pricelist-section">
+    <div class="container">
+      <div class="section-title"><h2>{{ section.settings.pricelist_heading }}</h2></div>
+      <div class="pricelist-container">
+        {{ section.settings.pricelist_image | image_url: width: 1400 | image_tag: class: 'pricelist-image', loading: 'lazy', alt: 'מחירון' }}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "עמוד הזמנות (מסגרות)",
+  "settings": [
+    { "type": "text", "id": "kicker", "default": "מסגרות בהזמנה אישית", "label": "שורת משנה" },
+    { "type": "text", "id": "title", "default": "מסגרת קריסטל שמספרת את הסיפור שלך", "label": "כותרת" },
+    {
+      "type": "textarea",
+      "id": "lead",
+      "label": "טקסט",
+      "default": "כל מסגרת נבנית בעבודת יד, עם פענוח אנרגטי מותאם אישית וקריסטלים שנבחרו בדיוק עבורך."
+    },
+    { "type": "text", "id": "btn_primary", "default": "התחילי בהזמנת מסגרת", "label": "כפתור ראשי" },
+    { "type": "text", "id": "wa_primary", "label": "קישור וואטסאפ ראשי", "default": "https://wa.me/972533397827" },
+    { "type": "text", "id": "btn_secondary", "default": "להתרשמות מהעבודות", "label": "כפתור משני" },
+    { "type": "text", "id": "hi1", "default": "מארז מתנה מוכן להענקה", "label": "הדגשה 1" },
+    { "type": "text", "id": "hi2", "default": "קריסטלים אנרגטיים איכותיים", "label": "הדגשה 2" },
+    { "type": "text", "id": "hi3", "default": "פענוח אישי על בסיס הקבלה", "label": "הדגשה 3" },
+    { "type": "image_picker", "id": "hero_image", "label": "תמונת גיבור" },
+    { "type": "text", "id": "process_title", "default": "איך זה עובד?", "label": "כותרת תהליך" },
+    { "type": "text", "id": "process_sub", "default": "תהליך אישי ונעים שמתחיל בשיחת היכרות ומסתיים בפריט ייחודי.", "label": "תת־כותרת תהליך" },
+    { "type": "text", "id": "gallery_title", "default": "טעימה מהעבודות האחרונות", "label": "כותרת גלריה" },
+    { "type": "text", "id": "gallery_sub", "default": "כל מסגרת היא עולם ומלואו.", "label": "תת־גלריה" },
+    { "type": "text", "id": "pkg_title", "default": "מסלולי הזמנה מומלצים", "label": "כותרת חבילות" },
+    { "type": "text", "id": "pkg_sub", "default": "בחרו את הפתרון שהכי מתאים עבורכם.", "label": "תת־חבילות" },
+    { "type": "text", "id": "testi_title", "default": "לקוחות משתפים", "label": "כותרת המלצות" },
+    { "type": "text", "id": "testi_sub", "default": "חוויות אמיתיות מהמסגרות שהוזמנו.", "label": "תת־המלצות" },
+    { "type": "text", "id": "pricelist_heading", "default": "מחירון", "label": "כותרת מחירון" },
+    { "type": "image_picker", "id": "pricelist_image", "label": "תמונת מחירון (או העתק מ־pricelist.png בנכסי התבנית)" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "שלב תהליך",
+      "settings": [
+        { "type": "text", "id": "num", "label": "מספר", "default": "01" },
+        { "type": "text", "id": "title", "label": "כותרת", "default": "שיחת היכרות" },
+        { "type": "textarea", "id": "text", "label": "תיאור", "default": "נזהה יחד את הכוונה והסיפור שהמסגרת אמורה להעביר." }
+      ]
+    },
+    {
+      "type": "gallery_img",
+      "name": "תמונת גלריה",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "תמונה" },
+        { "type": "text", "id": "alt", "label": "תיאור", "default": "מסגרת בעבודת יד" }
+      ]
+    },
+    {
+      "type": "package",
+      "name": "חבילה",
+      "settings": [
+        { "type": "text", "id": "title", "label": "כותרת", "default": "מסגרת יחידה" },
+        { "type": "text", "id": "price", "label": "מחיר", "default": "₪300" },
+        {
+          "type": "textarea",
+          "id": "bullets",
+          "label": "שורות (שורה לכל פריט)",
+          "default": "מסגרת עץ איכותית בגודל לבחירה\nקריסטל ראשי + חיזוק משלים\nפענוח מסר אישי מודפס"
+        },
+        { "type": "text", "id": "btn", "label": "כפתור", "default": "להזמנה" },
+        { "type": "text", "id": "wa", "label": "וואטסאפ", "default": "https://wa.me/972533397827" },
+        { "type": "checkbox", "id": "featured", "label": "סימון מודגש", "default": false }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "המלצה",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "ציטוט", "default": "המסגרת שקיבלנו הייתה מדויקת להפליא." },
+        { "type": "text", "id": "author", "label": "שם", "default": "קרן, תל אביב" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "הזמנות מסגרות",
+      "blocks": [
+        { "type": "step", "settings": { "num": "01", "title": "שיחת היכרות והתאמה", "text": "נזהה יחד את הכוונה, האנרגיה והסיפור שהמסגרת אמורה להעביר." } },
+        { "type": "step", "settings": { "num": "02", "title": "בחירת קריסטלים ופענוח", "text": "משלבת קריסטלים מתאימים ומנסחת מסר אנרגטי אישי." } },
+        { "type": "step", "settings": { "num": "03", "title": "יצירה ומסירה", "text": "המסגרת נוצרת בעבודת יד, נארזת ונשלחת אליך." } },
+        { "type": "package", "settings": { "title": "מסגרת יחידה", "price": "₪300", "featured": false, "btn": "להזמנה", "wa": "https://wa.me/972533397827" } },
+        { "type": "package", "settings": { "title": "סט זוגי", "price": "₪549 מומלץ", "featured": true, "btn": "להזמנה", "wa": "https://wa.me/972533397827" } },
+        { "type": "package", "settings": { "title": "אוסף משפחתי", "price": "₪699", "featured": false, "btn": "להזמנה", "wa": "https://wa.me/972533397827" } },
+        { "type": "quote", "settings": { "text": "המסגרת שקיבלנו הייתה מדויקת להפליא. הקריסטלים והמסר נגעו לנו בדיוק בלב.", "author": "קרן, תל אביב" } },
+        { "type": "quote", "settings": { "text": "הזמנתי סט זוגי מתנה לחתונה. הזוג לא הפסיקו להתרגש מהפענוח וההשקעה בכל פרט.", "author": "שקד, רעננה" } },
+        { "type": "quote", "settings": { "text": "לילדה שלי היה יום הולדת 12 והמסגרת האישית עם הקריסטלים הפכה את האירוע לבלתי נשכח.", "author": "אתי, חולון" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

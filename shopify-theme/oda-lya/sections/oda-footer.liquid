@@ -1,0 +1,55 @@
+<footer>
+  {% liquid
+    assign url_crystals = '/pages/crystals'
+    if pages.crystals != blank
+      assign url_crystals = pages.crystals.url
+    endif
+    assign url_contact = '/pages/contact'
+    if pages.contact != blank
+      assign url_contact = pages.contact.url
+    endif
+  %}
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>שירותים</h3>
+        <ul>
+          <li><a href="{{ routes.root_url }}#services">טיפולים אישיים</a></li>
+          <li><a href="{{ url_contact }}">ייעוץ מקוון</a></li>
+          <li><a href="{{ url_crystals }}">מוצרי ריפוי</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>שעות פעילות</h3>
+        <ul>
+          <li>ראשון - חמישי: 9:00 - 19:00</li>
+          <li>יום ו': 9:00 - 13:00</li>
+          <li>שבת: סגור</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>צור קשר</h3>
+        <ul>
+          <li>טלפון: {{ section.settings.phone }}</li>
+          <li>אימייל: {{ section.settings.email }}</li>
+          <li>כתובת: {{ section.settings.address }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.site_name }}. כל הזכויות שמורות.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "פוטר",
+  "settings": [
+    { "type": "text", "id": "site_name", "label": "שם באתר", "default": "לְהָאִיר אֶת הַחוֹשֶׁךְ" },
+    { "type": "text", "id": "phone", "label": "טלפון", "default": "053-3397827" },
+    { "type": "text", "id": "email", "label": "אימייל", "default": "odalyasite@gmail.com" },
+    { "type": "text", "id": "address", "label": "כתובת", "default": "חולון" }
+  ]
+}
+{% endschema %}
