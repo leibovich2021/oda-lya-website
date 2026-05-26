@@ -1,8 +1,8 @@
-<section class="hero names-hero">
+<section class="hero names-hero oda-names-hero">
   <div class="container">
-    <div class="hero-content">
+    <div class="hero-content oda-names-hero__panel">
       <h1>{{ section.settings.hero_title }}</h1>
-      <div class="intro-separator names-separator"></div>
+      <div class="intro-separator names-separator oda-names-hero__rule"></div>
       <p class="names-hero-text">{{ section.settings.hero_text }}</p>
     </div>
   </div>
@@ -10,10 +10,10 @@
 
 <section id="name-meaning">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title oda-names-section-title">
       <h2>{{ section.settings.intro_title }}</h2>
     </div>
-    <div class="content-box names-intro-box">
+    <div class="content-box names-intro-box oda-names-glass">
       <p>{{ section.settings.intro_p }}</p>
       <div class="names-quote">
         <blockquote>{{ section.settings.intro_quote }}</blockquote>
@@ -24,28 +24,25 @@
 
 <section id="name-analysis" class="names-analysis-section">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title oda-names-section-title">
       <h2>{{ section.settings.form_title }}</h2>
     </div>
-    <div class="name-form analysis-form">
+    <div class="name-form analysis-form oda-names-glass">
       <div class="form-group">
         <label for="oda-name-input">{{ section.settings.form_label }}</label>
-        <input type="text" id="oda-name-input" placeholder="{{ section.settings.form_placeholder }}">
+        <input type="text" id="oda-name-input" placeholder="{{ section.settings.form_placeholder }}" autocomplete="name">
       </div>
-      <button type="button" class="btn name-analysis-btn" id="oda-analyze-name-btn">{{ section.settings.form_btn }}</button>
+      <button type="button" class="btn name-analysis-btn oda-names-wa__btn" id="oda-analyze-name-btn">{{ section.settings.form_btn }}</button>
     </div>
   </div>
 </section>
 
-<section id="name-components" class="components-section">
+<section id="name-components" class="components-section oda-names-components">
   <div class="container">
-    <div class="section-title">
-      <h2>{{ section.settings.comp_title }}</h2>
-    </div>
-    <div class="cards analysis-cards">
+    <div class="cards analysis-cards oda-names-cards-grid">
       {% for block in section.blocks %}
         {% if block.type == 'item' %}
-          <div class="card analysis-card" {{ block.shopify_attributes }}>
+          <div class="card analysis-card oda-names-feature-card" {{ block.shopify_attributes }}>
             <div class="card-content">
               <h3>{{ block.settings.title }}</h3>
               <p>{{ block.settings.text }}</p>
@@ -67,7 +64,7 @@
     btn.addEventListener('click', function () {
       var name = (input.value || '').trim();
       if (!name) {
-        alert('אנא הזן שם לפיענוח');
+        alert('אנא הזן שם לפענוח');
         return;
       }
       var raw = (msgWith || '').split('{name}').join(name);
@@ -79,13 +76,13 @@
 
 {% schema %}
 {
-  "name": "עמוד פיענוח שמות",
+  "name": "עמוד פענוח שמות",
   "settings": [
-    { "type": "text", "id": "hero_title", "default": "פִּעֲנוּחַ שֵׁמוֹת", "label": "כותרת" },
+    { "type": "text", "id": "hero_title", "default": "פענוח שמות", "label": "כותרת" },
     {
       "type": "text",
       "id": "hero_text",
-      "default": "גלו את המשמעות העמוקה הגלום בשמכם על פי חכמת הקבלה והגימטריה",
+      "default": "גלו את המשמעות העמוקה הגלומה בשמכם על פי חכמת הקבלה והגימטריה",
       "label": "טקסט גיבור"
     },
     { "type": "text", "id": "intro_title", "default": "הכוח של השם שלך", "label": "כותרת מבוא" },
@@ -104,18 +101,17 @@
     {
       "type": "text",
       "id": "form_title",
-      "default": "מעוניינים בפיענוח שם אישי ומעמיק?",
+      "default": "מעוניינים בפענוח שם אישי ומעמיק?",
       "label": "כותרת טופס"
     },
     {
       "type": "text",
       "id": "form_label",
-      "default": "השאירו פרטים ואחזור אליכם עם פיענוח מלא ומשמעותי",
+      "default": "השאירו פרטים ואחזור אליכם עם פענוח מלא ומשמעותי",
       "label": "תווית"
     },
     { "type": "text", "id": "form_placeholder", "default": "השם המלא שלך", "label": "Placeholder" },
     { "type": "text", "id": "form_btn", "default": "צרו קשר", "label": "טקסט כפתור" },
-    { "type": "text", "id": "comp_title", "default": "מרכיבי הפיענוח", "label": "כותרת כרטיסים" },
     {
       "type": "text",
       "id": "wa_phone",
@@ -127,9 +123,9 @@
       "type": "textarea",
       "id": "wa_msg_with_name",
       "label": "הודעת וואטסאפ כשהוזן שם",
-      "default": "שלום, אשמח לקבל פיענוח שם בתשלום של 100 שקלים, לשם: {name}",
+      "default": "שלום, אשמח לקבל פענוח שם בתשלום של 100 שקלים, לשם: {name}",
       "info": "חובה לכלול את המילה {name} — היא תוחלף בשם שהלקוח הזין."
-    },
+    }
   ],
   "blocks": [
     {
@@ -148,7 +144,7 @@
   ],
   "presets": [
     {
-      "name": "פיענוח שמות",
+      "name": "פענוח שמות",
       "blocks": [
         { "type": "item", "settings": { "title": "גימטריה", "text": "ערך מספרי של האותיות בשם, חושף את האנרגיה הכוללת והפוטנציאל הרוחני." } },
         { "type": "item", "settings": { "title": "משמעות האותיות", "text": "כל אות בשם נושאת אנרגיה ומשמעות ייחודית המשפיעה על האישיות והייעוד." } },

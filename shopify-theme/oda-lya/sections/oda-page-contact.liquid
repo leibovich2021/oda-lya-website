@@ -1,58 +1,63 @@
-<section class="hero contact-hero">
+<section
+  class="hero contact-hero oda-contact-hero{% if section.settings.hero_bg_image != blank %} oda-contact-hero--has-photo{% endif %}"
+  {% if section.settings.hero_bg_image != blank %}
+    style="--oda-contact-hero-photo: url('{{ section.settings.hero_bg_image | image_url: width: 2400 }}');"
+  {% endif %}
+>
   <div class="container">
-    <div class="hero-content">
+    <div class="hero-content oda-contact-hero__panel">
       <h1>{{ section.settings.hero_title }}</h1>
-      <div class="intro-separator contact-separator"></div>
+      <div class="intro-separator contact-separator oda-contact-hero__rule"></div>
       <p class="contact-hero-text">{{ section.settings.hero_text }}</p>
     </div>
   </div>
 </section>
 
-<section id="contact-info" class="contact-info-section">
+<section id="contact-form-section" class="contact-form-enhanced oda-contact-wa">
   <div class="container">
-    <div class="section-title">
-      <h2>{{ section.settings.cards_title }}</h2>
+    <div class="section-title oda-contact-wa__title">
+      <h2>{{ section.settings.form_title }}</h2>
     </div>
-    <div class="cards contact-cards">
-      <div class="card contact-info-card">
-        <div class="card-content">
-          <h3>{{ section.settings.c1_title }}</h3>
-          <div class="contact-separator-mini"></div>
-          <p class="contact-data">{{ section.settings.c1_main }}</p>
-          <p>{{ section.settings.c1_extra }}</p>
-        </div>
+    <div class="form-wrapper oda-contact-wa__panel">
+      <div class="form-intro">
+        <p>{{ section.settings.form_intro }}</p>
       </div>
-      <div class="card contact-info-card">
-        <div class="card-content">
-          <h3>{{ section.settings.c2_title }}</h3>
-          <div class="contact-separator-mini"></div>
-          <p class="contact-data">{{ section.settings.c2_main }}</p>
-          <p>{{ section.settings.c2_extra }}</p>
-        </div>
-      </div>
-      <div class="card contact-info-card">
-        <div class="card-content">
-          <h3>{{ section.settings.c3_title }}</h3>
-          <div class="contact-separator-mini"></div>
-          <p class="contact-data">{{ section.settings.c3_main }}</p>
-          <p>{{ section.settings.c3_extra }}</p>
-        </div>
+      <div class="whatsapp-contact">
+        <a href="{{ section.settings.wa_url }}" class="btn whatsapp-btn oda-contact-wa__btn" target="_blank" rel="noopener">{{ section.settings.wa_label }}</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact-form-section" class="contact-form-enhanced">
+<section id="contact-info" class="contact-info-section oda-contact-strip">
   <div class="container">
-    <div class="section-title">
-      <h2>{{ section.settings.form_title }}</h2>
+    <div class="section-title oda-contact-strip__title">
+      <h2>{{ section.settings.cards_title }}</h2>
     </div>
-    <div class="form-wrapper">
-      <div class="form-intro">
-        <p>{{ section.settings.form_intro }}</p>
+    <div class="cards contact-cards oda-contact-cards">
+      <div class="card contact-info-card oda-contact-card">
+        <div class="card-content">
+          <h3 class="oda-contact-card__label">{{ section.settings.c1_title }}</h3>
+          <div class="contact-separator-mini oda-contact-card__rule"></div>
+          <p class="contact-data oda-contact-card__value">{{ section.settings.c1_main }}</p>
+          <p class="oda-contact-card__meta">{{ section.settings.c1_extra }}</p>
+        </div>
       </div>
-      <div class="whatsapp-contact">
-        <a href="{{ section.settings.wa_url }}" class="btn whatsapp-btn" target="_blank" rel="noopener">{{ section.settings.wa_label }}</a>
+      <div class="card contact-info-card oda-contact-card">
+        <div class="card-content">
+          <h3 class="oda-contact-card__label">{{ section.settings.c2_title }}</h3>
+          <div class="contact-separator-mini oda-contact-card__rule"></div>
+          <p class="contact-data oda-contact-card__value">{{ section.settings.c2_main }}</p>
+          <p class="oda-contact-card__meta">{{ section.settings.c2_extra }}</p>
+        </div>
+      </div>
+      <div class="card contact-info-card oda-contact-card">
+        <div class="card-content">
+          <h3 class="oda-contact-card__label">{{ section.settings.c3_title }}</h3>
+          <div class="contact-separator-mini oda-contact-card__rule"></div>
+          <p class="contact-data oda-contact-card__value">{{ section.settings.c3_main }}</p>
+          <p class="oda-contact-card__meta">{{ section.settings.c3_extra }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +67,13 @@
 {
   "name": "עמוד צור קשר",
   "settings": [
-    { "type": "text", "id": "hero_title", "default": "צְרוּ קֶשֶׁר", "label": "כותרת" },
+    {
+      "type": "image_picker",
+      "id": "hero_bg_image",
+      "label": "תמונת רקע לגיבור (אופציונלי)",
+      "info": "אם לא תיבחר תמונה — יוצג רקע גרדיאנט יוקרתי. מומלץ תמונה רכה (למשל צמיד / אבנים)."
+    },
+    { "type": "text", "id": "hero_title", "default": "צרו קשר", "label": "כותרת" },
     {
       "type": "text",
       "id": "hero_text",

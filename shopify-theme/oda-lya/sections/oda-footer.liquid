@@ -1,55 +1,173 @@
-<footer>
-  {% liquid
-    assign url_crystals = '/pages/crystals'
-    if pages.crystals != blank
-      assign url_crystals = pages.crystals.url
+{% liquid
+  assign oda_lbl_terms = section.settings.terms_link_label | strip
+  if oda_lbl_terms == blank
+    assign oda_lbl_terms = 'תקנון ותנאי שימוש'
+  endif
+  assign oda_lbl_privacy = section.settings.privacy_link_label | strip
+  if oda_lbl_privacy == blank
+    assign oda_lbl_privacy = 'מדיניות פרטיות'
+  endif
+  assign oda_lbl_a11y = section.settings.a11y_link_label | strip
+  if oda_lbl_a11y == blank
+    assign oda_lbl_a11y = 'הצהרת נגישות'
+  endif
+
+  # חלונות: פוטר; אם ריק או טקסט ברירת מחדל — נפילה ל־Policies (הגדרות → מדיניות בחנות)
+  assign oda_terms_sec = section.settings.terms_body
+  assign oda_terms_def_snip = 'יש להחליף כאן את נוסח התקנון ותנאי השימוש המלאים בהתאם לעסק ולחנות. המסמך מוצג ללקוחות בחלון קופץ.'
+  assign oda_terms_is_placeholder = false
+  if oda_terms_sec != blank and oda_terms_sec contains oda_terms_def_snip
+    assign oda_terms_is_placeholder = true
+  endif
+  if shop.terms_of_service != blank and shop.terms_of_service.body != blank
+    if oda_terms_sec == blank or oda_terms_is_placeholder
+      assign oda_dlg_terms_title = shop.terms_of_service.title
+      assign oda_dlg_terms_body = shop.terms_of_service.body
+    else
+      assign oda_dlg_terms_title = section.settings.terms_title
+      assign oda_dlg_terms_body = oda_terms_sec
     endif
-    assign url_contact = '/pages/contact'
-    if pages.contact != blank
-      assign url_contact = pages.contact.url
+  else
+    assign oda_dlg_terms_title = section.settings.terms_title
+    assign oda_dlg_terms_body = oda_terms_sec
+  endif
+
+  assign oda_priv_sec = section.settings.privacy_body
+  assign oda_priv_def_snip = "יש להחליף כאן את מדיניות הפרטיות המלאה (איסוף נתונים, עוגיות, שימוש בפרטים וכו')."
+  assign oda_priv_is_placeholder = false
+  if oda_priv_sec != blank and oda_priv_sec contains oda_priv_def_snip
+    assign oda_priv_is_placeholder = true
+  endif
+  if shop.privacy_policy != blank and shop.privacy_policy.body != blank
+    if oda_priv_sec == blank or oda_priv_is_placeholder
+      assign oda_dlg_privacy_title = shop.privacy_policy.title
+      assign oda_dlg_privacy_body = shop.privacy_policy.body
+    else
+      assign oda_dlg_privacy_title = section.settings.privacy_title
+      assign oda_dlg_privacy_body = oda_priv_sec
     endif
-  %}
+  else
+    assign oda_dlg_privacy_title = section.settings.privacy_title
+    assign oda_dlg_privacy_body = oda_priv_sec
+  endif
+
+  assign oda_dlg_a11y_title = section.settings.a11y_title
+  assign oda_dlg_a11y_body = section.settings.a11y_body
+%}
+<footer class="oda-footer">
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-column">
-        <h3>שירותים</h3>
-        <ul>
-          <li><a href="{{ routes.root_url }}#services">טיפולים אישיים</a></li>
-          <li><a href="{{ url_contact }}">ייעוץ מקוון</a></li>
-          <li><a href="{{ url_crystals }}">מוצרי ריפוי</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>שעות פעילות</h3>
-        <ul>
-          <li>ראשון - חמישי: 9:00 - 19:00</li>
-          <li>יום ו': 9:00 - 13:00</li>
-          <li>שבת: סגור</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>צור קשר</h3>
-        <ul>
-          <li>טלפון: {{ section.settings.phone }}</li>
-          <li>אימייל: {{ section.settings.email }}</li>
-          <li>כתובת: {{ section.settings.address }}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.site_name }}. כל הזכויות שמורות.</p>
+    <nav class="oda-footer-legal" aria-label="מסמכים משפטיים ונגישות">
+      <button type="button" class="oda-legal-trigger" data-oda-legal-open="terms">{{ oda_lbl_terms }}</button>
+      <span class="oda-footer-legal__sep" aria-hidden="true">·</span>
+      <button type="button" class="oda-legal-trigger" data-oda-legal-open="privacy">{{ oda_lbl_privacy }}</button>
+      <span class="oda-footer-legal__sep" aria-hidden="true">·</span>
+      <button type="button" class="oda-legal-trigger" data-oda-legal-open="a11y">{{ oda_lbl_a11y }}</button>
+    </nav>
+
+    <div class="copyright copyright--solo">
+      <p class="copyright__main">© 2024 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
     </div>
   </div>
+
+  <dialog id="oda-legal-dialog-terms" class="oda-legal-dialog" aria-labelledby="oda-legal-dialog-terms-title">
+    <div class="oda-legal-dialog__inner">
+      <button type="button" class="oda-legal-dialog__close" data-oda-legal-close aria-label="סגירה">×</button>
+      <h2 id="oda-legal-dialog-terms-title" class="oda-legal-dialog__title">{{ section.settings.terms_title }}</h2>
+      <div class="oda-legal-dialog__body rte">{{ section.settings.terms_body }}</div>
+    </div>
+  </dialog>
+
+  <dialog id="oda-legal-dialog-privacy" class="oda-legal-dialog" aria-labelledby="oda-legal-dialog-privacy-title">
+    <div class="oda-legal-dialog__inner">
+      <button type="button" class="oda-legal-dialog__close" data-oda-legal-close aria-label="סגירה">×</button>
+      <h2 id="oda-legal-dialog-privacy-title" class="oda-legal-dialog__title">{{ oda_dlg_privacy_title }}</h2>
+      <div class="oda-legal-dialog__body rte">{{ oda_dlg_privacy_body }}</div>
+    </div>
+  </dialog>
+
+  <dialog id="oda-legal-dialog-a11y" class="oda-legal-dialog" aria-labelledby="oda-legal-dialog-a11y-title">
+    <div class="oda-legal-dialog__inner">
+      <button type="button" class="oda-legal-dialog__close" data-oda-legal-close aria-label="סגירה">×</button>
+      <h2 id="oda-legal-dialog-a11y-title" class="oda-legal-dialog__title">{{ oda_dlg_a11y_title }}</h2>
+      <div class="oda-legal-dialog__body rte">{{ oda_dlg_a11y_body }}</div>
+    </div>
+  </dialog>
 </footer>
 
 {% schema %}
 {
   "name": "פוטר",
   "settings": [
-    { "type": "text", "id": "site_name", "label": "שם באתר", "default": "לְהָאִיר אֶת הַחוֹשֶׁךְ" },
-    { "type": "text", "id": "phone", "label": "טלפון", "default": "053-3397827" },
-    { "type": "text", "id": "email", "label": "אימייל", "default": "odalyasite@gmail.com" },
-    { "type": "text", "id": "address", "label": "כתובת", "default": "חולון" }
+    {
+      "type": "header",
+      "content": "קישורים בשורת המסמכים"
+    },
+    {
+      "type": "text",
+      "id": "terms_link_label",
+      "label": "טקסט — תקנון",
+      "default": "תקנון ותנאי שימוש"
+    },
+    {
+      "type": "text",
+      "id": "privacy_link_label",
+      "label": "טקסט — פרטיות",
+      "default": "מדיניות פרטיות"
+    },
+    {
+      "type": "text",
+      "id": "a11y_link_label",
+      "label": "טקסט — נגישות",
+      "default": "הצהרת נגישות"
+    },
+    {
+      "type": "header",
+      "content": "תקנון ותנאי שימוש (חלון)"
+    },
+    {
+      "type": "text",
+      "id": "terms_title",
+      "label": "כותרת",
+      "default": "תקנון ותנאי שימוש"
+    },
+    {
+      "type": "richtext",
+      "id": "terms_body",
+      "label": "תוכן",
+      "default": "<p>יש להחליף כאן את נוסח התקנון ותנאי השימוש המלאים בהתאם לעסק ולחנות. המסמך מוצג ללקוחות בחלון קופץ.</p>"
+    },
+    {
+      "type": "header",
+      "content": "מדיניות פרטיות (חלון)"
+    },
+    {
+      "type": "text",
+      "id": "privacy_title",
+      "label": "כותרת",
+      "default": "מדיניות פרטיות"
+    },
+    {
+      "type": "richtext",
+      "id": "privacy_body",
+      "label": "תוכן",
+      "default": "<p>יש להחליף כאן את מדיניות הפרטיות המלאה (איסוף נתונים, עוגיות, שימוש בפרטים וכו').</p>"
+    },
+    {
+      "type": "header",
+      "content": "הצהרת נגישות (חלון)"
+    },
+    {
+      "type": "text",
+      "id": "a11y_title",
+      "label": "כותרת",
+      "default": "הצהרת נגישות"
+    },
+    {
+      "type": "richtext",
+      "id": "a11y_body",
+      "label": "תוכן",
+      "default": "<p>יש להחליף כאן את הצהרת הנגישות בהתאם לתקן הישראלי ולמצב האתר בפועל.</p>"
+    }
   ]
 }
 {% endschema %}

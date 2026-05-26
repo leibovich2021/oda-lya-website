@@ -22,19 +22,9 @@ section::after,
 #name-meaning,
 #name-analysis,
 #name-components {
-    padding: 4rem 0;
-}
-
-#name-meaning {
-    background: rgba(247, 238, 221, 0.75);
-}
-
-#name-analysis {
-    background: rgba(235, 230, 224, 0.85);
-}
-
-#name-components {
-    background: rgba(223, 212, 199, 0.55);
+    padding: clamp(1rem, 3vw, 2.5rem) 0;
+    background: transparent !important;
+    background-image: none !important;
 }
 
 .promo-banner {
@@ -2272,14 +2262,25 @@ nav {
     margin: 0 auto;
 }
 
-/* צמצום רווחים בעמוד index.html */
+/* מקטע הטיפולים — רקע עדין, כרטיסים נקיים */
 #services {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2.25rem !important;
+    background: linear-gradient(
+        180deg,
+        rgba(235, 230, 224, 0.4) 0%,
+        rgba(253, 251, 247, 0.97) 38%,
+        rgba(235, 230, 224, 0.32) 100%
+    ) !important;
 }
 
 #services .section-title {
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#services .section-title h2 {
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 #names {
@@ -2328,10 +2329,6 @@ nav {
     padding-bottom: 0.5rem !important;
 }
 
-#name-components .section-title {
-    margin-bottom: 0.25rem !important;
-}
-
 /* צמצום רווחים בעמוד about.html */
 #our-story {
     padding-top: 0.5rem !important;
@@ -2351,10 +2348,12 @@ nav {
     margin-bottom: 0.25rem !important;
 }
 
-/* צמצום רווחים בעמוד contact.html */
+/* עמוד צור קשר — אזור הכרטיסים ללא רקע (רקע = סרטון גלובלי) */
 #contact-info {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.875rem !important;
+    background: transparent !important;
+    background-image: none !important;
 }
 
 #contact-info .section-title {
@@ -2362,8 +2361,8 @@ nav {
 }
 
 #contact-form-section {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
 }
 
 #contact-form-section .section-title {
@@ -2389,7 +2388,7 @@ nav {
 
 #contact-form-section .form-intro {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 #contact-form-section .form-intro p {
@@ -2400,6 +2399,15 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#contact-form-section .btn.whatsapp-btn {
+    border-radius: 8px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.72rem 1.35rem;
 }
 
 /* כרטיסים */
@@ -2414,71 +2422,91 @@ section {
 }
 
 .services-tagline {
-    max-width: 780px;
-    margin: 0.75rem auto 2.5rem;
+    max-width: 42rem;
+    margin: 0.5rem auto 2rem;
     text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: rgba(68, 34, 25, 0.88);
+    font-size: clamp(0.95rem, 2.4vw, 1.06rem);
+    line-height: 1.75;
+    color: rgba(68, 34, 25, 0.78);
     font-weight: 500;
 }
 
 .services-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+@media (min-width: 1100px) {
+    .services-showcase {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.75rem;
+    }
 }
 
 .service-card {
     position: relative;
-    background: linear-gradient(180deg, #fffcf8 0%, #f3ebe4 100%);
-    border-radius: 10px;
-    padding: 2.25rem 2rem 2.5rem;
-    box-shadow: 0 18px 40px rgba(68, 34, 25, 0.08);
+    background: var(--surface-card);
+    border-radius: 14px;
+    padding: 1.75rem 1.6rem 1.65rem;
+    box-shadow:
+        0 1px 0 rgba(68, 34, 25, 0.05),
+        0 10px 28px rgba(68, 34, 25, 0.06);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-subtle);
+    gap: 1.2rem;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    border: 1px solid rgba(68, 34, 25, 0.1);
 }
 
 .service-card::before {
     content: "";
     position: absolute;
-    inset: -40px;
-    background: radial-gradient(circle at top right, rgba(255, 181, 3, 0.18), transparent 55%);
-    opacity: 0.9;
+    inset: 0;
+    background: linear-gradient(165deg, rgba(255, 181, 3, 0.07) 0%, transparent 45%);
     pointer-events: none;
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 26px 50px rgba(68, 34, 25, 0.12);
+    transform: translateY(-3px);
+    box-shadow:
+        0 1px 0 rgba(68, 34, 25, 0.07),
+        0 16px 36px rgba(68, 34, 25, 0.09);
+    border-color: rgba(68, 34, 25, 0.14);
 }
 
 .service-card-header {
     position: relative;
     z-index: 1;
-    text-align: center;
+    text-align: start;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.65rem;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(68, 34, 25, 0.08);
 }
 
 .service-card h3 {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
     margin: 0;
     color: var(--accent-color);
+    font-weight: 700;
+    line-height: 1.35;
 }
 
 .service-intro {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 0.98rem;
+    line-height: 1.75;
     margin: 0;
-    color: rgba(68, 34, 25, 0.88);
+    color: rgba(68, 34, 25, 0.82);
     font-weight: 500;
+    text-align: start;
 }
 
 .service-features {
@@ -2489,60 +2517,70 @@ section {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.65rem;
 }
 
 .service-features li {
     display: flex;
     align-items: flex-start;
-    gap: 0.55rem;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    color: rgba(68, 34, 25, 0.92);
+    gap: 0.5rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: rgba(68, 34, 25, 0.9);
     font-weight: 500;
+    text-align: start;
 }
 
 .service-features li span {
-    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background: rgba(110, 71, 54, 0.1);
+    color: rgba(68, 34, 25, 0.88);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.65rem;
     flex-shrink: 0;
-    margin-top: 0.1rem;
+    line-height: 1;
 }
 
 .service-cta {
     position: relative;
     z-index: 1;
-    align-self: center;
+    align-self: stretch;
     margin-top: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1.85rem;
-    border-radius: 0;
+    padding: 0.72rem 1.2rem;
+    border-radius: 8px;
     background: var(--ink);
     color: #fff;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 0.92rem;
+    text-transform: none;
     text-decoration: none;
     border: 1px solid var(--ink);
-    box-shadow: 0 10px 26px rgba(26, 27, 24, 0.14);
+    box-shadow: 0 6px 18px rgba(26, 27, 24, 0.12);
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .service-cta:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     background: var(--accent-color);
     border-color: var(--accent-color);
-    box-shadow: 0 14px 32px rgba(68, 34, 25, 0.2);
+    box-shadow: 0 10px 24px rgba(68, 34, 25, 0.18);
 }
 
 @media (max-width: 768px) {
     .services-tagline {
         font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.35rem;
         padding: 0 0.5rem;
     }
 
@@ -2551,19 +2589,19 @@ section {
     }
 
     .service-card {
-        padding: 1.5rem 1.2rem 1.8rem;
+        padding: 1.45rem 1.15rem 1.4rem;
     }
-    
+
     .service-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.22rem;
     }
-    
+
     .service-intro {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
     }
-    
+
     .service-features li {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
     }
 }
 
@@ -2578,6 +2616,22 @@ section {
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+#contact-info .contact-cards .card.contact-info-card {
+    border-radius: 14px;
+    border: 1px solid rgba(68, 34, 25, 0.1);
+    box-shadow:
+        0 1px 0 rgba(68, 34, 25, 0.05),
+        0 10px 28px rgba(68, 34, 25, 0.06);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+#contact-info .contact-cards .card.contact-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 1px 0 rgba(68, 34, 25, 0.07),
+        0 16px 36px rgba(68, 34, 25, 0.09);
 }
 
 .card-img {
@@ -2712,7 +2766,7 @@ section {
 /* קריסטלים - Grid קומפקטי עם hover */
 .crystal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     column-gap: 1rem;
     row-gap: 1rem;
     margin: 2rem 0;
@@ -2732,15 +2786,18 @@ section {
     flex-direction: column;
     transform: none !important;
     align-items: center;
+    min-width: 0;
+    max-width: 100%;
 }
 
 
 .crystal-grid .crystal-img {
-    width: fit-content;
+    width: 100%;
+    max-width: min(266px, 100%);
+    box-sizing: border-box;
     height: fit-content;
-    max-width: 100%;
     flex-shrink: 0;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
@@ -2770,14 +2827,14 @@ section {
 }
 
 .crystal-grid .crystal-img img {
-    width: 250px !important;
-    height: 250px !important;
-    min-width: 250px !important;
-    min-height: 250px !important;
-    max-width: 250px !important;
-    max-height: 250px !important;
-    object-fit: cover !important;
-    object-position: center !important;
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
     border-radius: 18px;
     display: block;
     user-select: none;
@@ -2792,13 +2849,11 @@ section {
 
 @media (max-width: 480px) {
     .crystal-grid .crystal-img {
-        width: 140px;
-        height: 140px;
+        max-width: 100%;
     }
-    
+
     .crystal-grid .crystal-img img {
-        width: 140px;
-        height: 140px;
+        max-width: 100%;
     }
     
     .gallery-image-simple {
@@ -2828,7 +2883,8 @@ section {
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 280px;
+    max-width: min(280px, 100%);
+    box-sizing: border-box;
 }
 
 .crystal-grid .crystal-name {
@@ -3772,23 +3828,21 @@ footer {
     }
     
     .crystal-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
     }
-    
+
     .crystal-grid .crystal-img {
-        width: 160px;
-        height: 160px;
+        max-width: 100%;
     }
-    
+
     .crystal-grid .crystal-img img {
-        width: 160px;
-        height: 160px;
+        max-width: 100%;
     }
-    
+
     .crystal-grid .crystal-info {
         padding: 0.6rem;
-        max-width: 180px;
+        max-width: 100%;
     }
     
     .crystal-grid .crystal-name {
@@ -4179,10 +4233,10 @@ footer {
         padding: 0.8rem 0 !important;
     }
     
-    .crystal-hero h1,
+    .crystal-hero:not(.oda-crystals-hero) h1,
     .about-hero h1,
-    .names-hero h1,
-    .contact-hero h1 {
+    .names-hero:not(.oda-names-hero) h1,
+    .contact-hero:not(.oda-contact-hero) h1 {
         font-size: 1.2rem !important;
     }
     
@@ -4223,4 +4277,882 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* עמוד צור קשר — עיצוב יוקרתי (Shopify + contact סטטי עם body.page-contact) */
+body.template-page-contact .oda-contact-hero,
+body.page-contact .oda-contact-hero {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(1.1rem, 3.5vw, 2.1rem) 0 clamp(1rem, 2.5vw, 1.55rem);
+    min-height: clamp(200px, 22vw, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse 100% 80% at 50% 120%, rgba(255, 181, 3, 0.12), transparent 52%),
+        radial-gradient(ellipse 70% 55% at 15% 25%, rgba(200, 165, 150, 0.18), transparent 50%),
+        radial-gradient(ellipse 60% 50% at 85% 30%, rgba(180, 140, 125, 0.12), transparent 48%),
+        linear-gradient(168deg, #fdfbf7 0%, #f3ebe4 42%, #e9e2da 100%);
+}
+
+body.template-page-contact .oda-contact-hero--has-photo::before,
+body.page-contact .oda-contact-hero--has-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--oda-contact-hero-photo);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05);
+    transform: scale(1.02);
+    z-index: 0;
+}
+
+body.template-page-contact .oda-contact-hero--has-photo::after,
+body.page-contact .oda-contact-hero--has-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(253, 251, 247, 0.82) 0%,
+        rgba(253, 251, 247, 0.55) 38%,
+        rgba(240, 235, 228, 0.88) 100%
+    );
+}
+
+body.template-page-contact .oda-contact-hero .container,
+body.page-contact .oda-contact-hero .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+body.template-page-contact .oda-contact-hero__panel,
+body.page-contact .oda-contact-hero__panel {
+    max-width: min(100%, 34rem);
+    margin-inline: auto;
+    padding: clamp(0.85rem, 2.25vw, 1.2rem) clamp(0.7rem, 2vw, 1rem);
+    text-align: center;
+    background: rgba(255, 252, 248, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 28px 64px rgba(68, 34, 25, 0.1),
+        0 8px 24px rgba(68, 34, 25, 0.05);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+body.template-page-contact .oda-contact-hero__panel h1,
+body.page-contact .oda-contact-hero__panel h1 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.15rem, 5.5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+body.template-page-contact .oda-contact-hero__rule,
+body.page-contact .oda-contact-hero__rule {
+    width: min(12rem, 55%);
+    height: 2px;
+    margin: 0.5rem auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 181, 3, 0.85) 35%,
+        rgba(68, 34, 25, 0.35) 50%,
+        rgba(255, 181, 3, 0.85) 65%,
+        transparent
+    );
+    border: none;
+}
+
+body.template-page-contact .oda-contact-hero .contact-hero-text,
+body.page-contact .oda-contact-hero .contact-hero-text {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    line-height: 1.75;
+    color: rgba(68, 34, 25, 0.82);
+    font-weight: 500;
+    max-width: 28rem;
+    margin-inline: auto;
+}
+
+body.template-page-contact #contact-info.oda-contact-strip,
+body.page-contact #contact-info.oda-contact-strip {
+    padding-top: clamp(0.9rem, 2vw, 1.4rem) !important;
+    padding-bottom: clamp(0.9rem, 2vw, 1.4rem) !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+body.template-page-contact .oda-contact-strip__title h2,
+body.page-contact .oda-contact-strip__title h2 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 3.8vw, 2.1rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+}
+
+body.template-page-contact .oda-contact-strip__title,
+body.page-contact .oda-contact-strip__title {
+    margin-top: 0 !important;
+    margin-bottom: 0.35rem !important;
+}
+
+body.template-page-contact .oda-contact-wa__title,
+body.page-contact .oda-contact-wa__title {
+    margin-top: 0 !important;
+    margin-bottom: 0.35rem !important;
+}
+
+body.template-page-contact .oda-contact-cards,
+body.page-contact .oda-contact-cards {
+    gap: clamp(0.5rem, 1.25vw, 0.9rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+body.template-page-contact .oda-contact-card,
+body.page-contact .oda-contact-card {
+    position: relative;
+    background: linear-gradient(165deg, #fffefb 0%, #faf6f0 100%);
+    border-radius: 18px !important;
+    border: 1px solid rgba(68, 34, 25, 0.1) !important;
+    overflow: hidden;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 14px 36px rgba(68, 34, 25, 0.07) !important;
+}
+
+body.template-page-contact .oda-contact-card::before,
+body.page-contact .oda-contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 181, 3, 0.15), rgba(255, 181, 3, 0.75), rgba(110, 71, 54, 0.35));
+    opacity: 0.95;
+}
+
+body.template-page-contact .oda-contact-card:hover,
+body.page-contact .oda-contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 22px 48px rgba(68, 34, 25, 0.11) !important;
+}
+
+body.template-page-contact .oda-contact-card .card-content,
+body.page-contact .oda-contact-card .card-content {
+    padding: clamp(0.7rem, 1.75vw, 0.95rem) clamp(0.6rem, 1.5vw, 0.85rem);
+    text-align: center;
+}
+
+body.template-page-contact .oda-contact-card__label,
+body.page-contact .oda-contact-card__label {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.25rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+    color: var(--accent-color);
+}
+
+body.template-page-contact .oda-contact-card__rule,
+body.page-contact .oda-contact-card__rule {
+    width: 2.5rem;
+    height: 1px;
+    margin: 0.35rem auto 0.45rem;
+    background: linear-gradient(90deg, transparent, rgba(68, 34, 25, 0.35), transparent);
+}
+
+body.template-page-contact .oda-contact-card__value,
+body.page-contact .oda-contact-card__value {
+    font-size: clamp(1.02rem, 2.2vw, 1.15rem);
+    font-weight: 700 !important;
+    color: rgba(44, 22, 14, 0.95);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+body.template-page-contact .oda-contact-card__meta,
+body.page-contact .oda-contact-card__meta {
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+    font-weight: 500 !important;
+    color: rgba(68, 34, 25, 0.72) !important;
+    margin: 0;
+}
+
+body.template-page-contact #contact-form-section.oda-contact-wa,
+body.page-contact #contact-form-section.oda-contact-wa {
+    padding-top: clamp(0.75rem, 2vw, 1.25rem) !important;
+    padding-bottom: clamp(1rem, 2.5vw, 1.65rem) !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+body.template-page-contact .oda-contact-wa__title h2,
+body.page-contact .oda-contact-wa__title h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.55rem, 3.5vw, 2rem);
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+body.template-page-contact .oda-contact-wa__panel,
+body.page-contact .oda-contact-wa__panel {
+    max-width: 28rem;
+    padding: clamp(0.75rem, 2vw, 1.1rem) clamp(0.65rem, 1.75vw, 0.95rem);
+    background: rgba(255, 252, 248, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(68, 34, 25, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+body.template-page-contact .oda-contact-wa__panel .form-intro,
+body.page-contact .oda-contact-wa__panel .form-intro {
+    margin-bottom: 0.62rem;
+}
+
+body.template-page-contact .oda-contact-wa__panel .form-intro p,
+body.page-contact .oda-contact-wa__panel .form-intro p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(68, 34, 25, 0.78);
+}
+
+body.template-page-contact .oda-contact-wa__btn,
+body.page-contact .oda-contact-wa__btn {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.98rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(26, 27, 24, 0.92) !important;
+    background: linear-gradient(165deg, #2a2420 0%, #1a1b18 55%, #151614 100%) !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.12) inset,
+        0 12px 28px rgba(26, 27, 24, 0.25) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+
+body.template-page-contact .oda-contact-wa__btn:hover,
+body.page-contact .oda-contact-wa__btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 181, 3, 0.45) !important;
+    background: linear-gradient(165deg, #4a3028 0%, #2c1810 100%) !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.15) inset,
+        0 16px 36px rgba(68, 34, 25, 0.28) !important;
+}
+
+@media (max-width: 768px) {
+    body.template-page-contact .oda-contact-hero__panel h1,
+    body.page-contact .oda-contact-hero__panel h1 {
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+    }
+}
+
+/* עמוד פענוח שמות — יוקרתי, ללא רצועות רקע על הסקשנים (רקע גלובלי) */
+body.template-page-names .oda-names-hero,
+body.page-names .oda-names-hero {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(1.1rem, 3.5vw, 2.1rem) 0 clamp(1rem, 2.5vw, 1.55rem);
+    min-height: clamp(200px, 22vw, 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse 100% 80% at 50% 120%, rgba(255, 181, 3, 0.1), transparent 52%),
+        radial-gradient(ellipse 70% 55% at 15% 25%, rgba(200, 165, 150, 0.16), transparent 50%),
+        radial-gradient(ellipse 60% 50% at 85% 30%, rgba(180, 140, 125, 0.1), transparent 48%),
+        linear-gradient(168deg, #fdfbf7 0%, #f3ebe4 42%, #e9e2da 100%);
+}
+
+body.template-page-names .oda-names-hero .container,
+body.page-names .oda-names-hero .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+
+body.template-page-names .oda-names-hero__panel,
+body.page-names .oda-names-hero__panel {
+    max-width: min(100%, 36rem);
+    margin-inline: auto;
+    padding: clamp(0.85rem, 2.25vw, 1.2rem) clamp(0.7rem, 2vw, 1rem);
+    text-align: center;
+    background: rgba(255, 252, 248, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 22px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 28px 64px rgba(68, 34, 25, 0.09),
+        0 8px 24px rgba(68, 34, 25, 0.05);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+body.template-page-names .oda-names-hero__panel h1,
+body.page-names .oda-names-hero__panel h1 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.05rem, 5.2vw, 2.85rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+body.template-page-names .oda-names-hero__rule,
+body.page-names .oda-names-hero__rule {
+    width: min(12rem, 55%);
+    height: 2px;
+    margin: 0.5rem auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 181, 3, 0.85) 35%,
+        rgba(68, 34, 25, 0.35) 50%,
+        rgba(255, 181, 3, 0.85) 65%,
+        transparent
+    );
+    border: none;
+}
+
+body.template-page-names .oda-names-hero .names-hero-text,
+body.page-names .oda-names-hero .names-hero-text {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    line-height: 1.75;
+    color: rgba(68, 34, 25, 0.82);
+    font-weight: 500;
+    max-width: 30rem;
+    margin-inline: auto;
+}
+
+body.template-page-names #name-meaning,
+body.template-page-names #name-analysis,
+body.template-page-names #name-components,
+body.page-names #name-meaning,
+body.page-names #name-analysis,
+body.page-names #name-components {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+body.template-page-names .oda-names-section-title h2,
+body.page-names .oda-names-section-title h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.55rem, 3.5vw, 2rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+body.template-page-names .oda-names-section-title,
+body.page-names .oda-names-section-title {
+    margin-bottom: 0.65rem !important;
+    text-align: center;
+}
+
+body.template-page-names .oda-names-glass,
+body.page-names .oda-names-glass {
+    max-width: min(100%, 40rem);
+    margin-inline: auto;
+    margin-bottom: 0.75rem !important;
+    padding: clamp(1rem, 2.5vw, 1.35rem) clamp(0.85rem, 2.2vw, 1.15rem);
+    background: rgba(255, 252, 248, 0.38) !important;
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+    border-radius: 20px !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.85) inset,
+        0 20px 48px rgba(68, 34, 25, 0.07) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    font-weight: 500 !important;
+    line-height: 1.8;
+    color: rgba(44, 22, 14, 0.92);
+}
+
+body.template-page-names .oda-names-glass p,
+body.page-names .oda-names-glass p {
+    font-weight: 500 !important;
+    margin-bottom: 0.75rem;
+}
+
+body.template-page-names .oda-names-glass .names-quote blockquote,
+body.page-names .oda-names-glass .names-quote blockquote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.02rem, 2.2vw, 1.15rem);
+    font-weight: 500;
+    color: rgba(68, 34, 25, 0.88);
+    margin: 0.5rem 0 0;
+    padding: 0.65rem 0.85rem;
+    border-inline-start: 3px solid rgba(255, 181, 3, 0.55);
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 0 12px 12px 0;
+}
+
+body.template-page-names .oda-names-glass .form-group label,
+body.page-names .oda-names-glass .form-group label {
+    font-weight: 600;
+    color: rgba(68, 34, 25, 0.88);
+    margin-bottom: 0.55rem;
+}
+
+body.template-page-names .oda-names-glass .form-group input,
+body.page-names .oda-names-glass .form-group input {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(68, 34, 25, 0.12);
+    border-radius: 10px;
+}
+
+body.template-page-names .oda-names-wa__btn,
+body.page-names .oda-names-wa__btn {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.98rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(26, 27, 24, 0.92) !important;
+    background: linear-gradient(165deg, #2a2420 0%, #1a1b18 55%, #151614 100%) !important;
+    color: #fff !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.12) inset,
+        0 12px 28px rgba(26, 27, 24, 0.25) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+
+body.template-page-names .oda-names-wa__btn:hover,
+body.page-names .oda-names-wa__btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 181, 3, 0.45) !important;
+    background: linear-gradient(165deg, #4a3028 0%, #2c1810 100%) !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.15) inset,
+        0 16px 36px rgba(68, 34, 25, 0.28) !important;
+}
+
+body.template-page-names .oda-names-cards-grid,
+body.page-names .oda-names-cards-grid {
+    gap: clamp(0.55rem, 1.35vw, 1rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    margin-top: 0.35rem;
+}
+
+body.template-page-names .oda-names-feature-card,
+body.page-names .oda-names-feature-card {
+    position: relative;
+    background: linear-gradient(165deg, rgba(255, 254, 251, 0.72) 0%, rgba(250, 246, 240, 0.55) 100%) !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(68, 34, 25, 0.1) !important;
+    overflow: hidden;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 14px 36px rgba(68, 34, 25, 0.06) !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+body.template-page-names .oda-names-feature-card::before,
+body.page-names .oda-names-feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 181, 3, 0.15), rgba(255, 181, 3, 0.7), rgba(110, 71, 54, 0.3));
+}
+
+body.template-page-names .oda-names-feature-card:hover,
+body.page-names .oda-names-feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 20px 44px rgba(68, 34, 25, 0.1) !important;
+}
+
+body.template-page-names .oda-names-feature-card .card-content,
+body.page-names .oda-names-feature-card .card-content {
+    padding: clamp(0.85rem, 2vw, 1.1rem) clamp(0.75rem, 1.8vw, 1rem);
+    text-align: center;
+}
+
+body.template-page-names .oda-names-feature-card h3,
+body.page-names .oda-names-feature-card h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.2rem, 2.6vw, 1.4rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0 0 0.4rem;
+}
+
+body.template-page-names .oda-names-feature-card p,
+body.page-names .oda-names-feature-card p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: rgba(68, 34, 25, 0.78);
+    font-weight: 500 !important;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    body.template-page-names .oda-names-hero__panel h1,
+    body.page-names .oda-names-hero__panel h1 {
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+    }
+}
+
+/* עמוד קריסטלים — יוקרתי, בלי רקע לבן על המבוא ועל רשת הסוגים */
+body.template-page-crystals .oda-crystals-hero,
+body.page-crystals .oda-crystals-hero {
+    position: relative;
+    isolation: isolate;
+    padding: clamp(0.55rem, 1.75vw, 1.05rem) 0 clamp(0.5rem, 1.25vw, 0.78rem);
+    min-height: clamp(100px, 11vw, 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse 85% 70% at 80% 20%, rgba(127, 158, 191, 0.14), transparent 50%),
+        radial-gradient(ellipse 100% 80% at 50% 120%, rgba(255, 181, 3, 0.1), transparent 52%),
+        radial-gradient(ellipse 70% 55% at 15% 25%, rgba(200, 165, 150, 0.16), transparent 50%),
+        linear-gradient(168deg, #fdfbf7 0%, #f0f4f8 38%, #ebe4dc 100%);
+}
+
+body.template-page-crystals .oda-crystals-hero .container,
+body.page-crystals .oda-crystals-hero .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+body.template-page-crystals .oda-crystals-hero__panel,
+body.page-crystals .oda-crystals-hero__panel {
+    max-width: min(100%, 36rem);
+    margin-inline: auto;
+    padding: clamp(0.45rem, 1.15vw, 0.62rem) clamp(0.4rem, 1vw, 0.55rem);
+    text-align: center;
+    background: rgba(255, 252, 248, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 22px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 28px 64px rgba(68, 34, 25, 0.09),
+        0 8px 24px rgba(68, 34, 25, 0.05);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+body.template-page-crystals .oda-crystals-hero__panel h1,
+body.page-crystals .oda-crystals-hero__panel h1 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.05rem, 5.2vw, 2.85rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+body.template-page-crystals .oda-crystals-hero__rule,
+body.page-crystals .oda-crystals-hero__rule {
+    width: min(12rem, 55%);
+    height: 2px;
+    margin: 0.25rem auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(127, 158, 191, 0.75) 30%,
+        rgba(255, 181, 3, 0.75) 50%,
+        rgba(127, 158, 191, 0.75) 70%,
+        transparent
+    );
+    border: none;
+}
+
+body.template-page-crystals .oda-crystals-hero .crystal-hero-text,
+body.page-crystals .oda-crystals-hero .crystal-hero-text {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    line-height: 1.75;
+    color: rgba(68, 34, 25, 0.82);
+    font-weight: 500;
+    max-width: 30rem;
+    margin-inline: auto;
+}
+
+body.template-page-crystals #crystal-therapy,
+body.template-page-crystals #crystal-types,
+body.template-page-crystals #crystal-benefits,
+body.template-page-crystals #contact-crystal,
+body.page-crystals #crystal-therapy,
+body.page-crystals #crystal-types,
+body.page-crystals #crystal-benefits,
+body.page-crystals #contact-crystal {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+body.template-page-crystals .oda-crystals-section-title h2,
+body.page-crystals .oda-crystals-section-title h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.55rem, 3.5vw, 2rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+body.template-page-crystals .oda-crystals-section-title,
+body.page-crystals .oda-crystals-section-title {
+    margin-bottom: 0.35rem !important;
+    text-align: center;
+}
+
+body.template-page-crystals .oda-crystals-glass,
+body.page-crystals .oda-crystals-glass {
+    max-width: min(100%, 42rem);
+    margin-inline: auto;
+    margin-bottom: 0.4rem !important;
+    padding: clamp(0.5rem, 1.25vw, 0.68rem) clamp(0.45rem, 1.1vw, 0.6rem);
+    background: rgba(255, 252, 248, 0.36) !important;
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+    border-radius: 20px !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.85) inset,
+        0 20px 48px rgba(68, 34, 25, 0.06) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    font-weight: 500 !important;
+    line-height: 1.8;
+    color: rgba(44, 22, 14, 0.94);
+}
+
+body.template-page-crystals .oda-crystals-glass p,
+body.page-crystals .oda-crystals-glass p {
+    font-weight: 500 !important;
+    margin-bottom: 0.4rem;
+}
+
+body.template-page-crystals .oda-crystals-glass .crystal-quote blockquote,
+body.page-crystals .oda-crystals-glass .crystal-quote blockquote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.02rem, 2.2vw, 1.12rem);
+    font-weight: 500;
+    color: rgba(68, 34, 25, 0.9);
+    margin: 0.25rem 0 0;
+    padding: 0.35rem 0.45rem;
+    border-inline-start: 3px solid rgba(127, 158, 191, 0.55);
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 0 12px 12px 0;
+}
+
+body.template-page-crystals #crystal-benefits .oda-crystals-benefits-grid,
+body.page-crystals #crystal-benefits .oda-crystals-benefits-grid {
+    gap: clamp(0.35rem, 0.9vw, 0.55rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    justify-items: stretch;
+    max-width: min(100%, 72rem);
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+body.template-page-crystals .oda-crystals-benefit-card,
+body.page-crystals .oda-crystals-benefit-card {
+    position: relative;
+    max-width: none !important;
+    width: 100% !important;
+    min-width: 0;
+    padding: clamp(0.45rem, 1vw, 0.58rem) clamp(0.4rem, 0.9vw, 0.52rem) !important;
+    background: linear-gradient(165deg, rgba(255, 254, 251, 0.68) 0%, rgba(248, 252, 255, 0.45) 100%) !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(68, 34, 25, 0.09) !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9) inset,
+        0 14px 36px rgba(68, 34, 25, 0.06) !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+body.template-page-crystals .oda-crystals-benefit-card::before,
+body.page-crystals .oda-crystals-benefit-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(90deg, rgba(127, 158, 191, 0.2), rgba(255, 181, 3, 0.65), rgba(127, 158, 191, 0.35));
+}
+
+body.template-page-crystals .oda-crystals-benefit-card:hover,
+body.page-crystals .oda-crystals-benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 20px 44px rgba(68, 34, 25, 0.1) !important;
+}
+
+body.template-page-crystals .oda-crystals-benefit-card .benefit-icon i,
+body.page-crystals .oda-crystals-benefit-card .benefit-icon i {
+    color: rgba(68, 34, 25, 0.88);
+    opacity: 0.95;
+}
+
+body.template-page-crystals .oda-crystals-benefit-card h3,
+body.page-crystals .oda-crystals-benefit-card h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+body.template-page-crystals .oda-crystals-benefit-card p,
+body.page-crystals .oda-crystals-benefit-card p {
+    color: rgba(68, 34, 25, 0.78);
+    line-height: 1.65;
+}
+
+body.template-page-crystals .oda-crystals-cta__panel,
+body.page-crystals .oda-crystals-cta__panel {
+    max-width: min(100%, 32rem);
+    margin-inline: auto;
+    padding: clamp(0.5rem, 1.25vw, 0.68rem) clamp(0.45rem, 1.1vw, 0.6rem);
+    background: rgba(255, 252, 248, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(68, 34, 25, 0.07);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+body.template-page-crystals .oda-crystals-cta__panel h2,
+body.page-crystals .oda-crystals-cta__panel h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.45rem, 3.2vw, 1.85rem);
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+body.template-page-crystals .oda-crystals-cta__panel p,
+body.page-crystals .oda-crystals-cta__panel p {
+    color: rgba(68, 34, 25, 0.8);
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+body.template-page-crystals .oda-crystals-cta__btn,
+body.page-crystals .oda-crystals-cta__btn {
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.98rem !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(26, 27, 24, 0.92) !important;
+    background: linear-gradient(165deg, #2a2420 0%, #1a1b18 55%, #151614 100%) !important;
+    color: #fff !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.12) inset,
+        0 12px 28px rgba(26, 27, 24, 0.25) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+
+body.template-page-crystals .oda-crystals-cta__btn:hover,
+body.page-crystals .oda-crystals-cta__btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 181, 3, 0.45) !important;
+    background: linear-gradient(165deg, #4a3028 0%, #2c1810 100%) !important;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.15) inset,
+        0 16px 36px rgba(68, 34, 25, 0.28) !important;
+}
+
+@media (max-width: 768px) {
+    body.template-page-crystals .oda-crystals-hero__panel h1,
+    body.page-crystals .oda-crystals-hero__panel h1 {
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+    }
+}
+
+/* עמוד קריסטלים — חצי ריווח אנכי בין מקטעים (מול section / grid ברירת מחדל) */
+body.template-page-crystals #MainContent section,
+body.page-crystals > section {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+body.template-page-crystals #crystal-therapy,
+body.page-crystals #crystal-therapy {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+body.template-page-crystals #crystal-types,
+body.page-crystals #crystal-types {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+body.template-page-crystals #crystal-benefits,
+body.page-crystals #crystal-benefits {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+body.template-page-crystals #contact-crystal,
+body.page-crystals #contact-crystal {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+}
+
+body.template-page-crystals #MainContent .crystal-grid,
+body.page-crystals .crystal-grid {
+    margin: 1rem 0 !important;
+    padding: 1rem 0 !important;
+}
+
+body.template-page-crystals #crystal-types .crystal-grid,
+body.page-crystals #crystal-types .crystal-grid {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+@media (max-width: 768px) {
+    body.template-page-crystals #MainContent section,
+    body.page-crystals > section {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    body.template-page-crystals #crystal-therapy,
+    body.page-crystals #crystal-therapy,
+    body.template-page-crystals #crystal-types,
+    body.page-crystals #crystal-types {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
 }

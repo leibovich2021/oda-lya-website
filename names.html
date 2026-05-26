@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פיענוח שמות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <title>פענוח שמות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="page-names">
     <header>
         <div class="container">
             <nav> 
@@ -24,23 +25,22 @@
         </div>
     </header>
 
-    <section class="hero names-hero">
+    <section class="hero names-hero oda-names-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>פִּעֲנוּחַ שֵׁמוֹת</h1>
-                <div class="intro-separator names-separator"></div>
-                <p class="names-hero-text">גלו את המשמעות העמוקה הגלום בשמכם על פי חכמת הקבלה והגימטריה</p>
+            <div class="hero-content oda-names-hero__panel">
+                <h1>פענוח שמות</h1>
+                <div class="intro-separator names-separator oda-names-hero__rule"></div>
+                <p class="names-hero-text">גלו את המשמעות העמוקה הגלומה בשמכם על פי חכמת הקבלה והגימטריה</p>
             </div>
         </div>
     </section>
 
     <section id="name-meaning">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title oda-names-section-title">
                 <h2>הכוח של השם שלך</h2>
             </div>
-            <div class="content-box names-intro-box">
-              
+            <div class="content-box names-intro-box oda-names-glass">
                 <p>לפי המסורת היהודית והקבלה, השם שלנו אינו רק זיהוי אלא נושא בתוכו את מהות הנשמה, הייעוד והפוטנציאל הגלום בנו. באמצעות חכמת הגימטריה והפירוש העמוק של האותיות, אנו יכולים לחשוף תובנות משמעותיות על האישיות, החוזקות, האתגרים והייעוד הרוחני של האדם.</p>
                 <div class="names-quote">
                     <blockquote>
@@ -53,41 +53,35 @@
 
     <section id="name-analysis" class="names-analysis-section">
         <div class="container">
-            <div class="section-title">
-                <h2>מעוניינים בפיענוח שם אישי ומעמיק?</h2>
+            <div class="section-title oda-names-section-title">
+                <h2>מעוניינים בפענוח שם אישי ומעמיק?</h2>
             </div>
-            <div class="name-form analysis-form">
+            <div class="name-form analysis-form oda-names-glass">
                 <div class="form-group">
-                    <label for="name">השאירו פרטים ואחזור אליכם עם פיענוח מלא ומשמעותי</label>
-                    <input type="text" id="name" placeholder="השם המלא שלך">
+                    <label for="name">השאירו פרטים ואחזור אליכם עם פענוח מלא ומשמעותי</label>
+                    <input type="text" id="name" placeholder="השם המלא שלך" autocomplete="name">
                 </div>
-                <button class="btn name-analysis-btn" id="analyze-name-btn">צרו קשר</button>
+                <button type="button" class="btn name-analysis-btn oda-names-wa__btn" id="analyze-name-btn">צרו קשר</button>
             </div>
         </div>
     </section>
 
-    <section id="name-components" class="components-section">
+    <section id="name-components" class="components-section oda-names-components">
         <div class="container">
-            <div class="section-title">
-                <h2>מרכיבי הפיענוח</h2>
-            </div>
-            <div class="cards analysis-cards">
-                <div class="card analysis-card">
-                    
+            <div class="cards analysis-cards oda-names-cards-grid">
+                <div class="card analysis-card oda-names-feature-card">
                     <div class="card-content">
                         <h3>גימטריה</h3>
                         <p>ערך מספרי של האותיות בשם, חושף את האנרגיה הכוללת והפוטנציאל הרוחני.</p>
                     </div>
                 </div>
-                <div class="card analysis-card">
-                    
+                <div class="card analysis-card oda-names-feature-card">
                     <div class="card-content">
                         <h3>משמעות האותיות</h3>
                         <p>כל אות בשם נושאת אנרגיה ומשמעות ייחודית המשפיעה על האישיות והייעוד.</p>
                     </div>
                 </div>
-                <div class="card analysis-card">
-                    
+                <div class="card analysis-card oda-names-feature-card">
                     <div class="card-content">
                         <h3>ייעוד רוחני</h3>
                         <p>חיבור בין המשמעויות השונות מאפשר הבנה עמוקה של הייעוד הרוחני והמסע הנשמתי.</p>
@@ -148,22 +142,20 @@
             });
         });
 
-        // טיפול בכפתור פיענוח שם
         const analyzeBtn = document.getElementById('analyze-name-btn');
         if (analyzeBtn) {
             analyzeBtn.addEventListener('click', function() {
                 const nameInput = document.getElementById('name');
                 const name = nameInput ? nameInput.value.trim() : '';
-                
-                // מספר הטלפון
+                if (!name) {
+                    alert('אנא הזן שם לפענוח');
+                    return;
+                }
                 const phoneNumber = '972533397827';
-                // הודעה שתישלח עם השם שהוזן
-                const message = name ? `שלום, אשמח לקבל פיענוח שם בתשלום של 100 שקלים, לשם: ${name}` : 'שלום, אשמח לקבל מידע על פיענוח שמות';
-                // יצירת קישור וואטסאפ עם ההודעה
+                const message = `שלום, אשמח לקבל פענוח שם בתשלום של 100 שקלים, לשם: ${name}`;
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                // פתיחת וואטסאפ
-                window.open(whatsappLink, '_blank');
+                window.open(whatsappLink, '_blank', 'noopener,noreferrer');
             });
         }
     });

@@ -1,0 +1,21 @@
+{% if section.settings.message != blank %}
+  <div class="announcement-bar" role="region" aria-label="הודעה">
+    <div class="container announcement-bar__inner">
+      {{ section.settings.message }}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "פס הודעה",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "טקסט",
+      "default": "<p><strong>מטפלת הוליסטית</strong> - CBT , פענוח שמות לפי הקבלה וטיפול אנרגטי בקריסטלים</p>"
+    }
+  ]
+}
+{% endschema %}

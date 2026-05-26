@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>צור קשר - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Assistant:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="page-contact">
     <header>
         <div class="container">
             <nav>
@@ -25,67 +28,63 @@
         </div>
     </header>
 
-    <section class="hero contact-hero">
+    <section class="hero contact-hero oda-contact-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>צְרוּ קֶשֶׁר</h1>
-                <div class="intro-separator contact-separator"></div>
+            <div class="hero-content oda-contact-hero__panel">
+                <h1>צרו קשר</h1>
+                <div class="intro-separator contact-separator oda-contact-hero__rule"></div>
                 <p class="contact-hero-text">אנחנו כאן בשבילכם. פנו אלינו לקבלת מידע נוסף, קביעת פגישה או כל שאלה</p>
             </div>
         </div>
     </section>
 
-    <section id="contact-info" class="contact-info-section">
+    <section id="contact-form-section" class="contact-form-enhanced oda-contact-wa">
         <div class="container">
-            <div class="section-title">
-                <h2>דרכי התקשרות</h2>
+            <div class="section-title oda-contact-wa__title">
+                <h2>שלחו לנו הודעה</h2>
             </div>
-            <div class="cards contact-cards">
-                <div class="card contact-info-card">
-                
-                    <div class="card-content">
-                        <h3>טלפון</h3>
-                        <div class="contact-separator-mini"></div>
-                        <p class="contact-data">053-3397827</p>
-                        <p>ימים א'-ה': 9:00 - 19:00</p>
-                        <p>יום ו': 9:00 - 13:00</p>
-                    </div>
+            <div class="form-wrapper oda-contact-wa__panel">
+                <div class="form-intro">
+                    <p>לחצו על הכפתור כדי לשלוח הודעה ישירות בוואטסאפ</p>
                 </div>
-                <div class="card contact-info-card">
-                   
-                    <div class="card-content">
-                        <h3>אימייל</h3>
-                        <div class="contact-separator-mini"></div>
-                        <p class="contact-data">odalyasite@gmail.com</p>
-                        <p>אנו משתדלים להשיב לכל פניה בתוך 24 שעות.</p>
-                    </div>
-                </div>
-                <div class="card contact-info-card">
-                    
-                    <div class="card-content">
-                        <h3>כתובת</h3>
-                        <div class="contact-separator-mini"></div>
-                        <p class="contact-data">חולון</p>
-                        <p>אפשרות לטיפולים פרונטליים או מקוונים</p>
-                    </div>
+                <div class="whatsapp-contact">
+                    <a href="https://wa.me/972533397827?text=שלום,%20אשמח%20לקבל%20מידע%20נוסף" class="btn whatsapp-btn oda-contact-wa__btn">
+                        שלח הודעה בוואטסאפ
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact-form-section" class="contact-form-enhanced">
+    <section id="contact-info" class="contact-info-section oda-contact-strip">
         <div class="container">
-            <div class="section-title">
-                <h2>שלחו לנו הודעה</h2>
+            <div class="section-title oda-contact-strip__title">
+                <h2>דרכי התקשרות</h2>
             </div>
-            <div class="form-wrapper">
-                <div class="form-intro">
-                    <p>לחצו על הכפתור כדי לשלוח הודעה ישירות בוואטסאפ</p>
+            <div class="cards contact-cards oda-contact-cards">
+                <div class="card contact-info-card oda-contact-card">
+                    <div class="card-content">
+                        <h3 class="oda-contact-card__label">טלפון</h3>
+                        <div class="contact-separator-mini oda-contact-card__rule"></div>
+                        <p class="contact-data oda-contact-card__value">053-3397827</p>
+                        <p class="oda-contact-card__meta">ימים א'-ה': 9:00 - 19:00 | יום ו': 9:00 - 13:00</p>
+                    </div>
                 </div>
-                <div class="whatsapp-contact">
-                    <a href="https://wa.me/972533397827?text=שלום,%20אשמח%20לקבל%20מידע%20נוסף" class="btn whatsapp-btn">
-                        שלח הודעה בוואטסאפ
-                    </a>
+                <div class="card contact-info-card oda-contact-card">
+                    <div class="card-content">
+                        <h3 class="oda-contact-card__label">אימייל</h3>
+                        <div class="contact-separator-mini oda-contact-card__rule"></div>
+                        <p class="contact-data oda-contact-card__value">odalyasite@gmail.com</p>
+                        <p class="oda-contact-card__meta">אנו משתדלים להשיב לכל פניה בתוך 24 שעות.</p>
+                    </div>
+                </div>
+                <div class="card contact-info-card oda-contact-card">
+                    <div class="card-content">
+                        <h3 class="oda-contact-card__label">כתובת</h3>
+                        <div class="contact-separator-mini oda-contact-card__rule"></div>
+                        <p class="contact-data oda-contact-card__value">חולון</p>
+                        <p class="oda-contact-card__meta">אפשרות לטיפולים פרונטליים או מקוונים</p>
+                    </div>
                 </div>
             </div>
         </div>

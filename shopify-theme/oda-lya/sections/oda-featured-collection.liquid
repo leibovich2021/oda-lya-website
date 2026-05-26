@@ -8,7 +8,14 @@
   endif
 %}
 {% if collection != blank %}
-  <section class="jewelry-store page-width" aria-label="{{ section.settings.heading | escape }}">
+  {% liquid
+    assign oda_static_grid = section.settings.use_static_grid
+    assign oda_limit = section.settings.limit
+    if oda_static_grid and section.settings.show_all_products
+      assign oda_limit = 50
+    endif
+  %}
+  <section class="jewelry-store page-width{% if oda_static_grid %} jewelry-store--static-grid{% endif %}" aria-label="{{ section.settings.heading | escape }}">
     <div class="container">
       <h3 class="jewelry-store__section-title">
         {% if section.settings.title_link != blank %}
@@ -17,50 +24,96 @@
           <a href="{{ collection.url }}">{{ section.settings.heading }}</a>
         {% endif %}
       </h3>
-      <div class="jewelry-store__carousel">
-        <button type="button" class="jewelry-store__nav jewelry-store__nav--prev" aria-label="הקודם">‹</button>
-        <div class="jewelry-store__grid jewelry-store__grid--carousel js-store-carousel" role="list">
-          {% for product in collection.products limit: section.settings.limit %}
-            <article class="jewelry-store__item" role="listitem">
-              <div class="jewelry-store__media">
-                <a href="{{ product.url }}">
-                  {% if product.featured_image %}
-                    {{
-                      product.featured_image
-                      | image_url: width: 600
-                      | image_tag: class: 'jewelry-store__img', loading: 'lazy', alt: product.featured_image.alt
-                    }}
-                  {% endif %}
-                  <div class="jewelry-store__meta" aria-hidden="true">
-                    <span class="jewelry-store__price">{% render 'oda-money-ils', cents: product.price %}</span>
-                  </div>
-                </a>
-              </div>
-              <div class="jewelry-store__body">
-                <span class="jewelry-store__label">{{ product.title }}</span>
-                <div class="jewelry-store__actions">
-                  {% form 'product', product, class: 'oda-product-form' %}
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    <button type="submit" name="add" class="jewelry-store__add">הוספה לסל</button>
-                  {% endform %}
-                  {% comment %}
-                    לקניה: POST ל־/cart/add + return_to לסל — לא קישור /cart/variant:qty (נוטה לפתוח תשלום מהיר PayPal וכו').
-                    ללא name="add" על הכפתור — כדי שלא ייחשב כ־dynamic checkout.
-                  {% endcomment %}
-                  {% assign oda_go_cart_form_id = 'oda-go-cart-' | append: product.id %}
-                  {% form 'product', product, class: 'oda-go-cart-form', id: oda_go_cart_form_id %}
-                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                    <input type="hidden" name="quantity" value="1">
-                    <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
-                    <button type="submit" class="jewelry-store__details">לקניה</button>
-                  {% endform %}
+      {% if oda_static_grid %}
+        <div class="jewelry-store__static-grid-wrap">
+          <div class="jewelry-store__grid jewelry-store__grid--static" role="list">
+            {% for product in collection.products limit: oda_limit %}
+              <article class="jewelry-store__item" role="listitem">
+                <div class="jewelry-store__media">
+                  <a href="{{ product.url }}">
+                    {% if product.featured_image %}
+                      {{
+                        product.featured_image
+                        | image_url: width: 600
+                        | image_tag: class: 'jewelry-store__img', loading: 'lazy', alt: product.featured_image.alt
+                      }}
+                    {% endif %}
+                    <div class="jewelry-store__meta" aria-hidden="true">
+                      <span class="jewelry-store__price">{% render 'oda-money-ils', cents: product.price %}</span>
+                    </div>
+                  </a>
                 </div>
-              </div>
-            </article>
-          {% endfor %}
+                <div class="jewelry-store__body">
+                  <span class="jewelry-store__label">{{ product.title }}</span>
+                  <div class="jewelry-store__actions">
+                    {% form 'product', product, class: 'oda-product-form' %}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <button type="submit" name="add" class="jewelry-store__add">הוספה לסל</button>
+                    {% endform %}
+                    {% assign oda_go_cart_form_id = 'oda-go-cart-' | append: product.id %}
+                    {% form 'product', product, class: 'oda-go-cart-form', id: oda_go_cart_form_id %}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <input type="hidden" name="quantity" value="1">
+                      <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                      <button type="submit" class="jewelry-store__details">לקניה</button>
+                    {% endform %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
         </div>
-        <button type="button" class="jewelry-store__nav jewelry-store__nav--next" aria-label="הבא">›</button>
-      </div>
+        {% if section.settings.show_all_products and collection.all_products_count > oda_limit %}
+          <p class="jewelry-store__static-more">
+            <a href="{{ collection.url }}">לכל {{ collection.all_products_count }} המוצרים באוסף</a>
+          </p>
+        {% endif %}
+      {% else %}
+        <div class="jewelry-store__carousel">
+          <button type="button" class="jewelry-store__nav jewelry-store__nav--prev" aria-label="הקודם">‹</button>
+          <div class="jewelry-store__grid jewelry-store__grid--carousel js-store-carousel" role="list">
+            {% for product in collection.products limit: section.settings.limit %}
+              <article class="jewelry-store__item" role="listitem">
+                <div class="jewelry-store__media">
+                  <a href="{{ product.url }}">
+                    {% if product.featured_image %}
+                      {{
+                        product.featured_image
+                        | image_url: width: 600
+                        | image_tag: class: 'jewelry-store__img', loading: 'lazy', alt: product.featured_image.alt
+                      }}
+                    {% endif %}
+                    <div class="jewelry-store__meta" aria-hidden="true">
+                      <span class="jewelry-store__price">{% render 'oda-money-ils', cents: product.price %}</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="jewelry-store__body">
+                  <span class="jewelry-store__label">{{ product.title }}</span>
+                  <div class="jewelry-store__actions">
+                    {% form 'product', product, class: 'oda-product-form' %}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <button type="submit" name="add" class="jewelry-store__add">הוספה לסל</button>
+                    {% endform %}
+                    {% comment %}
+                      לקניה: POST ל־/cart/add + return_to לסל — לא קישור /cart/variant:qty (נוטה לפתוח תשלום מהיר PayPal וכו').
+                      ללא name="add" על הכפתור — כדי שלא ייחשב כ־dynamic checkout.
+                    {% endcomment %}
+                    {% assign oda_go_cart_form_id = 'oda-go-cart-' | append: product.id %}
+                    {% form 'product', product, class: 'oda-go-cart-form', id: oda_go_cart_form_id %}
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <input type="hidden" name="quantity" value="1">
+                      <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                      <button type="submit" class="jewelry-store__details">לקניה</button>
+                    {% endform %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+          <button type="button" class="jewelry-store__nav jewelry-store__nav--next" aria-label="הבא">›</button>
+        </div>
+      {% endif %}
     </div>
   </section>
 {% endif %}
@@ -72,6 +125,32 @@
   form.oda-go-cart-form .jewelry-store__details {
     font: inherit;
     cursor: pointer;
+  }
+
+  .jewelry-store__static-grid-wrap {
+    margin-top: 1.15rem;
+  }
+
+  .jewelry-store__grid--static {
+    margin-top: 0;
+  }
+
+  .jewelry-store__static-more {
+    margin: 0.85rem 0 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .jewelry-store__static-more a {
+    color: var(--accent-color, #5c3d2e);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .jewelry-store__static-more a:hover,
+  .jewelry-store__static-more a:focus-visible {
+    color: var(--secondary-color, #8b5a3c);
   }
 {% endstylesheet %}
 
@@ -89,7 +168,21 @@
       "info": "חובה בקובץ index.json — למשל taphtim, avne-crystal, misgarot"
     },
     { "type": "collection", "id": "collection", "label": "או בחר אוסף (בעורך התבנית)" },
-    { "type": "range", "id": "limit", "min": 4, "max": 24, "step": 1, "default": 12, "label": "מספר מוצרים" }
+    {
+      "type": "checkbox",
+      "id": "use_static_grid",
+      "label": "רשת סטטית (בלי קרוסלה)",
+      "default": false,
+      "info": "מתאים לעמוד «כל המוצרים»: כל הכרטיסים בשורות, בלי גלילה אוטומטית."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_all_products",
+      "label": "הצג עד 50 מוצרים (מקסימום בלייב)",
+      "default": false,
+      "info": "Shopify מגביל ל־50 מוצרים בטעינה אחת. אם יש יותר — יוצג קישור לדף האוסף."
+    },
+    { "type": "range", "id": "limit", "min": 4, "max": 50, "step": 1, "default": 12, "label": "מספר מוצרים (בקרוסלה או ברשת בלי «הצג עד 50»)" }
   ],
   "presets": [{ "name": "אוסף מוצרים" }]
 }

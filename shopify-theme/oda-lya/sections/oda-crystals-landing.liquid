@@ -1,19 +1,19 @@
-<section id="crystal-landing" class="hero crystal-hero">
+<section id="crystal-landing" class="hero crystal-hero oda-crystals-hero">
   <div class="container">
-    <div class="hero-content">
+    <div class="hero-content oda-crystals-hero__panel">
       <h1>{{ section.settings.hero_title }}</h1>
-      <div class="intro-separator crystal-separator"></div>
+      <div class="intro-separator crystal-separator oda-crystals-hero__rule"></div>
       <p class="crystal-hero-text">{{ section.settings.hero_text }}</p>
     </div>
   </div>
 </section>
 
-<section id="crystal-therapy">
+<section id="crystal-therapy" class="oda-crystals-therapy">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title oda-crystals-section-title">
       <h2>{{ section.settings.intro_title }}</h2>
     </div>
-    <div class="content-box crystal-intro-box">
+    <div class="content-box crystal-intro-box oda-crystals-glass">
       <p>{{ section.settings.intro_p1 }}</p>
       <div class="crystal-quote">
         <blockquote>{{ section.settings.intro_quote }}</blockquote>
@@ -22,24 +22,24 @@
   </div>
 </section>
 
-<section id="crystal-types" class="bg-light">
+<section id="crystal-types" class="oda-crystals-types">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title oda-crystals-section-title">
       <h2>{{ section.settings.grid_title }}</h2>
     </div>
     {% render 'crystals-grid-inner' %}
   </div>
 </section>
 
-<section id="crystal-benefits" class="benefit-section">
+<section id="crystal-benefits" class="benefit-section oda-crystals-benefits">
   <div class="container">
-    <div class="section-title">
+    <div class="section-title oda-crystals-section-title">
       <h2>{{ section.settings.benefits_title }}</h2>
     </div>
-    <div class="benefits-grid">
+    <div class="benefits-grid oda-crystals-benefits-grid">
       {% for block in section.blocks %}
         {% if block.type == 'benefit' %}
-          <div class="benefit-item" {{ block.shopify_attributes }}>
+          <div class="benefit-item oda-crystals-benefit-card" {{ block.shopify_attributes }}>
             <div class="benefit-icon"><i class="{{ block.settings.icon }}"></i></div>
             <h3>{{ block.settings.title }}</h3>
             <p>{{ block.settings.text }}</p>
@@ -50,12 +50,12 @@
   </div>
 </section>
 
-<section id="contact-crystal" class="contact-section-crystal">
+<section id="contact-crystal" class="contact-section-crystal oda-crystals-cta">
   <div class="container">
-    <div class="contact-crystal-content">
+    <div class="contact-crystal-content oda-crystals-cta__panel">
       <h2>{{ section.settings.cta_title }}</h2>
       <p>{{ section.settings.cta_text }}</p>
-      <a href="{{ section.settings.cta_url }}" class="btn contact-btn crystal-contact-btn">{{ section.settings.cta_label }}</a>
+      <a href="{{ section.settings.cta_url }}" class="btn contact-btn crystal-contact-btn oda-crystals-cta__btn">{{ section.settings.cta_label }}</a>
     </div>
   </div>
 </section>
