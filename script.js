@@ -213,6 +213,39 @@ function cartItemPriceNote(it) {
     return '';
 }
 
+const ORDER_SITE_ORIGIN = 'https://oda-lya.co.il';
+
+function absoluteProductImageUrl(image) {
+    const raw = String(image ?? '').trim();
+    if (!raw || /[\u0000-\u001F\u007F]/.test(raw)) return '';
+    // Relative product paths are resolved on the shop. Reject non-http schemes.
+    if (/^[a-z][a-z0-9+.-]*:/i.test(raw) && !/^https?:/i.test(raw)) return '';
+
+    let url;
+    try {
+        url = new URL(raw, ORDER_SITE_ORIGIN + '/');
+    } catch {
+        return '';
+    }
+
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return '';
+    if (url.username || url.password) return '';
+
+    const isAbsolute = /^https?:\/\//i.test(raw) || raw.startsWith('//');
+    if (!isAbsolute && url.origin !== ORDER_SITE_ORIGIN) return '';
+
+    const host = url.hostname.toLowerCase();
+    if (host === 'oda-lya.co.il' || host === 'www.oda-lya.co.il') {
+        url.protocol = 'https:';
+        url.hostname = 'oda-lya.co.il';
+    }
+
+    if (!url.pathname || url.pathname === '/') return '';
+
+    // Apostrophes break some chat link detectors (Tiger's-Eye.png).
+    return url.href.replace(/'/g, '%27');
+}
+
 function formatOrderForMessage(items) {
     const lines = items.map((it) => {
         const qty = Number(it.qty) || 1;
@@ -221,7 +254,11 @@ function formatOrderForMessage(items) {
         const note = (it.note || '').trim();
         const notePart = note ? ` | בקשה: ${note}` : '';
         const pricePart = quote || formatILS(price);
-        return `- ${it.name} ×${qty} (${pricePart})${notePart}`;
+        const sku = String(it.sku || '').replace(/[\u0000-\u001F\u007F]/g, '').trim();
+        const skuPart = sku ? ` | מק״ט: ${sku}` : '';
+        const imageUrl = absoluteProductImageUrl(it.image);
+        const imageLine = imageUrl ? `\n  תמונה: ${imageUrl}` : '';
+        return `- ${it.name} ×${qty} (${pricePart})${skuPart}${notePart}${imageLine}`;
     });
     return lines.join('\n');
 }
