@@ -1,15 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אודות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Assistant:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=sale41">
 </head>
-<body>
+<body class="page-about">
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <header>
         <div class="container">
             <nav>
@@ -18,67 +22,110 @@
                 <ul class="menu" id="navMenu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html">הזמנות</a></li>
-                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
-                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="crystals.html">חיבור לקריסטלים</a></li>
+                    <li><a href="names.html">פענוח שמות</a></li>
+                    <li><a href="frames.html">מסגרות עם פענוח</a></li>
                     <li><a href="about.html" class="active">אודות</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="contact.html" class="menu-contact">צור קשר</a></li>
                 </ul>
+                <a href="cart.html" class="header-cart" aria-label="סל קניות">
+                    <svg class="header-cart__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.2 4.8A1.5 1.5 0 0 0 3.7 3.5H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="header-cart__name">סל</span>
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <section class="hero about-hero">
-        <div class="container">
-           
-        </div>
-    </section>
-
-    <section id="our-story" class="story-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>הסיפור שלי</h2>
+    <main class="about-page">
+        <section class="about-hero-invite">
+            <div class="container">
+                <p class="about-kicker">✦ מטפלת הוליסטית ✦</p>
+                <h1>הסיפור שלי</h1>
+                <p class="about-lead">אני לְבָנָה אוֹדְהַלְיָה. מלווה במסע של איזון — בין חכמה עתיקה לכלים של היום, בין הגוף לנפש, בין השם לאבן.</p>
             </div>
-            <div class="about-content enhanced-about-content">
-                <div class="about-text">
-                    <div class="story-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>מי אני</h3>
-                    <p>לְהָאִיר אֶת הַחוֹשֶׁךְ נוסד מתוך אמונה עמוקה בכוחה של המסורת היהודית לריפוי הגוף והנפש. אני משלבת חכמה עתיקה עם שיטות מודרניות, כדי ללוות אותך במסע ריפוי אישי — עמוק, מדויק ומרגיע.</p>
-                    <p>הטיפול שלי מבוסס על שיטת הרב פנגר לניהול רגשות, ומשלב טכניקות מעולם ה-CBT, קואצ'ינג, דמיון מודרך, מיינדפולנס, ריפוי במגע יד ועבודה עם קריסטלים.</p>
-                    
-                    <div class="story-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>השיטה שלי</h3>
-                    <p>אני מאמינה שכל אדם יכול להגיע לאיזון ושלווה פנימית באמצעות עבודה נכונה עם הרגשות, המחשבות והאנרגיות. שיטת הריפוי שלי מתייחסת לכל האספקטים של האדם.</p>
+        </section>
+
+        <section class="about-stage" id="our-story">
+            <div class="container about-stage__grid">
+                <div class="about-story">
+                    <p>לְהָאִיר אֶת הַחוֹשֶׁךְ נולד מתוך אמונה עמוקה בכוחה של המסורת היהודית לאיזון הגוף והנפש. אני משלבת חכמה עתיקה עם כלים מודרניים, כדי ללוות אותך במסע אישי — עמוק, מדויק ומרגיע.</p>
+                    <p>הליווי שלי מחבר ניהול רגשות, CBT, קואצ'ינג, דמיון מודרך, מיינדפולנס ומגע יד — יחד עם עבודה בקריסטלים ופענוח שמות לפי הקבלה.</p>
+                    <p>אפשר להיפגש בחולון או בליווי מקוון. לצד הטיפול אני גם יוצרת תכשיטי קריסטלים, קיטים ומסגרות בעבודת יד — כל יצירה ממשיכה את אותו חיבור בין יופי, משמעות והקלה.</p>
+                    <blockquote>״נְשָׁמָה אַחַת מְאִירָה עוֹלָם שָׁלֵם״</blockquote>
                 </div>
-                <div class="about-img-container">
-                    <div class="about-img-frame">
-                        <img class="about-hero-image" src="your-image.jpg" alt="תמונה אישית" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'about-img-placeholder\'><i class=\'fas fa-user\'></i></div>';">
-                    </div>
-                    <div class="about-quote">
-                        <blockquote>
-                            "נְשָׁמָה אַחַת מְאִירָה עוֹלָם שָׁלֵם"
-                        </blockquote>
-                    </div>
+
+                <aside class="about-portrait" aria-label="לבנה אודהליה">
+                    <img class="about-portrait__img" src="image/levana.jpg" alt="לבנה אודהליה">
+                    <p class="about-portrait__name">לְבָנָה אוֹדְהַלְיָה</p>
+                    <p class="about-portrait__role">מטפלת הוליסטית · חולון</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="about-ways" id="about-ways">
+            <div class="container">
+                <h2 class="about-ways__title">איך אני מלווה</h2>
+                <p class="about-ways__lead">כל מפגש נבנה לפי מה שאת צריכה עכשיו — תהליך עומק, או חיבור בין כמה כלים יחד.</p>
+                <div class="about-ways__grid">
+                    <article class="about-way">
+                        <h3>טיפול וליווי</h3>
+                        <p>עבודה עם דפוסי חשיבה והתנהגות בגישת CBT, יחד עם קואצ'ינג, ניהול רגשות, מיינדפולנס ודמיון מודרך. המטרה היא שינוי מדויק שמרגישים בגוף ובתודעה — לא רק שיחה.</p>
+                    </article>
+                    <article class="about-way">
+                        <h3>חיבור לקריסטלים</h3>
+                        <p>בחירה אישית של אבנים לפי מה שאת צריכה עכשיו, עם הדרכה להמשך שימוש, טעינה וטיהור. הפירוט על סוגי האבנים נמצא בעמוד הקריסטלים.</p>
+                        <a class="about-way__link" href="crystals.html">לעמוד הקריסטלים</a>
+                    </article>
+                    <article class="about-way">
+                        <h3>פענוח שמות</h3>
+                        <p>השם נושא את שורש הנשמה. בפענוח לפי הקבלה קוראים את האותיות, את הגימטריה ואת תאריך הלידה — ומחזירים מסר אישי, יחד עם התאמת קריסטל.</p>
+                        <a class="about-way__link" href="names.html">לעמוד פענוח השמות</a>
+                    </article>
+                    <article class="about-way">
+                        <h3>יצירה בעבודת יד</h3>
+                        <p>שרשראות, צמידים, קיטים ומסגרות — כל פריט נבחר ומיוצר מתוך אותה שפה: אבן, כוונה ויופי שאפשר לקחת הביתה ולהמשיך איתו אחרי המפגש.</p>
+                        <a class="about-way__link" href="orders.html">לחנות ההזמנות</a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="about-deep" id="about-path">
+            <div class="container about-deep__grid">
+                <article class="about-deep__card">
+                    <h2>לחיצות לפי רפואת הסו־ג'וק</h2>
+                    <p>רפואת הסו־ג'וק רואה בידיים וברגליים מפה חיה של הגוף כולו. כל אזור, כל צ'קרה וכל מערכת — אפשר להגיע אליהם דרך נקודת לחיצה מדויקת. זו רפואה עדינה, ממוקדת, שעובדת בלי מילים מיותרות.</p>
+                    <p>השיטה שלי מחברת את הלחיצות האלה עם קריסטלים: האבן מונחת או נלחצת בנקודה שנבחרה, כדי לנקות חסימה, להרגיע מערכת מוצפת ולהחזיר זרימה. זו עבודה מקורית שצמחה מתוך הקליניקה — סו־ג'וק, צ'קרות וקריסטל באותו מגע.</p>
+                    <p>אחרי המפגש תקבלי גם הדרכה פשוטה: איך להמשיך בבית, איך לטעון ולטהר את האבנים, ואיך לשמור על מה שנפתח.</p>
+                </article>
+                <article class="about-deep__card">
+                    <h2>פענוח שמות לפי הקבלה</h2>
+                    <p>לפי המסורת היהודית, השם אינו תווית. הוא שער. האותיות נושאות כוח, המספרים חושפים תדר, ותאריך הלידה מחבר את הכל למסע האישי שלך.</p>
+                    <p>בפענוח אני קוראת את סוד האותיות ואת השילוב שלהן עם היום שבו נולדת — ומנסחת מסר כתוב, ברור ומרגיע. לא אוסף סמלים כללי, אלא מילים שמדברות אליך. כשיש צורך, מצטרפת גם אבן שמתאימה בדיוק למה שנפתח.</p>
+                    <p>אם את רוצה להתחיל משם, כל הפרטים וההזמנה נמצאים בעמוד הייעודי.</p>
+                    <a class="about-way__link" href="names.html">לעמוד פענוח השמות</a>
+                </article>
+            </div>
+        </section>
 
-
-
-
-
-
-
-
-
-    
-
-
+        <section class="about-close">
+            <div class="container">
+                <aside class="about-invite">
+                    <h2>אשמח להכיר</h2>
+                    <p>טיפול אישי, חיבור לקריסטלים, פענוח שם או יצירה בעבודת יד — אפשר לכתוב, ואבנה איתך את הצעד הבא.</p>
+                    <div class="about-invite__actions">
+                        <a class="contact-btn contact-btn--gold" href="https://wa.me/972533397827?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%9B%D7%99%D7%A8%20%D7%95%D7%9C%D7%AA%D7%90%D7%95%D7%9D%20%D7%9E%D7%A4%D7%92%D7%A9" target="_blank" rel="noopener noreferrer">וואטסאפ</a>
+                        <a class="contact-btn contact-btn--cream" href="contact.html">צור קשר</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -88,7 +135,7 @@
                     <ul>
                         <li><a href="index.html#services">טיפולים אישיים</a></li>
                         <li><a href="contact.html">ייעוץ מקוון</a></li>
-                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                        <li><a href="crystals.html">חיבור לקריסטלים</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -103,35 +150,25 @@
                     <h3>צור קשר</h3>
                     <ul>
                         <li>טלפון: 053-3397827</li>
-                        <li>אימייל: odalyasite@gmail.com</li>
                         <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>מידע משפטי</h3>
+                    <ul>
+                        <li><a href="terms.html">תקנון האתר</a></li>
+                        <li><a href="cancellation.html">ביטול עסקה</a></li>
+                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // סקריפט לתפריט המובייל
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        
-        menuToggle.addEventListener('click', function() {
-            menu.classList.toggle('active');
-        });
-        
-        // סגירת התפריט בלחיצה על קישור
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
-            });
-        });
-    });
-    </script>
+    <script src="script.js?v=sale29"></script>
 </body>
 </html>

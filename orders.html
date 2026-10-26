@@ -2,14 +2,18 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>פרטי הקריסטל שלך - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>הזמנות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="stylesheet" href="styles.css?v=sale41">
     <meta name="google-site-verification" content="Fzcmd_ZS1Lth-FvbekWtQxCaVpW6HbOkzIeiQZvx32w" />
 </head>
-<body>
+<body class="page-orders">
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <header>
         <div class="container">
             <nav>
@@ -18,210 +22,1035 @@
                 <ul class="menu" id="navMenu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html" class="active">הזמנות</a></li>
-                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
-                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="crystals.html">חיבור לקריסטלים</a></li>
+                    <li><a href="names.html">פענוח שמות</a></li>
+                    <li><a href="frames.html">מסגרות עם פענוח</a></li>
                     <li><a href="about.html">אודות</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="contact.html" class="menu-contact">צור קשר</a></li>
                 </ul>
+                <a href="cart.html" class="header-cart" aria-label="סל קניות">
+                    <svg class="header-cart__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.2 4.8A1.5 1.5 0 0 0 3.7 3.5H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="header-cart__name">סל</span>
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </a>
+            </nav>
+        </div>
+        <div class="orders-intro__panel">
+            <h1 class="sr-only">הזמנות</h1>
+            <nav class="orders-cats" aria-label="קטגוריות">
+                <a class="orders-cats__link" href="#cat-necklaces">שרשראות קריסטלים</a>
+                <a class="orders-cats__link" href="#cat-bracelets">צמידים</a>
+                <a class="orders-cats__link" href="#cat-sets">סט</a>
+                <a class="orders-cats__link" href="#cat-frames">פענוח שם</a>
+                <a class="orders-cats__link" href="#cat-kits">קיטים</a>
+                <a class="orders-cats__link" href="#cat-stones">אבני קריסטלים</a>
             </nav>
         </div>
     </header>
 
-    <section class="orders-hero">
-        <div class="container orders-hero-wrapper">
-            <div class="orders-hero-content">
-                <p class="orders-hero-kicker">מסגרות בהזמנה אישית</p>
-                <h1>מסגרת קריסטל שמספרת את הסיפור שלך</h1>
-                <p class="orders-hero-text">
-                    כל מסגרת נבנית בעבודת יד, עם פענוח אנרגטי מותאם אישית וקריסטלים שנבחרו בדיוק עבורך. זהו שי ייחודי לבית, לעסק או כמתנה משמעותית שממשיכה להאיר את הלב בכל יום.
-                </p>
-                <div class="orders-hero-actions">
-                    <a href="https://wa.me/972533397827?text=שלום,%20אני%20מעוניינת%20בהזמנה%20אישית%20של%20מסגרת%20קריסטל" class="btn secondary-btn">התחילי בהזמנת מסגרת</a>
-                    <a href="#orders-gallery" class="btn secondary-btn">להתרשמות מהעבודות</a>
-                </div>
-                <div class="orders-hero-highlights">
-                    <div class="orders-hero-highlight">
-                        <span class="orders-hero-highlight-icon">🎁</span>
-                        מארז מתנה מוכן להענקה
-                    </div>
-                    <div class="orders-hero-highlight">
-                        <span class="orders-hero-highlight-icon">✨</span>
-                        קריסטלים אנרגטיים איכותיים
-                    </div>
-                    <div class="orders-hero-highlight">
-                        <span class="orders-hero-highlight-icon">🪬</span>
-                        פענוח אישי על בסיס הקבלה
-                    </div>
-                </div>
-            </div>
-            <div class="orders-hero-media">
-                <div class="orders-hero-image">
-                    <div class="orders-hero-image-frame">
-                        <img src="image/gallery/frame5.png" alt="מסגרת קריסטל בעיצוב אישי">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- 
-    <section class="orders-section">
-        <div class="container orders-process-wrapper">
-            <div class="orders-section-title">
-                <h2>איך זה עובד?</h2>
-                <p>תהליך אישי ונעים שמתחיל בשיחת היכרות ומסתיים בפריט ייחודי שממשיך ללוות אותך.</p>
-            </div>
-            <div class="orders-process-steps">
-                <div class="orders-step">
-                    <div class="orders-step-number">01</div>
-                    <h3>שיחת היכרות והתאמה</h3>
-                    <p>נזהה יחד את הכוונה, האנרגיה והסיפור שהמסגרת אמורה להעביר, ונבחר את שילובי הצבעים.</p>
-                </div>
-                <div class="orders-step">
-                    <div class="orders-step-number">02</div>
-                    <h3>בחירת קריסטלים ופענוח</h3>
-                    <p>אני משלבת קריסטלים מתאימים ומנסחת עבורך מסר אנרגטי אישי, כולל פענוח שמות במידת הצורך.</p>
-                </div>
-                <div class="orders-step">
-                    <div class="orders-step-number">03</div>
-                    <h3>יצירה ומסירה</h3>
-                    <p>המסגרת נוצרת בעבודת יד, נארזת בקפידה ונשלחת אליך או ישירות לאדם שיקבל את המתנה.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="orders-section bg-light" id="orders-gallery">
+        <section class="orders-shop" aria-label="קטלוג מוצרים">
         <div class="container">
-            <div class="orders-section-title">
-                <h2>טעימה מהעבודות האחרונות</h2>
-                <p>כל מסגרת היא עולם ומלואו, עם קריסטלים שונים וסיפור ייחודי.</p>
-            </div>
-            <div class="simple-gallery">
-                <div class="gallery-item">
-                    <img src="image/gallery/frame5.png" alt="מסגרת בעיצוב אישי" class="gallery-image-simple gallery-image-contain">
+<article class="orders-shop__cat jewelry-store" id="cat-necklaces">
+                <header class="orders-shop__head">
+                    <h2>שרשראות קריסטלים</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="שרשראות קריסטלים">
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-10" data-name="GARNET & PEARL" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-pearl-amethyst.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-pearl-amethyst.jpg" alt="GARNET & PEARL" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">GARNET & PEARL</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">גארנט בגוון יין עמוק, פנינים טבעיות, נגיעות זהב ותליון רימון.</p>
+                                <p>הגארנט היא אחת מאבני החושן — אבן שמחזקת את הכוח הפנימי, האומץ והעוצמה האישית, ומחברת ליופי ולזוהר שכבר קיימים בנו.</p>
+                                <p>הפנינה מביאה איתה אנרגיה אחרת לגמרי: שלווה, זרימה, שקט פנימי ואיזון רגשי.</p>
+                                <p>וזה בדיוק מה שמיוחד בשילוב שלהן יחד — עוצמה שיש בה גם רכות.</p>
+                                <p class="jewelry-store__story-close">שרשרת נשית, עמוקה ומלאת נוכחות.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-11" data-name="TURQUOISE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-turquoise-chai.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-turquoise-chai.jpg" alt="TURQUOISE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TURQUOISE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">טורקיז בגוון תכלת שאי אפשר לפספס.</p>
+                                <p>אבן שמזוהה במיוחד עם הגנה, ומחוברת גם לביטוי עצמי, תקשורת, רוגע ואיזון.</p>
+                                <p>יש בה משהו שמצד אחד נותן תחושת שקט, ומצד שני מחזק את היכולת להביע את עצמנו בצורה ברורה ובטוחה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, צבע ומשמעות</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-12" data-name="JADE & TIGER EYE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-blue-tigereye.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-blue-tigereye.jpg" alt="JADE & TIGER EYE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">JADE & TIGER EYE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">ג׳ייד בגוון תכלת עדין בשילוב עין הנמר, נגיעות זהב ותליון דג.</p>
+                                <p>הג׳ייד מזוהה עם מזל, שפע, הרמוניה ואיזון, ונחשבת לאבן שמעודדת פתיחות להזדמנויות ולדברים טובים שנכנסים לחיים.</p>
+                                <p>עין הנמר מביאה איתה אנרגיה יותר חזקה ומקרקעת: ביטחון עצמי, אומץ, כוח רצון ויכולת להתקדם לעבר המטרות שלנו.</p>
+                                <p>והשילוב ביניהן הוא בדיוק הקסם של השרשרת הזאת — לפתוח את הדלת לשפע, אבל גם שיהיה בנו הביטחון ללכת ולקחת את ההזדמנויות שמגיעות אלינו.</p>
+                                <p class="jewelry-store__story-close">עדינה בצבעים שלה, אבל עם משמעות ממש חזקה.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-13" data-name="TURQUOISE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-turquoise-eye.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-turquoise-eye.jpg" alt="TURQUOISE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TURQUOISE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">טורקיז בגוון תכלת שאי אפשר לפספס.</p>
+                                <p>אבן שמזוהה במיוחד עם הגנה, ומחוברת גם לביטוי עצמי, תקשורת, רוגע ואיזון.</p>
+                                <p>יש בה משהו שמצד אחד נותן תחושת שקט, ומצד שני מחזק את היכולת להביע את עצמנו בצורה ברורה ובטוחה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, צבע ומשמעות</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-14" data-name="GARNET" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-amethyst-gold.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-amethyst-gold.jpg" alt="GARNET" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">GARNET</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">גארנט בגוון יין עמוק עם נגיעות זהב.</p>
+                                <p>אבן של עוצמה, ביטחון, תשוקה וכוח פנימי.</p>
+                                <p>מחזקת נחישות ואומץ ומחברת לאנרגיה של עשייה והגשמה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, אבל עדיין עדינה ומדויקת.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-15" data-name="RHODONITE" data-price="149" data-currency="ILS" data-image="image/j-cr/necklace-rhodonite.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-rhodonite.jpg" alt="RHODONITE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪149</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">RHODONITE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">רודונייט בגוונים טבעיים של ורוד ושחור, בחיתוך צ׳יפסים שמעניק לכל שרשרת מראה מיוחד וחד־פעמי.</p>
+                                <p>הרודונייט מזוהה עם אהבה עצמית, איזון רגשי וריפוי של הלב. היא מחזקת חמלה, עוזרת לשחרר משקעים מהעבר ומזכירה לנו לבחור בעצמנו גם מתוך רכות וגם מתוך עוצמה.</p>
+                                <p>יש בה שילוב מיוחד בין הוורוד העדין לנגיעות הכהות כמו תזכורת לכך שהלב שלנו יכול לעבור דרך כאב, להחלים ממנו ולהישאר פתוח לאהבה.</p>
+                                <p class="jewelry-store__story-close">שרשרת נשית, טבעית ומלאת עומק לכל מי שרוצה לשאת איתה תזכורת לאהוב את עצמה קצת יותר.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-16" data-name="GARNET" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-ruby.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-ruby.jpg" alt="GARNET" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">GARNET</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">גארנט בגוון יין עמוק עם נגיעות זהב.</p>
+                                <p>אבן של עוצמה, ביטחון, תשוקה וכוח פנימי.</p>
+                                <p>מחזקת נחישות ואומץ ומחברת לאנרגיה של עשייה והגשמה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, אבל עדיין עדינה ומדויקת.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-17" data-name="TURQUOISE" data-price="149" data-currency="ILS" data-image="image/j-cr/necklace-turquoise-chips.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-turquoise-chips.jpg" alt="TURQUOISE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪149</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TURQUOISE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">טורקיז בגוון תכלת שאי אפשר לפספס.</p>
+                                <p>אבן שמזוהה במיוחד עם הגנה, ומחוברת גם לביטוי עצמי, תקשורת, רוגע ואיזון.</p>
+                                <p>יש בה משהו שמצד אחד נותן תחושת שקט, ומצד שני מחזק את היכולת להביע את עצמנו בצורה ברורה ובטוחה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, צבע ומשמעות</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-18" data-name="CORAL &amp; GOLD" data-price="149" data-currency="ILS" data-image="image/j-cr/necklace-coral.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-coral.jpg" alt="CORAL &amp; GOLD" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪149</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">CORAL &amp; GOLD</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">קורל בגוון אדום עמוק בחיתוך צ׳יפסים, בשילוב צ׳יפסים מוזהבים שמוסיפים אור ונוכחות.</p>
+                                <p>הקורל מזוהה עם חיות, אומץ, תשוקה ושמחת חיים. יש בו אנרגיה שמחזקת את כוח הרצון ומזכירה לנו להתחבר לאש הפנימית שלנו לזוז, ליצור ולבחור בחיים מתוך ביטחון.</p>
+                                <p>נגיעות הזהב מכניסות לשרשרת זוהר וחמימות, ומדגישות את הגוון העשיר והמיוחד של הקורל.</p>
+                                <p class="jewelry-store__story-close">שרשרת נשית, מלאת חיים ונוכחות. כזאת שמכניסה צבע, אנרגיה וזוהר לכל מראה.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-19" data-name="GREEN JADE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-jade.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-jade.jpg" alt="GREEN JADE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">GREEN JADE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">ג׳ייד בגוון ירוק טבעי, רענן ומלא חיים.</p>
+                                <p>הג׳ייד מזוהה עם מזל, שפע, הרמוניה ואיזון. היא נחשבת לאבן שמעודדת פתיחות להזדמנויות חדשות ולדברים הטובים שמבקשים להיכנס לחיינו.</p>
+                                <p>יש בה אנרגיה רגועה ויציבה שמזכירה לנו ששפע לא תמיד מגיע ברעש. לפעמים הוא מתחיל דווקא כשאנחנו מרפות, סומכות ומאפשרות לעצמנו לקבל.</p>
+                                <p class="jewelry-store__story-close">שרשרת עדינה ומלאת נוכחות, שמכניסה איתה תחושה של התחדשות, צמיחה ושפע.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-20" data-name="TURQUOISE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-turquoise-chai-2.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-turquoise-chai-2.jpg" alt="TURQUOISE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TURQUOISE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">טורקיז בגוון תכלת שאי אפשר לפספס.</p>
+                                <p>אבן שמזוהה במיוחד עם הגנה, ומחוברת גם לביטוי עצמי, תקשורת, רוגע ואיזון.</p>
+                                <p>יש בה משהו שמצד אחד נותן תחושת שקט, ומצד שני מחזק את היכולת להביע את עצמנו בצורה ברורה ובטוחה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, צבע ומשמעות</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-21" data-name="BLUE JADE" data-price="179" data-currency="ILS" data-image="image/j-cr/necklace-blue-agate.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-blue-agate.jpg" alt="BLUE JADE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪179</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">BLUE JADE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">ג׳ייד בגוון תכלת עדין, בחרוזים חלקים שמעניקים לו מראה נקי, רגוע ומדויק.</p>
+                                <p>הג׳ייד מזוהה עם מזל, שפע, הרמוניה ואיזון. הוא נחשב לאבן שמעודדת פתיחות להזדמנויות חדשות ולדברים הטובים שנכנסים לחיינו.</p>
+                                <p>הגוון התכול מוסיף תחושה של שלווה, בהירות וזרימה. כמו תזכורת לסמוך על הדרך ולאפשר לדברים להגיע בזמן הנכון.</p>
+                                <p class="jewelry-store__story-close">תכשיט עדין ומלא משמעות, שמחבר בין שקט פנימי לאנרגיה של שפע והתחדשות.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-22" data-name="LARIMAR &amp; PEARL" data-price="149" data-currency="ILS" data-image="image/j-cr/necklace-aquamarine-pearls.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--bust" src="image/j-cr/necklace-aquamarine-pearls.jpg" alt="LARIMAR &amp; PEARL" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪149</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">LARIMAR &amp; PEARL</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">לרימר בגווני תכלת־ים בשילוב פנינים טבעיות ועדינות.</p>
+                                <p>הלרימר מזוהה עם רוגע, שלווה, תקשורת רכה וביטוי עצמי. יש בה אנרגיה שמזכירה את הים שקטה, זורמת ומאפשרת לנו לעצור, לנשום ולהקשיב לקול הפנימי שלנו.</p>
+                                <p>הפנינה מביאה איתה טוהר, איזון רגשי וחכמה נשית, ומוסיפה לשרשרת רכות קלאסית ועל־זמנית.</p>
+                                <p>והשילוב ביניהן מרגיש כמו ים שקט זרימה, עומק ורכות שמתחברים יחד בהרמוניה.</p>
+                                <p class="jewelry-store__story-close">שרשרת נשית, אלגנטית ומלאת שלווה, עם יופי עדין שאי אפשר להתעלם ממנו.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame4.png" alt="מסגרת בעבודת יד" class="gallery-image-simple">
+            </article>
+
+<article class="orders-shop__cat jewelry-store" id="cat-bracelets">
+                <header class="orders-shop__head">
+                    <h2>צמידים קריסטלים</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="צמידים קריסטלים">
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-01" data-name="GREEN JADE" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.55.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.55.jpeg" alt="GREEN JADE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">GREEN JADE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">ג׳ייד בגוון ירוק טבעי, רענן ומלא חיים.</p>
+                                <p>הג׳ייד הירוק נחשב לסמל של מזל, שפע ושגשוג. הוא מחזק גישה חיובית כלפי כסף והצלחה ומעודד לזהות אפשרויות לצמיחה גם במקומות שלא ראינו קודם.</p>
+                                <p>הצבע הירוק מחבר להתחדשות ולתהליכים שמבשילים בהדרגה — כמו זרע שנשתל ומקבל את הזמן להפוך לדבר גדול.</p>
+                                <p class="jewelry-store__story-close">צמיד של צמיחה מבורכת ושפע שמגיע ממקום יציב.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-02" data-name="OBSIDIAN" data-price="59" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%281%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%281%29.jpeg" alt="OBSIDIAN" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪59</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">OBSIDIAN</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד אובסידיאן שחורה בחיתוך צ׳יפסים טבעי, שמעניק לכל צמיד מראה עמוק וייחודי.</p>
+                                <p>האובסידיאן מזוהה עם הגנה, קרקוע, יציבות וכוח פנימי. היא נחשבת לאבן שעוזרת לשחרר אנרגיות שכבר אינן משרתות אותנו ולהתחבר לאמת הפנימית שלנו.</p>
+                                <p>יש בה אנרגיה חזקה שמזכירה לנו להציב גבולות, לעמוד יציבות במקום שלנו ולשמור על עצמנו גם מול רעשים והשפעות מבחוץ.</p>
+                                <p class="jewelry-store__story-close">צמיד עם נוכחות ועומק. להגנה, לחיזוק ולתחושת יציבות פנימית.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-03" data-name="TIGER EYE" data-price="59" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%283%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%283%29.jpeg" alt="TIGER EYE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪59</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TIGER EYE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד עין הנמר בחיתוך צ׳יפסים טבעי, בגוונים חמים של חום וזהב.</p>
+                                <p>עין הנמר מזוהה עם ביטחון עצמי, אומץ, כוח רצון וקרקוע. היא מעודדת אותנו לסמוך על היכולות שלנו, לקבל החלטות בביטחון ולהתקדם בנחישות לעבר המטרות שלנו.</p>
+                                <p>יש בה שילוב מיוחד בין יציבות לתנועה. להישאר מחוברות לעצמנו, אבל לא לפחד לעשות את הצעד הבא.</p>
+                                <p class="jewelry-store__story-close">צמיד עם נוכחות ואנרגיה חזקה, שמזכיר לנו כמה כוח כבר קיים בתוכנו.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-04" data-name="ROSE QUARTZ" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%284%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%284%29.jpeg" alt="ROSE QUARTZ" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">ROSE QUARTZ</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד רוז קוורץ בגוון ורוד עדין ורך.</p>
+                                <p>הרוז קוורץ מזוהה עם אהבה עצמית, חמלה, רכות ופתיחת הלב לאהבה. היא מזכירה לנו לעצור, להקשיב לעצמנו ולהעניק ללב את אותה אהבה שאנחנו נותנות לאחרים.</p>
+                                <p>יש בה אנרגיה נעימה ומרגיעה שמחברת לקבלה עצמית ולמערכות יחסים שמבוססות על רוך, כנות ואהבה.</p>
+                                <p class="jewelry-store__story-close">צמיד נשי ועדין, עם משמעות שמזכירה לנו שהאהבה מתחילה קודם כול בתוכנו.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-05" data-name="BLUE AGATE" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%285%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.56%20%285%29.jpeg" alt="BLUE AGATE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">BLUE AGATE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">שרשרת אגת כחולה בגוונים רכים ושקופים.</p>
+                                <p>האגת הכחולה מאפשרת לעבד מחשבות ורגשות בסבלנות, בלי למהר להגיב. היא מעודדת הקשבה עמוקה, בחירת מילים מדויקת ותקשורת שנשארת נעימה גם בשיחות מורכבות.</p>
+                                <p>זו אבן של קול שקול — לא שקט שנובע מפחד, אלא דיבור שמגיע לאחר מחשבה.</p>
+                                <p class="jewelry-store__story-close">שרשרת אלגנטית ונקייה, לאישה שיודעת שלמילים שלה יש כוח.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-06" data-name="OBSIDIAN &amp; AMAZONITE" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%281%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%281%29.jpeg" alt="OBSIDIAN &amp; AMAZONITE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">OBSIDIAN &amp; AMAZONITE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד לגבר בשילוב אובסידיאן שחורה ואמזונייט בגווני כחול־ירוק.</p>
+                                <p>האובסידיאן מזוהה עם הגנה, קרקוע, יציבות וכוח פנימי. היא מחזקת את היכולת להציב גבולות, להישאר ממוקדים ולעמוד בביטחון מול אתגרים.</p>
+                                <p>האמזונייט מביאה איתה אנרגיה רגועה ומאוזנת יותר, ומזוהה עם שלווה, תקשורת ברורה וביטוי עצמי.</p>
+                                <p>והשילוב ביניהן הוא בדיוק העוצמה של הצמיד הזה. כוח שיש בו שקט, יציבות לצד גמישות וביטחון שלא צריך להוכיח את עצמו.</p>
+                                <p class="jewelry-store__story-close">צמיד גברי, נקי ומלא נוכחות, עם שילוב צבעים עמוק ומדויק.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-07" data-name="OBSIDIAN &amp; TIGER EYE" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%282%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%282%29.jpeg" alt="OBSIDIAN &amp; TIGER EYE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">OBSIDIAN &amp; TIGER EYE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד לגבר בשילוב אובסידיאן שחורה ועין הנמר בגווני חום וזהב.</p>
+                                <p>האובסידיאן מסלקת רעשי רקע וחושפת את הדברים כפי שהם. עין הנמר לוקחת את הבהירות הזאת צעד קדימה ומתרגמת אותה להחלטה, התמדה וביצוע.</p>
+                                <p>זהו שילוב לגבר שפועל מתוך שיקול דעת — לא בפזיזות, אך גם לא נשאר במקום בגלל היסוס.</p>
+                                <p class="jewelry-store__story-close">צמיד חד, מרשים וממוקד מטרה.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-08" data-name="OBSIDIAN" data-price="79" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%283%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2015.32.57%20%283%29.jpeg" alt="OBSIDIAN" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">OBSIDIAN</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד אובסידיאן שחורה במראה עמוק ועוצמתי.</p>
+                                <p>האובסידיאן נוצרת מלבה געשית שהתקררה — מפגש בין אש חזקה לקרקע יציבה. היא מסייעת לחשוף דפוסים, הרגלים וקשרים שכבר אינם משרתים אותנו, ומעניקה כוח להשאיר אותם מאחור.</p>
+                                <p>זו אבן של אמת פנימית: לראות את הדברים כפי שהם, בלי להסתיר ובלי לייפות, ומתוך הבהירות הזאת לבחור מחדש.</p>
+                                <p class="jewelry-store__story-close">צמיד חד, נקי ומלא נוכחות למי שמוכנה לפנות מקום לשינוי אמיתי.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-23" data-name="CITRINE" data-price="99" data-currency="ILS" data-image="image/j-cr/bracelet-citrine.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/bracelet-citrine.jpg" alt="CITRINE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪99</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">CITRINE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד סיטרין בגוונים זהובים ומוארים.</p>
+                                <p>הסיטרין מכונה „אבן השפע” ומחוברת להצלחה, פרנסה והגשמת מטרות. היא מחזקת חשיבה חיובית ומעודדת אותנו להכיר ביכולות שלנו, להעז לבקש יותר ולהיות פתוחות לקבל את מה שמגיע אלינו.</p>
+                                <p>האנרגיה השמשית שלה מכניסה שמחה והתלהבות גם לימים שגרתיים ומעוררת רצון ליצור, להתפתח ולצמוח.</p>
+                                <p class="jewelry-store__story-close">צמיד מלא אור, שנועד להכניס לחיים תדר של שפע ואפשרויות חדשות.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-24" data-name="LAPIS LAZULI &amp; AQUAMARINE" data-price="99" data-currency="ILS" data-image="image/j-cr/bracelet-lapis-moonstone.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/bracelet-lapis-moonstone.jpg" alt="LAPIS LAZULI &amp; AQUAMARINE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪99</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">LAPIS LAZULI &amp; AQUAMARINE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">לאפיס לזולי בכחול עמוק בשילוב אקוומרין בגוון תכלת צלול.</p>
+                                <p>הלאפיס לזולי נחשבה עוד בעולם העתיק לאבן של חכמה, ידע ואמת. היא מעודדת התבוננות עמוקה והבנה של מה שנמצא מעבר לרושם הראשוני.</p>
+                                <p>האקוומרין מנקה ערפל ומביאה בהירות, במיוחד ברגעים של התלבטות או עומס מחשבתי.</p>
+                                <p>יחד הן מחברות בין העומק הדרוש כדי לשאול את השאלות הנכונות לבין הצלילות שמאפשרת למצוא את התשובה.</p>
+                                <p class="jewelry-store__story-close">שילוב כחול, אלגנטי ומלא חכמה לראש בהיר ולבחירות מדויקות.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-25" data-name="AMAZONITE" data-price="79" data-currency="ILS" data-image="image/j-cr/bracelet-aquamarine.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/bracelet-aquamarine.jpg" alt="AMAZONITE" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪79</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">AMAZONITE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד אמזונייט בגוונים טבעיים של טורקיז, ירוק ותכלת. שילוב צבעים שמזכיר מים, טבע וחופש.</p>
+                                <p>האמזונייט מכונה גם "אבן האמת", ומזוהה עם אותנטיות ועם האומץ להיות מי שאנחנו באמת. היא מזכירה לנו לא להקטין את עצמנו כדי להתאים לאחרים, להכיר ברצונות שלנו ולבחור במה שמרגיש נכון עבורנו.</p>
+                                <p>זה צמיד למי שרוצה ללכת בדרך שלה. ברכות, אבל בלי לוותר על עצמה.</p>
+                                <p class="jewelry-store__story-close">טבעי, מרענן ומלא אופי.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-26" data-name="LAPIS LAZULI" data-price="99" data-currency="ILS" data-image="image/j-cr/bracelet-lapis.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/bracelet-lapis.jpg" alt="LAPIS LAZULI" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪99</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">LAPIS LAZULI</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">לאפיס לזולי בגוון כחול עמוק, עם נגיעות טבעיות שמזכירות שמיים זרועי כוכבים.</p>
+                                <p>לאורך ההיסטוריה נחשבה הלאפיס לאבן של חכמה, ידע ואמת. היא מעודדת להעמיק מעבר למה שרואים מבחוץ, לסמוך על התובנות שלנו ולבחון מצבים מתוך ראייה רחבה ובוגרת.</p>
+                                <p>זו אבן לאישה שמבקשת להכיר את עצמה לעומק, להרחיב את התודעה ולפעול מתוך הבנה ולא מתוך דחף רגעי.</p>
+                                <p class="jewelry-store__story-close">תכשיט מלכותי ומלא מסתורין, עם כחול שאי אפשר להישאר אדישים אליו.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-27" data-name="CITRINE &amp; CARNELIAN" data-price="99" data-currency="ILS" data-image="image/j-cr/bracelet-garnet-citrine.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/bracelet-garnet-citrine.jpg" alt="CITRINE &amp; CARNELIAN" loading="lazy" decoding="async" width="600" height="800">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪99</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">CITRINE &amp; CARNELIAN</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">צמיד סיטרין וקרנליאן בגוונים חמים של צהוב, כתום ואדום.</p>
+                                <p>הסיטרין מכונה „אבן השפע” ומחזקת אופטימיות, ביטחון ביכולת להצליח ופתיחות לקבל את הטוב שהחיים מציעים.</p>
+                                <p>הקרנליאן מביאה את כוח העשייה — יצירתיות, מוטיבציה, תעוזה והתלהבות שמניעה רעיונות קדימה.</p>
+                                <p>יחד הן יוצרות שילוב של שפע ופעולה: לא רק לחלום על מה שאנחנו רוצות, אלא להדליק את האש ולגרום לזה לקרות.</p>
+                                <p class="jewelry-store__story-close">צמיד שמח, אנרגטי ומלא אור למי שמוכנה ליצור, להתקדם ולהגשים.</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame1.png" alt="מסגרת ברכה" class="gallery-image-simple">
+            </article>
+
+<article class="orders-shop__cat jewelry-store" id="cat-sets">
+                <header class="orders-shop__head">
+                    <h2>סט קריסטלים</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="סט קריסטלים">
+<article class="jewelry-store__item" role="listitem" data-sku="JEWEL-JCR-09" data-name="TURQUOISE" data-price="249" data-currency="ILS" data-image="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2017.03.05%20%281%29.jpeg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/j-cr/WhatsApp%20Image%202026-05-05%20at%2017.03.05%20%281%29.jpeg" alt="TURQUOISE" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪249</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">TURQUOISE</span>
+                            <div class="jewelry-store__story">
+                                <p class="jewelry-store__story-lead">טורקיז בגוון תכלת שאי אפשר לפספס.</p>
+                                <p>אבן שמזוהה במיוחד עם הגנה, ומחוברת גם לביטוי עצמי, תקשורת, רוגע ואיזון.</p>
+                                <p>יש בה משהו שמצד אחד נותן תחושת שקט, ומצד שני מחזק את היכולת להביע את עצמנו בצורה ברורה ובטוחה.</p>
+                                <p class="jewelry-store__story-close">שרשרת עם נוכחות, צבע ומשמעות</p>
+                            </div>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame2.png" alt="מסגרת משפחתית" class="gallery-image-simple">
+            </article>
+
+<article class="orders-shop__cat jewelry-store" id="cat-frames">
+                <header class="orders-shop__head">
+                    <h2>פענוח שם</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="פענוח שם">
+                    <article class="jewelry-store__item jewelry-store__item--name-wa" role="listitem">
+                        <div class="name-wa__visual">
+                            <div class="name-wa__mark" aria-hidden="true">
+                                <span class="name-wa__diamond"></span>
+                                <span class="name-wa__word">שם</span>
+                                <span class="name-wa__diamond"></span>
+                            </div>
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪100</span><span class="jewelry-store__on-photo">(נשלח בוואטסאפ)</span></div>
+                            <div class="name-wa__field">
+                                <label for="orders-name-input">השם המלא</label>
+                                <input type="text" id="orders-name-input" placeholder="למשל: נועה לוי" autocomplete="name">
+                            </div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">פענוח שם</span>
+                            <div class="jewelry-store__actions">
+                                <button type="button" class="jewelry-store__add" id="orders-analyze-name-btn">לפענוח בוואטסאפ</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="FRAME-DECODE-01" data-name="פענוח שם (ללא קריסטל)" data-price="199" data-currency="ILS" data-image="image/gallery/frame3.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/gallery/frame3.png" alt="פענוח שם (ללא קריסטל)" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪199</span><span class="jewelry-store__on-photo">(ללא קריסטל)</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">פענוח שם</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="FRAME-DECODE-02" data-name="פענוח שם עם קריסטל" data-price="319" data-currency="ILS" data-image="image/gallery/frame5.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/gallery/frame5.png" alt="פענוח שם עם קריסטל" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪319</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">פענוח שם עם קריסטל</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="FRAME-DECODE-03" data-name="פענוח שם זוגי (ללא קריסטל)" data-price="379" data-currency="ILS" data-image="image/gallery/frame1.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/gallery/frame1.png" alt="פענוח שם זוגי (ללא קריסטל)" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪379</span><span class="jewelry-store__on-photo">(ללא קריסטל)</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">פענוח שם זוגי</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="FRAME-DECODE-04" data-name="זוגי עם קריסטל" data-price="549" data-currency="ILS" data-image="image/gallery/frame7.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img" src="image/gallery/frame7.png" alt="זוגי עם קריסטל" loading="lazy" decoding="async" width="600" height="600">
+                            <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price">₪549</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">זוגי עם קריסטל</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame3.png" alt="מסגרת מעוצבת" class="gallery-image-simple">
+            </article>
+
+<article class="orders-shop__cat jewelry-store" id="cat-kits">
+                <header class="orders-shop__head">
+                    <h2>קיטים שאפשר לקחת לכל מקום</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="קיטים שאפשר לקחת לכל מקום">
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-01" data-name="קיט קרנליאן וקוורץ — למציאת זיווג" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-carnelian-quartz.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-carnelian-quartz.jpg" alt="קיט קרנליאן וקוורץ" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט קרנליאן וקוורץ<span class="jewelry-store__virtue">למציאת זיווג</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-02" data-name="קיט אמטיסט ושחור — נגד עין הרע" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-amethyst-obsidian.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-amethyst-obsidian.jpg" alt="קיט אמטיסט ושחור" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט אמטיסט ושחור<span class="jewelry-store__virtue">נגד עין הרע</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-03" data-name="קיט אמטיסט וסודלייט — לשלווה ותקשורת" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-amethyst-sodalite.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-amethyst-sodalite.jpg" alt="קיט אמטיסט וסודלייט" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט אמטיסט וסודלייט<span class="jewelry-store__virtue">לשלווה ותקשורת</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-04" data-name="קיט עין הנמר ואוונטורין — לפתיחת פרנסה" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-tigereye-aventurine.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-tigereye-aventurine.jpg" alt="קיט עין הנמר ואוונטורין" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט עין הנמר ואוונטורין<span class="jewelry-store__virtue">לפתיחת פרנסה</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-05" data-name="קיט ג'ספר אדום — לבריאות" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-red-jasper.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-red-jasper.jpg" alt="קיט ג'ספר אדום" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט ג'ספר אדום<span class="jewelry-store__virtue">לבריאות</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-06" data-name="קיט אמטיסט זוגי — לשלווה זוגית" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-amethyst-pair.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-amethyst-pair.jpg" alt="קיט אמטיסט זוגי" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט אמטיסט זוגי<span class="jewelry-store__virtue">לשלווה זוגית</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="KIT-09" data-name="קיט קוורץ וקרנליאן — לחיוניות והצלחה" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/kits/kit-quartz-carnelian.jpg">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--kit" src="image/kits/kit-quartz-carnelian.jpg" alt="קיט קוורץ וקרנליאן" loading="lazy" decoding="async" width="600" height="800">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קיט קוורץ וקרנליאן<span class="jewelry-store__virtue">לחיוניות והצלחה</span></span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame6.png" alt="מסגרת מעוצבת בגלים" class="gallery-image-simple">
-                </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame7.png" alt="מסגרת עם מסר אישי" class="gallery-image-simple">
-                </div>
-                <div class="gallery-item">
-                    <img src="image/gallery/frame8.png" alt="מסגרת קלאסית" class="gallery-image-simple">
-                </div>
-                
-            </div>
+            </article>
+
         </div>
     </section>
 
-    <section class="orders-section">
+<section class="orders-shop" aria-label="אבני קריסטלים">
         <div class="container">
-            <div class="orders-section-title">
-                <h2>מסלולי הזמנה מומלצים</h2>
-                <p>בחרו את הפתרון שהכי מתאים עבורכם – ואני אדאג לשאר.</p>
-            </div>
-            <div class="orders-packages">
-                <div class="order-card">
-                    <div class="order-card-header">
-                        <h3>מסגרת יחידה</h3>
-                        <span class="order-card-price">₪300</span>
-                    </div>
-                    <ul class="order-includes">
-                        <li>מסגרת עץ איכותית בגודל לבחירה</li>
-                        <li>קריסטל ראשי + חיזוק משלים</li>
-                        <li>פענוח מסר אישי מודפס</li>
-                    </ul>
-                    <a href="https://wa.me/972533397827?text=שלום,%20אני%20מעוניין%20בהזמנת%20מסגרת%20יחידה" class="btn contact-btn order-card-btn">להזמנה</a>
+<article class="orders-shop__cat jewelry-store" id="cat-stones">
+                <header class="orders-shop__head">
+                    <h2>אבני קריסטלים</h2>
+                </header>
+                <div class="jewelry-store__grid jewelry-store__grid--catalog" role="list" aria-label="אבני קריסטלים">
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-ROSE" data-name="רוז קוורץ" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/rose-quartz.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/rose-quartz.png" alt="רוז קוורץ" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">רוז קוורץ</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-TSEI" data-name="צרי קוורץ" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Tsei-Quartz.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Tsei-Quartz.png" alt="צרי קוורץ" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">צרי קוורץ</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-AQUA" data-name="אקוומרין" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Aquamarine.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Aquamarine.png" alt="אקוומרין" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אקוומרין</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-AVENT" data-name="אוונטורין ירוק" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Green-aventurine.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Green-aventurine.png" alt="אוונטורין ירוק" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אוונטורין ירוק</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-CITRINE" data-name="סיטרין" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Citrine.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Citrine.png" alt="סיטרין" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">סיטרין</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-AMETHYST" data-name="אמטיסט" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/amethyst.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/amethyst.png" alt="אמטיסט" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אמטיסט</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-AMBER" data-name="ענבר" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/amber.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/amber.png" alt="ענבר" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">ענבר</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-SMOKY" data-name="סמוקי קוורץ" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Smoky-Quartz.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Smoky-Quartz.png" alt="סמוקי קוורץ" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">סמוקי קוורץ</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-CARN" data-name="קרנליאן" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Carnelian.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Carnelian.png" alt="קרנליאן" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קרנליאן</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-MOON" data-name="אבן ירח" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/moonstone.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/moonstone.png" alt="אבן ירח" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אבן ירח</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-OBS" data-name="אובסידין" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Opsidin.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Opsidin.png" alt="אובסידין" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אובסידין</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-TOURM" data-name="טורמלין שחור" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/black-tourmaline.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/black-tourmaline.png" alt="טורמלין שחור" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">טורמלין שחור</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-LAPIS" data-name="לאפיס לזולי" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Lapis-lazuli.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Lapis-lazuli.png" alt="לאפיס לזולי" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">לאפיס לזולי</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-MALA" data-name="מלכיט" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/malachite.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/malachite.png" alt="מלכיט" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">מלכיט</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-SELEN" data-name="סלונייט" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Selonite.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Selonite.png" alt="סלונייט" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">סלונייט</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-TIGER" data-name="עין הנמר" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Tiger's-Eye.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Tiger's-Eye.png" alt="עין הנמר" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">עין הנמר</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-CLEAR" data-name="קוורץ שקוף" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Clear-quartz.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Clear-quartz.png" alt="קוורץ שקוף" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">קוורץ שקוף</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-ONYX" data-name="אוניקס שחור" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Black-onyx.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Black-onyx.png" alt="אוניקס שחור" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אוניקס שחור</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-OPAL" data-name="אופלית" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/opal.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/opal.png" alt="אופלית" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אופלית</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="jewelry-store__item" role="listitem" data-sku="CRYSTAL-ABALONE" data-name="אבלון צדף" data-price="0" data-price-note="מחיר בהתאמה אישית" data-currency="ILS" data-image="image/Abalone-shell.png">
+                        <div class="jewelry-store__media">
+                            <img class="jewelry-store__img jewelry-store__img--contain" src="image/Abalone-shell.png" alt="אבלון צדף" loading="lazy" decoding="async" width="600" height="600">
+                        <div class="jewelry-store__meta" aria-hidden="true"><span class="jewelry-store__price jewelry-store__price--note">מחיר בהתאמה אישית</span></div>
+                        </div>
+                        <div class="jewelry-store__body">
+                            <span class="jewelry-store__label">אבלון צדף</span>
+                            <div class="jewelry-store__actions">
+                                <button class="jewelry-store__add" type="button">הוספה לסל</button>
+                                <a class="jewelry-store__details" href="cart.html">לקניה</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="order-card featured">
-                    <div class="order-card-header">
-                        <h3>סט זוגי</h3>
-                        <span class="order-card-price">₪549 מומלץ</span>
-                    </div>
-                    <ul class="order-includes">
-                        <li>שתי מסגרות בהתאמה הדדית</li>
-                        <li>קריסטלים מעצימים לכל אחד</li>
-                        <li>פענוח זוגי + מסר אישי לכל אחד</li>
-                    </ul>
-                    <a href="https://wa.me/972533397827?text=שלום,%20אני%20מעוניין%20בסט%20זוגי%20של%20מסגרות" class="btn contact-btn order-card-btn">להזמנה</a>
-                </div>
-                <div class="order-card">
-                    <div class="order-card-header">
-                        <h3>אוסף משפחתי</h3>
-                        <span class="order-card-price">₪699</span>
-                    </div>
-                    <ul class="order-includes">
-                        <li>שלוש מסגרות בהתאמה משפחתית</li>
-                        <li>בחירת קריסטלים לכל בן משפחה</li>
-                        <li>מסר משפחתי מאחד + פענוח אישי</li>
-                    </ul>
-                    <a href="https://wa.me/972533397827?text=שלום,%20אני%20מעוניין%20במסגרת%20משפחתית%20בהזמנה%20אישית" class="btn contact-btn order-card-btn">להזמנה</a>
-                </div>
-            </div>
+            </article>
+
         </div>
     </section>
-
-    <section class="orders-section bg-light">
-        <div class="container">
-            <div class="orders-section-title">
-                <h2>לקוחות משתפים</h2>
-                <p>המילים שלהם אומרות הכל – חוויות אמיתיות מהמסגרות שהוזמנו.</p>
-            </div>
-            <div class="orders-testimonials">
-                <div class="orders-testimonial">
-                    <p>“המסגרת שקיבלנו הייתה מדויקת להפליא. הקריסטלים והמסר נגעו לנו בדיוק בלב. זו מזכרת שחיממה את הבית.”</p>
-                    <span>קרן, תל אביב</span>
-                </div>
-                <div class="orders-testimonial">
-                    <p>“הזמנתי סט זוגי מתנה לחתונה. הזוג לא הפסיקו להתרגש מהפענוח וההשקעה בכל פרט. יצירה מרגשת.”</p>
-                    <span>שקד, רעננה</span>
-                </div>
-                <div class="orders-testimonial">
-                    <p>“לילדה שלי היה יום הולדת 12 והמסגרת האישית עם הקריסטלים הפכה את האירוע לבלתי נשכח. תודה על הליווי והאהבה.”</p>
-                    <span>אתי, חולון</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricelist" class="pricelist-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>מחירון</h2>
-            </div>
-            <div class="pricelist-container">
-                <img src="image/gallery/מחירון.png" alt="מחירון" class="pricelist-image">
-            </div>
-        </div>
-    </section>
-
-    
-    <div class="promo-banner" id="orders-promo-banner" hidden>
-        <div class="promo-banner-inner">
-            <div class="promo-banner-text">
-                <strong>מבצע נובמבר:</strong> 30% הנחה על מסגרות בהזמנה אישית
-            </div>
-            <div class="promo-banner-actions">
-                <a href="https://wa.me/972533397827?text=שלום,%20אני%20מעוניין%20לנצל%2030%25%20הנחה%20על%20מסגרת%20קריסטל" class="btn promo-banner-btn">לתיאום ההטבה</a>
-                <button type="button" class="promo-banner-close" id="orders-banner-close" aria-label="סגור מבצע">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <div class="container">
@@ -231,7 +1060,7 @@
                     <ul>
                         <li><a href="index.html#services">טיפולים אישיים</a></li>
                         <li><a href="contact.html">ייעוץ מקוון</a></li>
-                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                        <li><a href="crystals.html">חיבור לקריסטלים</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -246,94 +1075,39 @@
                     <h3>צור קשר</h3>
                     <ul>
                         <li>טלפון: 053-3397827</li>
-                        <li>אימייל: odalyasite@gmail.com</li>
                         <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>מידע משפטי</h3>
+                    <ul>
+                        <li><a href="terms.html">תקנון האתר</a></li>
+                        <li><a href="cancellation.html">ביטול עסקה</a></li>
+                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const banner = document.getElementById('orders-promo-banner');
-            const dismissBtn = document.getElementById('orders-banner-close');
+    <div class="product-zoom" id="product-zoom" hidden>
+        <div class="product-zoom__panel" role="dialog" aria-modal="true" aria-label="תמונת מוצר">
+            <button class="product-zoom__close" type="button" aria-label="סגירת התמונה">×</button>
+            <div class="product-zoom__stage">
+                <img class="product-zoom__img" alt="">
+                <div class="product-zoom__overlay">
+                    <p class="product-zoom__name"></p>
+                    <div class="product-zoom__desc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            if (banner && dismissBtn) {
-                const showBanner = () => {
-                    banner.hidden = false;
-                    requestAnimationFrame(() => banner.classList.add('show'));
-                };
-
-                const hideBanner = () => {
-                    banner.classList.remove('show');
-                    setTimeout(() => {
-                        banner.hidden = true;
-                        sessionStorage.setItem('ordersNovemberPromoDismissed', 'true');
-                    }, 200);
-                };
-
-                const dismissed = sessionStorage.getItem('ordersNovemberPromoDismissed') === 'true';
-                if (!dismissed) {
-                    setTimeout(showBanner, 1200);
-                }
-
-                dismissBtn.addEventListener('click', hideBanner);
-            }
-
-            const slider = document.querySelector('.orders-gallery-slider');
-            if (slider) {
-                const track = slider.querySelector('.orders-gallery-track');
-                const items = Array.from(track.querySelectorAll('.orders-gallery-item'));
-                const prevBtn = slider.querySelector('.orders-gallery-nav.prev');
-                const nextBtn = slider.querySelector('.orders-gallery-nav.next');
-
-                if (items.length) {
-                    let index = 0;
-
-                    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
-                    const itemWidth = items[0].offsetWidth + gap;
-
-                    const updateSlider = () => {
-                        track.style.transform = `translateX(${-index * itemWidth}px)`;
-                    };
-
-                    const move = (direction) => {
-                        index = (index + direction + items.length) % items.length;
-                        updateSlider();
-                    };
-
-                    let autoSlide = setInterval(() => move(1), 4000);
-
-                    const resetAutoSlide = () => {
-                        clearInterval(autoSlide);
-                        autoSlide = setInterval(() => move(1), 4000);
-                    };
-
-                    if (prevBtn && nextBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            move(-1);
-                            resetAutoSlide();
-                        });
-
-                        nextBtn.addEventListener('click', () => {
-                            move(1);
-                            resetAutoSlide();
-                        });
-                    }
-
-                    slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
-                    slider.addEventListener('mouseleave', resetAutoSlide);
-
-                    updateSlider();
-                }
-            }
-        });
-    </script>
+    <script src="script.js?v=sale29"></script>
 </body>
 </html>
 

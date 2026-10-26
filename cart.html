@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>סל קניות - לבנה אודהליה</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>סל קניות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Assistant:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css?v=sale45">
 </head>
-<body>
+<body class="page-cart">
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <header>
         <div class="container">
             <nav>
@@ -17,44 +22,76 @@
                 <ul class="menu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html">הזמנות</a></li>
-                    <li><a href="cart.html" class="active cart-link" aria-label="סל קניות">סל <span class="cart-badge" aria-hidden="true">0</span></a></li>
-                    <li><a href="crystals.html">ריפוי בקריסטלים</a></li>
-                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="crystals.html">חיבור לקריסטלים</a></li>
+                    <li><a href="names.html">פענוח שמות</a></li>
+                    <li><a href="frames.html">מסגרות עם פענוח</a></li>
                     <li><a href="about.html">אודות</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="contact.html" class="menu-contact">צור קשר</a></li>
                 </ul>
+                <a href="cart.html" class="header-cart header-cart--active" aria-label="סל קניות" aria-current="page">
+                    <svg class="header-cart__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.2 4.8A1.5 1.5 0 0 0 3.7 3.5H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="header-cart__name">סל</span>
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main class="cart-page">
-        <div class="container cart-page__container">
-            <div class="section-title">
-                <h2>סל הקניות</h2>
+        <section class="names-hero-invite">
+            <div class="container">
+                <p class="names-kicker">✦ ההזמנה שלך ✦</p>
+                <h1>סל הקניות</h1>
+                <p class="names-lead">כאן רואים את מה שבחרת. עד סוף ספטמבר יש 15% הנחה על כל הזמנה. התשלום הוא במזומן או בביט בלבד.</p>
             </div>
+        </section>
 
+        <div class="container cart-page__container">
             <div class="cart-layout">
                 <section class="cart" aria-label="פריטי סל">
                     <div id="cart-items" class="cart-items"></div>
-                    <p id="cart-empty" class="cart-empty" hidden>הסל ריק. אפשר לחזור ל־<a href="index.html">חנות בדף הבית</a>.</p>
+                    <p id="cart-empty" class="cart-empty" hidden>הסל ריק כרגע. אפשר לחזור ל־<a href="orders.html">הזמנות</a> או ל־<a href="frames.html">מסגרות</a>.</p>
                 </section>
 
                 <aside class="cart-summary" aria-label="סיכום ותשלום">
                     <div class="cart-summary__box">
-                        <h3>סיכום</h3>
+                        <h2>סיכום הזמנה</h2>
                         <div class="cart-summary__row">
-                            <span>סה״כ</span>
+                            <span>פריטים</span>
+                            <strong id="cart-count">0</strong>
+                        </div>
+                        <p class="cart-sale-note" id="cart-sale-note" hidden>מבצע עד סוף ספטמבר — 15% הנחה על כל הזמנה.</p>
+                        <div class="cart-summary__row" id="cart-subtotal-row" hidden>
+                            <span>לפני הנחה</span>
+                            <strong id="cart-subtotal">₪0</strong>
+                        </div>
+                        <div class="cart-summary__row cart-summary__row--sale" id="cart-discount-row" hidden>
+                            <span>הנחת מבצע 15%</span>
+                            <strong id="cart-discount"><span class="cart-minus">−</span>₪0</strong>
+                        </div>
+                        <div class="cart-summary__row cart-summary__row--total">
+                            <span>סה״כ לתשלום</span>
                             <strong id="cart-total">₪0</strong>
                         </div>
-                        <p class="cart-summary__hint">התשלום מתבצע ב־PayPal (אפשר לשלם גם בכרטיס).</p>
 
-                        <div id="paypal-missing" class="cart-warning" hidden>
-                            כדי להפעיל תשלום, צריך להכניס את ה־<code>PAYPAL_CLIENT_ID</code> בקובץ <code>script.js</code>.
-                        </div>
+                        <form id="order-form" class="order-form" aria-label="טופס הזמנה" data-cart-needs-items>
+                            <fieldset class="cart-pay">
+                                <legend>אופן תשלום</legend>
+                                <label class="cart-pay__option">
+                                    <input type="radio" name="pay" value="cash" checked>
+                                    <span>מזומן</span>
+                                </label>
+                                <label class="cart-pay__option">
+                                    <input type="radio" name="pay" value="bit">
+                                    <span>ביט</span>
+                                </label>
+                            </fieldset>
+                            <p class="cart-summary__hint">ביט: 053-3397827. אחרי שליחת ההזמנה אחזור אלייך לאישור.</p>
 
-                        <div id="paypal-button-container" class="paypal-button"></div>
-
-                        <form id="order-form" class="order-form" aria-label="טופס הזמנה">
                             <div class="order-form__grid">
                                 <label class="order-form__field">
                                     <span>שם מלא</span>
@@ -77,15 +114,19 @@
                                     <input id="order-email" name="email" type="email" autocomplete="email" required>
                                 </label>
                                 <label class="order-form__field order-form__field--full">
-                                    <span>הערה כללית להזמנה</span>
-                                    <textarea id="order-note" name="note" rows="3" placeholder="כל דבר שחשוב שנדע…"></textarea>
+                                    <span>הערה להזמנה</span>
+                                    <textarea id="order-note" name="note" rows="3" placeholder="כל דבר שחשוב שנדע"></textarea>
                                 </label>
                             </div>
-                            <button id="order-submit" class="btn order-submit" type="submit">שליחת הזמנה</button>
-                            <p class="order-form__hint">הכפתור שולח אלינו את פרטי ההזמנה בוואטסאפ לצורך טיפול מהיר.</p>
+                            <div class="order-agree">
+                                <label class="order-agree__btn" for="order-agree">
+                                    <input id="order-agree" name="agree" type="checkbox" required>
+                                    <span>לאשר</span>
+                                </label>
+                                <p class="order-form__hint">ההזמנה נשלחת אליי בוואטסאפ, עם פרטי התשלום שבחרת. בשליחה את מאשרת את <a href="terms.html">תקנון האתר</a> ואת <a href="cancellation.html">מדיניות ביטול העסקה</a>.</p>
+                            </div>
+                            <button id="order-submit" class="contact-btn contact-btn--gold order-submit" type="submit">שליחת הזמנה בוואטסאפ</button>
                         </form>
-
-                        <button id="bit-pay" class="btn bit-pay" type="button">תשלום ב־Bit</button>
 
                         <button id="cart-clear" class="btn cart-clear" type="button">ניקוי סל</button>
                     </div>
@@ -94,8 +135,62 @@
         </div>
     </main>
 
-    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>שירותים</h3>
+                    <ul>
+                        <li><a href="index.html#services">טיפולים אישיים</a></li>
+                        <li><a href="contact.html">ייעוץ מקוון</a></li>
+                        <li><a href="crystals.html">חיבור לקריסטלים</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>שעות פעילות</h3>
+                    <ul>
+                        <li>ראשון - חמישי: 9:00 - 19:00</li>
+                        <li>שישי: 9:00 - 13:00</li>
+                        <li>שבת: סגור</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>צור קשר</h3>
+                    <ul>
+                        <li>טלפון: 053-3397827</li>
+                        <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>מידע משפטי</h3>
+                    <ul>
+                        <li><a href="terms.html">תקנון האתר</a></li>
+                        <li><a href="cancellation.html">ביטול עסקה</a></li>
+                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="script.js"></script>
+    <div class="product-zoom" id="product-zoom" hidden>
+        <div class="product-zoom__panel" role="dialog" aria-modal="true" aria-label="תמונת מוצר">
+            <button class="product-zoom__close" type="button" aria-label="סגירת התמונה">×</button>
+            <div class="product-zoom__stage">
+                <img class="product-zoom__img" alt="">
+                <div class="product-zoom__overlay">
+                    <p class="product-zoom__name"></p>
+                    <div class="product-zoom__desc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <script src="script.js?v=sale31"></script>
 </body>
 </html>

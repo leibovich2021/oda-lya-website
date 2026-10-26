@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ריפוי בקריסטלים - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
+    <title>חיבור לקריסטלים - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=sale41">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="page-crystals">
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <header>
         <div class="container">
             <nav>
@@ -17,37 +21,40 @@
                 <ul class="menu" id="navMenu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html">הזמנות</a></li>
-                    <li><a href="crystals.html" class="active">ריפוי בקריסטלים</a></li>
-                    <li><a href="names.html">פיענוח שמות</a></li>
+                    <li><a href="crystals.html" class="active">חיבור לקריסטלים</a></li>
+                    <li><a href="names.html">פענוח שמות</a></li>
+                    <li><a href="frames.html">מסגרות עם פענוח</a></li>
                     <li><a href="about.html">אודות</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="contact.html" class="menu-contact">צור קשר</a></li>
                 </ul>
+                <a href="cart.html" class="header-cart" aria-label="סל קניות">
+                    <svg class="header-cart__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.2 4.8A1.5 1.5 0 0 0 3.7 3.5H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="header-cart__name">סל</span>
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <section class="hero crystal-hero oda-crystals-hero">
+    <main class="crystals-page">
+    <section class="names-hero-invite">
         <div class="container">
-            <div class="hero-content oda-crystals-hero__panel">
-                <h1>רִפּוּי בִּקְרִיסְטָלִים</h1>
-                <div class="intro-separator crystal-separator oda-crystals-hero__rule"></div>
-                <p class="crystal-hero-text">גלי את העוצמה המרפאה של אבני החן והקריסטלים במסורת היהודית</p>
-            </div>
+            <p class="names-kicker">✦ אבנים עם נשמה ✦</p>
+            <h1>חיבור לקריסטלים</h1>
+            <p class="names-lead">כל אבן נושאת תדר משלה. כאן הן פוגשות אותך — ברכות, בבהירות, ובלי רעש מיותר.</p>
         </div>
     </section>
 
     <section id="crystal-therapy" class="oda-crystals-therapy">
         <div class="container">
-            <div class="section-title oda-crystals-section-title">
+            <div class="names-story crystals-intro">
                 <h2>עוצמת הקריסטלים</h2>
-            </div>
-            <div class="content-box crystal-intro-box oda-crystals-glass">
-                <p>קריסטלים הם אוצרות טבעיים בעלי תכונות אנרגטיות ייחודיות. במסורת היהודית, אבני החושן שימשו ככלים מקודשים בעלי כוחות מיוחדים. כיום, אנו משלבים את החכמה העתיקה עם הבנה מודרנית של האנרגיה והתדרים כדי לסייע בתהליכי ריפוי פיזיים, רגשיים ורוחניים.</p>
-                <div class="crystal-quote">
-                    <blockquote>
-                        "אבני החן הן מתנות מהאדמה, המחברות אותנו לחכמה עתיקה ולכוחות הריפוי של הטבע"
-                    </blockquote>
-                </div>
+                <p>הקריסטלים הם מתנות מהאדמה. במסורת היהודית שימשו אבני החושן כשער של חיבור — בין אדם, נשמה ועולם. היום הן פוגשות אותך באותה שפה עתיקה, רק ברכות יותר: אבן אחת, כוונה אחת, רגע אחד של הקשבה.</p>
+                <blockquote>״אבני החן מחברות אותנו לחכמה עתיקה ולכוחות החיבור של הטבע״</blockquote>
             </div>
         </div>
     </section>
@@ -55,7 +62,7 @@
     <section id="crystal-types" class="oda-crystals-types">
         <div class="container">
             <div class="section-title oda-crystals-section-title">
-                <h2>סוגי הקריסטלים</h2>
+                <h2>האבנים</h2>
             </div>
             <div class="crystal-grid">
                         <div class="crystal-item">
@@ -65,8 +72,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">רוז קוורץ</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מעודד אהבה עצמית, אהבת הזולת, ריפוי פצעים רגשיים והרמוניה ביחסים.</p>
-                                <p><strong>קשור ל:</strong> ספירת חסד וצ'אקרת הלב</p>
+                                <p class="crystal-properties">אבן הלב. רכה וחמה, ומזכירה אהבה — קודם כל כלפי עצמך, ואז כלפי מי שלידך.</p>
+                                <p class="crystal-link">חסד · צ'אקרת הלב</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -76,8 +83,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">צרי קוורץ</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מעודד אהבה, תשוקה, אנרגיה ויצירתיות. מסייע בביטחון עצמי, מוטיבציה ומימוש ייעוד. מחזק את האנרגיה החיובית ומביא אופטימיות.</p>
-                                <p><strong>קשור ל:</strong> ספירת גבורה וצ'אקרת הלב</p>
+                                <p class="crystal-properties">אש עדינה של תשוקה ויצירה. מעירה את הביטחון ואת החשק לזוז קדימה.</p>
+                                <p class="crystal-link">גבורה · צ'אקרת הלב</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -87,8 +94,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אקוומרין</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע בתקשורת, ביטוי עצמי, שלווה פנימית, חיבור לזרימת החיים.</p>
-                                <p><strong>קשור ל:</strong> ספירת חסד וצ'אקרת הגרון</p>
+                                <p class="crystal-properties">מים צלולים. עוזרת לדבר אמת בנחת, ולזרום עם החיים במקום להילחם בהם.</p>
+                                <p class="crystal-link">חסד · צ'אקרת הגרון</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -98,8 +105,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אוונטורין ירוק</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מעודד צמיחה, שפע, מזל טוב, איזון רגשי וריפוי הלב.</p>
-                                <p><strong>קשור ל:</strong> ספירת נצח וצ'אקרת הלב</p>
+                                <p class="crystal-properties">ירוק של צמיחה. פותחת מקום לשפע, למזל טוב וללב שנרגע.</p>
+                                <p class="crystal-link">נצח · צ'אקרת הלב</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -109,8 +116,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">סיטרין</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מושך שפע, ביטחון עצמי, אופטימיות ואנרגיה חיובית.</p>
-                                <p><strong>קשור ל:</strong> ספירת תפארת וצ'אקרת מקלעת השמש</p>
+                                <p class="crystal-properties">שמש קטנה בכף היד. אור של ביטחון, אופטימיות ושפע שנפתח מבפנים.</p>
+                                <p class="crystal-link">תפארת · צ'אקרת מקלעת השמש</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -120,8 +127,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אמטיסט</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע ברגיעה, הפחתת חרדות, שיפור השינה, חיזוק האינטואיציה והקשר הרוחני.</p>
-                                <p><strong>קשור ל:</strong> ספירת כתר וצ'אקרת העין השלישית</p>
+                                <p class="crystal-properties">סגול של שקט. מלווה שינה עמוקה, אינטואיציה עדינה וחיבור פנימי.</p>
+                                <p class="crystal-link">כתר · העין השלישית</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -131,8 +138,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">ענבר</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מחזק אנרגיה, הגנה, ריפוי ובריאות. מסייע באיזון רגשי וחיבור לטבע.</p>
-                                <p><strong>קשור ל:</strong> ספירת תפארת וצ'אקרת מקלעת השמש</p>
+                                <p class="crystal-properties">זהב חם של טבע. מחברת לאדמה, מגינה, ומחזירה תחושת חיות.</p>
+                                <p class="crystal-link">תפארת · צ'אקרת מקלעת השמש</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -142,8 +149,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">סמוקי קוורץ</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע באיזון, הגנה אנרגטית, שחרור רגשות שליליים וחיבור לטבע. מחזק את הצ'אקרה הבסיסית.</p>
-                                <p><strong>קשור ל:</strong> ספירת מלכות וצ'אקרת הבסיס</p>
+                                <p class="crystal-properties">עשן רך שמנקה. משחררת מה שנצבר, ומחזירה יציבות לבסיס.</p>
+                                <p class="crystal-link">מלכות · צ'אקרת הבסיס</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -153,8 +160,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">קרנליאן</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מחזק אומץ, ביטחון עצמי, יצירתיות ואנרגיה. מסייע במוטיבציה ובמימוש ייעוד.</p>
-                                <p><strong>קשור ל:</strong> ספירת גבורה וצ'אקרת מקלעת השמש</p>
+                                <p class="crystal-properties">להבה כתומה. מעירה אומץ, יצירה, ואת הרצון לפעול.</p>
+                                <p class="crystal-link">גבורה · צ'אקרת מקלעת השמש</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -164,30 +171,30 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אבן ירח</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע באיזון רגשי, אינטואיציה, חיבור לנשיות וטיפוח. מרגיע ומביא שלווה פנימית.</p>
-                                <p><strong>קשור ל:</strong> ספירת נצח וצ'אקרת הלב</p>
+                                <p class="crystal-properties">אור ירח. רכה, אינטואיטיבית, ומחזירה שלווה אל הלב.</p>
+                                <p class="crystal-link">נצח · צ'אקרת הלב</p>
                             </div>
                         </div>
                         <div class="crystal-item">
                             <div class="crystal-img obsidian">
-                                <img src="image/Opsidin.png" alt="אופסידין" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#1a1a1a'; this.parentNode.innerHTML='אופסידין';">
+                                <img src="image/Opsidin.png" alt="אובסידין" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#1a1a1a'; this.parentNode.innerHTML='אובסידין';">
                             </div>
                             <div class="crystal-info">
-                                <h3 class="crystal-name">אופסידין</h3>
+                                <h3 class="crystal-name">אובסידין</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מגן מפני אנרגיות שליליות, מסייע בניקוי רגשי ופיזי. מחזק את הצ'אקרה הבסיסית.</p>
-                                <p><strong>קשור ל:</strong> ספירת מלכות וצ'אקרת הבסיס</p>
+                                <p class="crystal-properties">זכוכית שחורה של הגנה. מנקה, מייצבת, ושומרת על הגבולות שלך.</p>
+                                <p class="crystal-link">מלכות · צ'אקרת הבסיס</p>
                             </div>
                         </div>
                         <div class="crystal-item">
                             <div class="crystal-img black-tourmaline">
-                                <img src="image/Black-tourmaline.png" alt="טורמלין שחור" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2c2c2c'; this.parentNode.innerHTML='טורמלין שחור';">
+                                <img src="image/black-tourmaline.png" alt="טורמלין שחור" loading="lazy" decoding="async">
                             </div>
                             <div class="crystal-info">
                                 <h3 class="crystal-name">טורמלין שחור</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מגן חזק מפני אנרגיות שליליות, עומס רגשי וקרינה. מסייע באיזון אנרגטי.</p>
-                                <p><strong>קשור ל:</strong> ספירת מלכות וצ'אקרת הבסיס</p>
+                                <p class="crystal-properties">מגן שקט. עוזרת כשיש עומס סביב, ומחזירה תחושת גבול ברור.</p>
+                                <p class="crystal-link">מלכות · צ'אקרת הבסיס</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -197,8 +204,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">לאפיס לזולי</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מחזק ביטוי עצמי, אמת, תקשורת ואמון. מסייע בחיבור לעצמי האמיתי ולחכמה פנימית.</p>
-                                <p><strong>קשור ל:</strong> ספירת בינה וצ'אקרת העין השלישית</p>
+                                <p class="crystal-properties">כחול של אמת. מחברת לקול הפנימי, ומעודדת לדבר מתוך בהירות.</p>
+                                <p class="crystal-link">בינה · העין השלישית</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -208,8 +215,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">מלכיט</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע בפתיחת הלב, ריפוי רגשי, שינוי וצמיחה. מחזק את האומץ להתמודד עם אתגרים.</p>
-                                <p><strong>קשור ל:</strong> ספירת נצח וצ'אקרת הלב</p>
+                                <p class="crystal-properties">ירוק עמוק של שינוי. פותחת את הלב, ונותנת אומץ לגדול.</p>
+                                <p class="crystal-link">נצח · צ'אקרת הלב</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -219,8 +226,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">סלונייט</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מנקה אנרגטית, מביא שקט פנימי, חיבור רוחני וחיזוק האינטואיציה. מסייע במיקוד.</p>
-                                <p><strong>קשור ל:</strong> ספירת כתר וצ'אקרת הכתר</p>
+                                <p class="crystal-properties">אור לבן ונקי. מביאה שקט, מיקוד, ותחושה שהכל מתבהר.</p>
+                                <p class="crystal-link">כתר · צ'אקרת הכתר</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -230,8 +237,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">עין הנמר</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מחזק ביטחון עצמי, אומץ, הגנה ושפע. מסייע בהגנה מפני אנרגיות שליליות ומביא מזל.</p>
-                                <p><strong>קשור ל:</strong> ספירת תפארת וצ'אקרת מקלעת השמש</p>
+                                <p class="crystal-properties">זהב של אומץ. שומרת, מחזקת ביטחון, ופותחת דלת לשפע.</p>
+                                <p class="crystal-link">תפארת · צ'אקרת מקלעת השמש</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -241,8 +248,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">קוורץ שקוף</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מגביר אנרגיה, מחזק את כל הצ'אקרות, מסייע בריפוי, מיקוד וחיבור למודעות גבוהה.</p>
-                                <p><strong>קשור ל:</strong> ספירת כתר וכל הצ'אקרות</p>
+                                <p class="crystal-properties">מים צלולים של האבן. מבהירה, ממקדת, ומעצימה את מה שכבר חי בך.</p>
+                                <p class="crystal-link">כתר · כל הצ'אקרות</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -252,8 +259,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אוניקס שחור</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מגן מפני אנרגיות שליליות, מחזק ריכוז, כוח רצון ועמידות. מסייע בהגנה אנרגטית.</p>
-                                <p><strong>קשור ל:</strong> ספירת מלכות וצ'אקרת הבסיס</p>
+                                <p class="crystal-properties">שחור יציב. מחזק ריכוז, כוח רצון, ותחושת עמידות.</p>
+                                <p class="crystal-link">מלכות · צ'אקרת הבסיס</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -263,8 +270,8 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אופלית</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע בתקשורת, ביטוי עצמי, יצירתיות ופתיחות. מביא אור וצלילות מחשבתית.</p>
-                                <p><strong>קשור ל:</strong> ספירת חסד וצ'אקרת הגרון</p>
+                                <p class="crystal-properties">אור חלבי ורך. פותחת יצירה, דיבור, וצלילות במחשבה.</p>
+                                <p class="crystal-link">חסד · צ'אקרת הגרון</p>
                             </div>
                         </div>
                         <div class="crystal-item">
@@ -274,67 +281,14 @@
                             <div class="crystal-info">
                                 <h3 class="crystal-name">אבלון צדף</h3>
                                 <div class="crystal-separator-mini"></div>
-                                <p class="crystal-properties">מסייע באיזון רגשי, ריפוי הלב, חיבור למים ולטבע. מביא שלווה, רגישות וחמלה.</p>
-                                <p><strong>קשור ל:</strong> ספירת חסד וצ'אקרת הלב</p>
+                                <p class="crystal-properties">ים קטן בכף היד. מחברת למים, לחמלה, וללב שנפתח לאט.</p>
+                                <p class="crystal-link">חסד · צ'אקרת הלב</p>
                             </div>
                         </div>
             </div>
         </div>
     </section>
-
-
-
-    <section id="healing-methods" class="treatment-methods-section">
-
-    </section>
-
-    <section id="crystal-benefits" class="benefit-section oda-crystals-benefits">
-        <div class="container">
-            <div class="section-title oda-crystals-section-title">
-                <h2>היתרונות של עבודה עם קריסטלים</h2>
-            </div>
-            <div class="benefits-grid oda-crystals-benefits-grid">
-                <div class="benefit-item oda-crystals-benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>איזון רגשי</h3>
-                    <p>קריסטלים מסייעים בהפחתת מתח, חרדה ובהשבת שלווה פנימית</p>
-                </div>
-                <div class="benefit-item oda-crystals-benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>ריפוי רגשי</h3>
-                    <p>עזרה בשחרור טראומות רגשיות ובניית דפוסי חשיבה חיוביים</p>
-                </div>
-                <div class="benefit-item oda-crystals-benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>חיבור רוחני</h3>
-                    <p>העמקת החיבור לעצמי הפנימי ולמימד הרוחני של החיים</p>
-                </div>
-                <div class="benefit-item oda-crystals-benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>הגנה אנרגטית</h3>
-                    <p>יצירת שדה מגן מפני אנרגיות שליליות וסביבה מזיקה</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-crystal" class="contact-section-crystal oda-crystals-cta">
-        <div class="container">
-            <div class="contact-crystal-content oda-crystals-cta__panel">
-                <h2>מעוניינים בטיפול עם קריסטלים?</h2>
-                <p>השאירו פרטים ואחזור אליכם בהקדם</p>
-                <a href="contact.html" class="btn contact-btn crystal-contact-btn oda-crystals-cta__btn">צרי קשר עכשיו</a>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -344,7 +298,7 @@
                     <ul>
                         <li><a href="index.html#services">טיפולים אישיים</a></li>
                         <li><a href="contact.html">ייעוץ מקוון</a></li>
-                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                        <li><a href="crystals.html">חיבור לקריסטלים</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -359,62 +313,25 @@
                     <h3>צור קשר</h3>
                     <ul>
                         <li>טלפון: 053-3397827</li>
-                        <li>אימייל: odalyasite@gmail.com</li>
                         <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>מידע משפטי</h3>
+                    <ul>
+                        <li><a href="terms.html">תקנון האתר</a></li>
+                        <li><a href="cancellation.html">ביטול עסקה</a></li>
+                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        
-        if (menuToggle && menu) {
-            // פונקציה לפתיחה/סגירה של התפריט
-            function toggleMenu(e) {
-                if (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                menu.classList.toggle('active');
-                console.log('Menu toggled, active:', menu.classList.contains('active'));
-            }
-            
-            // הוספת event listeners - גם click וגם touchstart
-            menuToggle.addEventListener('click', toggleMenu);
-            menuToggle.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                toggleMenu(e);
-            });
-            
-            // סגירת התפריט בלחיצה על קישור
-            const menuLinks = document.querySelectorAll('.menu a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menu.classList.remove('active');
-                });
-            });
-            
-            // סגירת התפריט בלחיצה מחוץ לתפריט (עם delay קטן)
-            document.addEventListener('click', function(e) {
-                if (menu.classList.contains('active')) {
-                    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-                        setTimeout(function() {
-                            menu.classList.remove('active');
-                        }, 100);
-                    }
-                }
-            });
-        } else {
-            console.log('Menu elements not found:', {menuToggle, menu});
-        }
-    });
-    </script>
+    <script src="script.js?v=sale29"></script>
 </body>
 </html>

@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>פענוח שמות - לְהָאִיר אֶת הַחוֹשֶׁךְ</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=sale41">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="page-names">
+    <video class="page-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="video/Jewelry_Promotional_Video_A_man_with_short_brown_hair_and_a_light_q1CH4ySU.mp4" type="video/mp4">
+    </video>
+    <div class="page-bg-overlay" aria-hidden="true"></div>
     <header>
         <div class="container">
             <nav> 
@@ -17,79 +21,86 @@
                 <ul class="menu" id="navMenu">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="orders.html">הזמנות</a></li>
-                    <li><a href="names.html" class="active">פיענוח שמות</a></li>
+                    <li><a href="crystals.html">חיבור לקריסטלים</a></li>
+                    <li><a href="names.html" class="active">פענוח שמות</a></li>
+                    <li><a href="frames.html">מסגרות עם פענוח</a></li>
                     <li><a href="about.html">אודות</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="contact.html" class="menu-contact">צור קשר</a></li>
                 </ul>
+                <a href="cart.html" class="header-cart" aria-label="סל קניות">
+                    <svg class="header-cart__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.2 4.8A1.5 1.5 0 0 0 3.7 3.5H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+                        <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+                    </svg>
+                    <span class="header-cart__name">סל</span>
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <section class="hero names-hero oda-names-hero">
-        <div class="container">
-            <div class="hero-content oda-names-hero__panel">
-                <h1>פענוח שמות</h1>
-                <div class="intro-separator names-separator oda-names-hero__rule"></div>
-                <p class="names-hero-text">גלו את המשמעות העמוקה הגלומה בשמכם על פי חכמת הקבלה והגימטריה</p>
+    <main class="names-page">
+        <section class="names-hero-invite" id="name-meaning">
+            <div class="container">
+                <p class="names-kicker">✦ פענוח לפי הקבלה ✦</p>
+                <h1>השם שלך מספר סיפור</h1>
+                <p class="names-lead">קריאה מעמיקה באותיות, בגימטריה ובתאריך הלידה — כדי לגלות את הכוחות והייעוד שנולדת איתם.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="name-meaning">
-        <div class="container">
-            <div class="section-title oda-names-section-title">
-                <h2>הכוח של השם שלך</h2>
-            </div>
-            <div class="content-box names-intro-box oda-names-glass">
-                <p>לפי המסורת היהודית והקבלה, השם שלנו אינו רק זיהוי אלא נושא בתוכו את מהות הנשמה, הייעוד והפוטנציאל הגלום בנו. באמצעות חכמת הגימטריה והפירוש העמוק של האותיות, אנו יכולים לחשוף תובנות משמעותיות על האישיות, החוזקות, האתגרים והייעוד הרוחני של האדם.</p>
-                <div class="names-quote">
-                    <blockquote>
-                        "שם האדם אינו דבר מקרי, אלא ביטוי עמוק לשורש נשמתו ולתפקידו בעולם"
-                    </blockquote>
+        <section class="names-stage" id="name-analysis">
+            <div class="container names-stage__grid">
+                <div class="names-story">
+                    <h2>הכוח של השם שלך</h2>
+                    <p>לפי המסורת היהודית והקבלה, השם אינו רק זיהוי. הוא נושא את מהות הנשמה, את הייעוד ואת הפוטנציאל הגלום בך. בפענוח קוראים את האותיות ואת המספרים — ומחזירים לך מסר מדויק, אישי ומרגיע.</p>
+                    <blockquote>״שם האדם אינו דבר מקרי, אלא ביטוי עמוק לשורש נשמתו ולתפקידו בעולם״</blockquote>
+                    <ul class="names-includes">
+                        <li>פענוח שם על פי הקבלה — סוד האותיות</li>
+                        <li>פענוח תאריך לידה והשילוב הייחודי עם השם</li>
+                        <li>מסר אישי כתוב לפי הפענוח</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="name-analysis" class="names-analysis-section">
-        <div class="container">
-            <div class="section-title oda-names-section-title">
-                <h2>מעוניינים בפענוח שם אישי ומעמיק?</h2>
+                <aside class="names-invite" aria-label="הזמנת פענוח">
+                    <p class="names-invite__price">₪100</p>
+                    <h2>פענוח שם אישי</h2>
+                    <p class="names-invite__text">כתבי את השם המלא, ואשלח אלייך בוואטסאפ פענוח מלא ומשמעותי.</p>
+                    <p class="names-invite__text">רוצה את המסר במסגרת? <a class="about-way__link" href="frames.html">לעמוד המסגרות</a></p>
+                    <div class="names-invite__form">
+                        <label for="name">השם המלא</label>
+                        <input type="text" id="name" placeholder="למשל: נועה לוי" autocomplete="name">
+                        <button type="button" class="names-invite__btn" id="analyze-name-btn">לפענוח בוואטסאפ</button>
+                    </div>
+                </aside>
             </div>
-            <div class="name-form analysis-form oda-names-glass">
-                <div class="form-group">
-                    <label for="name">השאירו פרטים ואחזור אליכם עם פענוח מלא ומשמעותי</label>
-                    <input type="text" id="name" placeholder="השם המלא שלך" autocomplete="name">
-                </div>
-                <button type="button" class="btn name-analysis-btn oda-names-wa__btn" id="analyze-name-btn">צרו קשר</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="name-components" class="components-section oda-names-components">
-        <div class="container">
-            <div class="cards analysis-cards oda-names-cards-grid">
-                <div class="card analysis-card oda-names-feature-card">
-                    <div class="card-content">
+        <section class="names-features" id="name-components">
+            <div class="container">
+                <p class="names-features__kicker">✦ שלושה שערים ✦</p>
+                <h2 class="names-features__title">מה נפתח בפענוח</h2>
+                <p class="names-features__lead">לא רשימת סמלים — אלא קריאה עדינה שמחזירה אותך אל עצמך.</p>
+                <div class="names-features__grid">
+                    <article class="names-feature">
+                        <span class="names-feature__mark" aria-hidden="true">✦</span>
                         <h3>גימטריה</h3>
-                        <p>ערך מספרי של האותיות בשם, חושף את האנרגיה הכוללת והפוטנציאל הרוחני.</p>
-                    </div>
-                </div>
-                <div class="card analysis-card oda-names-feature-card">
-                    <div class="card-content">
+                        <p>האותיות הופכות למספר, והמספר חושף את התדר של השם — הכוח השקט שאת כבר נושאת איתך.</p>
+                    </article>
+                    <article class="names-feature">
+                        <span class="names-feature__mark" aria-hidden="true">✦</span>
                         <h3>משמעות האותיות</h3>
-                        <p>כל אות בשם נושאת אנרגיה ומשמעות ייחודית המשפיעה על האישיות והייעוד.</p>
-                    </div>
-                </div>
-                <div class="card analysis-card oda-names-feature-card">
-                    <div class="card-content">
-                        <h3>ייעוד רוחני</h3>
-                        <p>חיבור בין המשמעויות השונות מאפשר הבנה עמוקה של הייעוד הרוחני והמסע הנשמתי.</p>
-                    </div>
+                        <p>כל אות היא שער קטן. יחד הן מרכיבות דיוקן חי — החוזקות, הרכות, והמקומות שבהם את גדלה.</p>
+                    </article>
+                    <article class="names-feature">
+                        <span class="names-feature__mark" aria-hidden="true">✦</span>
+                        <h3>ייעוד</h3>
+                        <p>כשהשם פוגש את יום הלידה, נפתח הסיפור: לא מה צריך להיות — אלא מה כבר חי בך ומחכה להישמע.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -99,7 +110,7 @@
                     <ul>
                         <li><a href="index.html#services">טיפולים אישיים</a></li>
                         <li><a href="contact.html">ייעוץ מקוון</a></li>
-                        <li><a href="crystals.html">מוצרי ריפוי</a></li>
+                        <li><a href="crystals.html">חיבור לקריסטלים</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -114,34 +125,28 @@
                     <h3>צור קשר</h3>
                     <ul>
                         <li>טלפון: 053-3397827</li>
-                        <li>אימייל: odalyasite@gmail.com</li>
                         <li>כתובת: חולון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>מידע משפטי</h3>
+                    <ul>
+                        <li><a href="terms.html">תקנון האתר</a></li>
+                        <li><a href="cancellation.html">ביטול עסקה</a></li>
+                        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+                        <li><a href="accessibility.html">הצהרת נגישות</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
+                <p>&copy; 2026 לְהָאִיר אֶת הַחוֹשֶׁךְ. כל הזכויות שמורות.</p>
             </div>
         </div>
     </footer>
 
+    <script src="script.js?v=sale29"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-        
-        menuToggle.addEventListener('click', function() {
-            menu.classList.toggle('active');
-        });
-        
-        // סגירת התפריט בלחיצה על קישור
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
-            });
-        });
-
         const analyzeBtn = document.getElementById('analyze-name-btn');
         if (analyzeBtn) {
             analyzeBtn.addEventListener('click', function() {
