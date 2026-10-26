@@ -248,8 +248,8 @@ body:has(.page-bg-video) {
 }
 
 .sale-bar {
-    background: #5c2f22;
-    color: #fff8ee;
+    background: #8c3d4f;
+    color: #fff6f8;
     text-align: center;
     padding: 0.52rem 0.9rem;
     font-size: 0.92rem;
@@ -265,7 +265,7 @@ body:has(.page-bg-video) {
 }
 
 .sale-bar strong {
-    color: #f0d7a8;
+    color: #ffd6de;
 }
 
 /* תפריט ניווט */
@@ -1066,6 +1066,18 @@ nav .header-cart {
     text-shadow: none;
 }
 
+.jewelry-store__sku {
+    display: block;
+    margin: -0.05rem 0.7rem 0.4rem;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    line-height: 1.35;
+    color: rgba(68, 34, 25, 0.62);
+    word-break: break-word;
+}
+
 .jewelry-store__quote {
     display: block;
     margin: -0.15rem 0.7rem 0.45rem;
@@ -1800,6 +1812,11 @@ nav .header-cart {
     .jewelry-store__label {
         font-size: 0.85rem;
         padding: 0.65rem 0.6rem 0.45rem;
+    }
+
+    .jewelry-store__sku {
+        margin: 0 0.55rem 0.35rem;
+        font-size: 0.68rem;
     }
 
     .jewelry-store__actions {

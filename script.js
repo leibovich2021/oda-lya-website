@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // סל קניות
     initCart();
     initSaleBar();
+    initProductSkus();
+    initCollectionSplash();
  });
 
 // -----------------------------
@@ -134,12 +136,38 @@ const CART_CURRENCY = 'ILS';
 const BIT_PHONE = '0533397827';
 const ORDER_CONTACT_WA = '972533397827';
 const ORDER_FORM_STORAGE_KEY = 'oda_order_form_v1';
-const SALE_PERCENT = 15;
-const SALE_ENDS_AT = Date.parse('2026-10-01T00:00:00+03:00');
+const SALE_PERCENT = 10;
+const SALE_STARTS_AT = Date.parse('2026-10-01T00:00:00+03:00');
+const SALE_ENDS_AT = Date.parse('2026-11-01T00:00:00+03:00');
+const SALE_NAME = 'אוקטובר ורוד';
+const SPLASH_STORAGE_KEY = 'oda_pink_october_splash_2026';
 let cartPageBound = false;
 
 function isSaleActive() {
-    return Number.isFinite(SALE_ENDS_AT) && Date.now() < SALE_ENDS_AT;
+    const now = Date.now();
+    return Number.isFinite(SALE_STARTS_AT) && Number.isFinite(SALE_ENDS_AT)
+        && now >= SALE_STARTS_AT && now < SALE_ENDS_AT;
+}
+
+function saleBarHtml() {
+    return `${SALE_NAME} — <strong>${SALE_PERCENT}% הנחה</strong> על כל הזמנה בחודש אוקטובר`;
+}
+
+function saleNoteText() {
+    return `${SALE_NAME} — ${SALE_PERCENT}% הנחה על כל הזמנה בחודש אוקטובר.`;
+}
+
+function saleDiscountLabel() {
+    return `הנחת מבצע ${SALE_PERCENT}%`;
+}
+
+function jerusalemDateKey(date) {
+    return new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Jerusalem',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).format(date || new Date());
 }
 
 function calcCartSubtotal(items) {
@@ -247,20 +275,21 @@ function absoluteProductImageUrl(image) {
 }
 
 function formatOrderForMessage(items) {
-    const lines = items.map((it) => {
+    const blocks = items.map((it) => {
         const qty = Number(it.qty) || 1;
         const price = Number(it.price) || 0;
         const quote = cartItemPriceNote(it);
         const note = (it.note || '').trim();
-        const notePart = note ? ` | בקשה: ${note}` : '';
         const pricePart = quote || formatILS(price);
         const sku = String(it.sku || '').replace(/[\u0000-\u001F\u007F]/g, '').trim();
-        const skuPart = sku ? ` | מק״ט: ${sku}` : '';
         const imageUrl = absoluteProductImageUrl(it.image);
-        const imageLine = imageUrl ? `\n  תמונה: ${imageUrl}` : '';
-        return `- ${it.name} ×${qty} (${pricePart})${skuPart}${notePart}${imageLine}`;
+        const lines = [`- ${it.name} ×${qty} (${pricePart})`];
+        if (sku) lines.push(`  מק״ט: ${sku}`);
+        if (note) lines.push(`  בקשה: ${note}`);
+        if (imageUrl) lines.push(`  תמונה: ${imageUrl}`);
+        return lines.join('\n');
     });
-    return lines.join('\n');
+    return blocks.join('\n\n');
 }
 
 function readOrderForm() {
@@ -381,7 +410,7 @@ function initSaleBar() {
     bar.className = 'sale-bar';
     bar.setAttribute('role', 'region');
     bar.setAttribute('aria-label', 'מבצע');
-    bar.innerHTML = `<p>מבצע עד סוף ספטמבר — <strong>${SALE_PERCENT}% הנחה</strong> על כל הזמנה</p>`;
+    bar.innerHTML = `<p>${saleBarHtml()}</p>`;
     const header = document.querySelector('body > header');
     const announcement = document.querySelector('.announcement-bar');
     if (announcement) {
@@ -481,10 +510,10 @@ function renderCartItems() {
     if (discountRow) discountRow.hidden = !showSale;
     if (saleNote) {
         saleNote.hidden = !showSale;
-        if (showSale) {
-            saleNote.textContent = `מבצע עד סוף ספטמבר — ${SALE_PERCENT}% הנחה על כל הזמנה.`;
-        }
+        if (showSale) saleNote.textContent = saleNoteText();
     }
+    const discountLabel = document.getElementById('cart-discount-label');
+    if (discountLabel && showSale) discountLabel.textContent = saleDiscountLabel();
     if (submitEl) {
         submitEl.classList.toggle('is-disabled', isEmpty);
         submitEl.setAttribute('aria-disabled', isEmpty ? 'true' : 'false');
@@ -637,6 +666,28 @@ function bindCartPageOnce() {
 function renderCartPage() {
     bindCartPageOnce();
     refreshCartPage();
+}
+
+function initProductSkus() {
+    document.querySelectorAll('.jewelry-store__item[data-sku]').forEach((item) => {
+        if (item.querySelector('.jewelry-store__sku')) return;
+        const sku = (item.getAttribute('data-sku') || '').trim();
+        if (!sku) return;
+
+        const skuEl = document.createElement('span');
+        skuEl.className = 'jewelry-store__sku';
+        skuEl.innerHTML = `מק״ט: <bdi>${escapeHtml(sku)}</bdi>`;
+
+        const label = item.querySelector('.jewelry-store__label');
+        const body = item.querySelector('.jewelry-store__body');
+        if (label) {
+            label.insertAdjacentElement('afterend', skuEl);
+        } else if (body) {
+            body.prepend(skuEl);
+        } else {
+            item.appendChild(skuEl);
+        }
+    });
 }
 
 function initCart() {
@@ -855,23 +906,47 @@ function initGallery() {
     checkImagesAndInit();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function wasSplashDismissedToday() {
+    try {
+        return localStorage.getItem(SPLASH_STORAGE_KEY) === jerusalemDateKey();
+    } catch {
+        return false;
+    }
+}
+
+function markSplashDismissed() {
+    try {
+        localStorage.setItem(SPLASH_STORAGE_KEY, jerusalemDateKey());
+    } catch {
+        /* ignore quota / private-mode failures */
+    }
+}
+
+function initCollectionSplash() {
     const splash = document.getElementById('collection-splash');
     if (!splash) return;
 
+    const removeSplash = function () {
+        if (splash.parentNode) splash.parentNode.removeChild(splash);
+    };
+
+    if (!isSaleActive() || wasSplashDismissedToday()) {
+        removeSplash();
+        return;
+    }
+
     const hideSplash = function () {
+        markSplashDismissed();
         splash.classList.remove('is-visible');
         splash.classList.add('is-gone');
-        window.setTimeout(function () {
-            if (splash.parentNode) splash.parentNode.removeChild(splash);
-        }, 450);
+        window.setTimeout(removeSplash, 450);
     };
 
     requestAnimationFrame(function () {
         splash.classList.add('is-visible');
     });
 
-    const timer = window.setTimeout(hideSplash, 4000);
+    const timer = window.setTimeout(hideSplash, 6000);
     const closeBtn = splash.querySelector('.collection-splash__close');
     const closeNow = function (event) {
         if (event) event.stopPropagation();
@@ -888,7 +963,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.removeEventListener('keydown', onKey);
         }
     });
-});
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const zoom = document.getElementById('product-zoom');
