@@ -1,0 +1,50 @@
+name: Deploy to Plesk
+
+# After this file is on main, every push to main uploads the repo root
+# into the Plesk document root (httpdocs) over FTP.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-httpdocs
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Upload site to httpdocs
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Plesk over FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: ./
+          server-dir: ./httpdocs/
+          # Per-file timeout. Largest assets are about 5 MB.
+          timeout: 120000
+          log-level: standard
+          # Re-state the action defaults, then skip CI metadata and OS junk.
+          # dangerous-clean-slate stays off: files already on the server that
+          # this action did not deploy are left in place.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            **/desktop.ini
+            **/.DS_Store
+            **/Thumbs.db
