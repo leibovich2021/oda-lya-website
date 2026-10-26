@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // סל קניות
     initCart();
     initSaleBar();
-    initProductSkus();
     initCollectionSplash();
  });
 
@@ -668,28 +667,6 @@ function renderCartPage() {
     refreshCartPage();
 }
 
-function initProductSkus() {
-    document.querySelectorAll('.jewelry-store__item[data-sku]').forEach((item) => {
-        if (item.querySelector('.jewelry-store__sku')) return;
-        const sku = (item.getAttribute('data-sku') || '').trim();
-        if (!sku) return;
-
-        const skuEl = document.createElement('span');
-        skuEl.className = 'jewelry-store__sku';
-        skuEl.innerHTML = `מק״ט: <bdi>${escapeHtml(sku)}</bdi>`;
-
-        const label = item.querySelector('.jewelry-store__label');
-        const body = item.querySelector('.jewelry-store__body');
-        if (label) {
-            label.insertAdjacentElement('afterend', skuEl);
-        } else if (body) {
-            body.prepend(skuEl);
-        } else {
-            item.appendChild(skuEl);
-        }
-    });
-}
-
 function initCart() {
     updateCartBadge();
     bindStoreAddToCart();
@@ -973,12 +950,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const zoomName = zoom.querySelector('.product-zoom__name');
     const zoomDesc = zoom.querySelector('.product-zoom__desc');
     const closeBtn = zoom.querySelector('.product-zoom__close');
+    let zoomSku = zoom.querySelector('.product-zoom__sku');
+    if (!zoomSku && zoomName) {
+        zoomSku = document.createElement('p');
+        zoomSku.className = 'product-zoom__sku';
+        zoomName.insertAdjacentElement('afterend', zoomSku);
+    }
 
-    const openZoom = function (src, name, descHtml) {
+    const setZoomSku = function (sku) {
+        if (!zoomSku) return;
+        const clean = String(sku || '').replace(/[\u0000-\u001F\u007F]/g, '').trim();
+        zoomSku.hidden = !clean;
+        zoomSku.innerHTML = clean ? `מק״ט: <bdi>${escapeHtml(clean)}</bdi>` : '';
+    };
+
+    const openZoom = function (src, name, descHtml, sku) {
         if (!src) return;
         zoomImg.src = src;
         zoomImg.alt = name || 'תמונת מוצר';
         zoomName.textContent = name || '';
+        setZoomSku(sku);
         if (zoomDesc) {
             const html = (descHtml || '').trim();
             zoomDesc.innerHTML = html;
@@ -1003,6 +994,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (zoomDesc) {
                     zoomDesc.innerHTML = '';
                 }
+                setZoomSku('');
             }
         }, 280);
     };
@@ -1015,7 +1007,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const nameEl = item ? item.querySelector('.cart-item__name') : null;
             if (!photo) return;
             event.preventDefault();
-            openZoom(photo.currentSrc || photo.getAttribute('src'), nameEl ? nameEl.textContent.trim() : (photo.alt || ''));
+            const skuEl = item ? item.querySelector('[data-sku]') : null;
+            openZoom(
+                photo.currentSrc || photo.getAttribute('src'),
+                nameEl ? nameEl.textContent.trim() : (photo.alt || ''),
+                '',
+                item?.getAttribute('data-sku') || skuEl?.getAttribute('data-sku') || ''
+            );
             return;
         }
 
@@ -1039,7 +1037,8 @@ document.addEventListener('DOMContentLoaded', function () {
         openZoom(
             photo.currentSrc || photo.getAttribute('src'),
             item.getAttribute('data-name') || photo.alt || '',
-            story ? String(story.innerHTML || '').trim() : ''
+            story ? String(story.innerHTML || '').trim() : '',
+            item.getAttribute('data-sku') || ''
         );
     });
 
